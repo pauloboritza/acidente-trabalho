@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { TextInput, Button, Text, Divider, List, Checkbox, RadioButton } from 'react-native-paper';
-import { DatePickerInput } from 'react-native-paper-dates';
+import { DatePickerInput, TimePicker } from 'react-native-paper-dates';
 //import realm from '../database';
 import { Alert } from 'react-native';
 import { Formik } from 'formik';
@@ -50,7 +50,7 @@ const FormScreen = () => {
           terceirizado:{cnpj:'',nome:'',cep:'',municipio:'',endereco:'',telefone:'',email:'',nTotalTrabalhadores:'',nHomens:'',nMulheres:'',ramoAtividade:'',cnae:'',grauRisco:''}
         },
         acidente:{
-          tipo:'',emitiuCat:'',nomeEstabelecimento:'',localAcidente:'',setorAcidente:'', municipioAcidente:'',enderecoAcidente:'',data:'',hora:'',horasTrabalhadas:'',fazHorasExtras:'',qtdHorasExtras:'',funcaoAcidente:'',tempoFuncao:'',teveTreinamento:'',teveTreinamentoComp:'',descricaoTreinamento:'',causaAcidenteManuEq:'',causaAcidente:'',diagnosticoLesao:'',causaObito:'',maisTrabalhadoresAtingidos:{res:'', qtd:''},outrosObitos:{res:'', qtd:''},outrosAcidentes:{res:'', qtd:''}
+          tipo:'',emitiuCat:'',nomeEstabelecimento:'',setorAcidente:'', municipioAcidente:'',enderecoAcidente:'',data:undefined, hora:undefined,horasTrabalhadas:'',fazHorasExtras:'',qtdHorasExtras:'',funcaoAcidente:'',tempoFuncao:'',teveTreinamento:'',teveTreinamentoComp:'',descricaoTreinamento:'',causaAcidenteManuEq:'',causaAcidente:'',diagnosticoLesao:'',causaObito:'',maisTrabalhadoresAtingidos:{res:'', qtd:''},outrosObitos:{res:'', qtd:''},outrosAcidentes:{res:'', qtd:''}
         },
         descTrabalhoHabitual:'',
         trabRealizadoDiaAcidente:'',
@@ -101,22 +101,15 @@ const FormScreen = () => {
       {/* Seção: Roteiro Inicial */}
       <List.Accordion title="Roteiro Inicial" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
         <View style={styles.section}>
-          {/* <TextInput
-            label="Data da Inspeção"
-            value={values.dataInspecao}
-            onChangeText={handleChange('dataInspecao')}
-            onBlur={handleBlur('dataInspecao')}
-            style={styles.input}
-          /> */}
+          
           <DatePickerInput 
             locale='pt'
             saveLabel='Data da Inspeção'
             value={values.dataInspecao}
             onChange={e=>handleChange('dataInspecao')}
             inputMode='start'
-          />
-
-        
+            style={{marginBottom: 15}}
+          />        
           <TextInput
             label="Número SINAN-NET"
             value={values.numeroSinan}
@@ -125,8 +118,8 @@ const FormScreen = () => {
             style={styles.input}
           />
 
-          <View>
-            <Text style={styles.title}>Motivo da Inspeção / Investigação do Acidente</Text>
+          <View style={styles.input}>
+            <Text style={[styles.textLabel,{marginBottom: -25}]}>Motivo da Inspeção / Investigação do Acidente</Text>
 
             <RadioButton.Group
               onValueChange={handleChange('motivoInspecao')}
@@ -292,7 +285,7 @@ const FormScreen = () => {
         <View style={[styles.section,{flexDirection:"column", gap: 5, justifyContent: 'space-between', width: '100%', flexGrow: 1}]}>
           <View></View>
           <List.Accordion title="Pessoa Fisica" left={(props) => <List.Icon {...props} icon="account" />}>
-            <View style={{marginVertical: 10}}>
+            <View style={styles.section}>
               <TextInput
                 label="CPF (Pessoa Física)"
                 value={values.estabelecimento.pf.cpf}
@@ -346,7 +339,7 @@ const FormScreen = () => {
           </List.Accordion>
           <View></View>
           <List.Accordion title="Pessoa Juridica" left={(props) => <List.Icon {...props} icon="account" />}>
-            <View>
+            <View style={styles.section}>
               <TextInput
                 label="CNPJ (Pessoa Jurídica)"
                 value={values.estabelecimento.pj.cnpj}
@@ -580,20 +573,38 @@ const FormScreen = () => {
       {/* Seção: Dados do Acidente */}
       <List.Accordion title="Dados do Acidente" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
         <View style={styles.section}>
-            <TextInput
-            label="Tipo do Acidente"
-            value={values.acidente.tipo}
-            onChangeText={handleChange('acidente.tipo')}
-            onBlur={handleBlur('acidente.tipo')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Foi Emitida a CAT?"
-            value={values.acidente.emitiuCat}
-            onChangeText={handleChange('acidente.emitiuCat')}
-            onBlur={handleBlur('acidente.emitiuCat')}
-            style={styles.input}
-          />
+            
+          <View style={{marginBottom: 15}}>
+            <View style={{flex: 1, justifyContent: 'space-between', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.tipo')}
+              value={values.acidente.tipo}
+            >
+              <View style={{flexDirection: 'column'}}>
+                <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Tipo do Acidente</Text>
+                <View style={{marginEnd: 60, marginTop: -15}}>
+                  <RadioButton.Item label="Acidente típico" value="tipico" />
+                  <RadioButton.Item label="Acidente de trajeto" value="trajeto" style={{marginTop: -15}}/>
+                </View>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
+          
+          <View style={{marginBottom: 15}}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.emitiuCat')}
+              value={values.acidente.emitiuCat}
+            >
+              <View style={{flexDirection: 'row'}}>
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Foi Emitida a CAT?</Text>
+                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
           <TextInput
             label="Nome do Estabelecimento"
             value={values.acidente.nomeEstabelecimento}
@@ -602,14 +613,7 @@ const FormScreen = () => {
             style={styles.input}
           />
           <TextInput
-            label="Local do Acidente"
-            value={values.acidente.localAcidente}
-            onChangeText={handleChange('acidente.localAcidente')}
-            onBlur={handleBlur('acidente.localAcidente')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Setor do Acidente"
+            label="Setor do estabeleciento do acidente"
             value={values.acidente.setorAcidente}
             onChangeText={handleChange('acidente.setorAcidente')}
             onBlur={handleBlur('acidente.setorAcidente')}
@@ -629,12 +633,14 @@ const FormScreen = () => {
             onBlur={handleBlur('acidente.enderecoAcidente')}
             style={styles.input}
           />
-          <TextInput
-            label="Data do Acidente"
-            value={values.acidente.data}
-            onChangeText={handleChange('acidente.data')}
-            onBlur={handleBlur('acidente.data')}
+          <DatePickerInput
             style={styles.input}
+            label={'Data do Acidente'}           
+            locale='pt'
+            saveLabel='Data do Acidente'
+            value={values.acidente.data}
+            onChange={e=>handleChange('acidente.data')}
+            inputMode='start'
           />
           <TextInput
             label="Hora do Acidente"
@@ -644,21 +650,28 @@ const FormScreen = () => {
             style={styles.input}
           />
           <TextInput
-            label="Horas Trabalhadas"
+            label="Após quantas horas trabalhadas"
             value={values.acidente.horasTrabalhadas}
             onChangeText={handleChange('acidente.horasTrabalhadas')}
             onBlur={handleBlur('acidente.horasTrabalhadas')}
             style={styles.input}
           />
+          <View style={{marginBottom: 15}}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.fazHorasExtras')}
+              value={values.acidente.fazHorasExtras}
+            >
+              <View style={{flexDirection: 'row'}}>
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Faz Horas Extras?</Text>
+                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
           <TextInput
-            label="Faz Horas Extras?"
-            value={values.acidente.fazHorasExtras}
-            onChangeText={handleChange('acidente.fazHorasExtras')}
-            onBlur={handleBlur('acidente.fazHorasExtras')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Quantidade de Horas Extras"
+            label="Descreva a qtde de Horas Extras"
             value={values.acidente.qtdHorasExtras}
             onChangeText={handleChange('acidente.qtdHorasExtras')}
             onBlur={handleBlur('acidente.qtdHorasExtras')}
@@ -672,40 +685,61 @@ const FormScreen = () => {
             style={styles.input}
           />
           <TextInput
-            label="Tempo na Função"
+            label="Quanto tempo na função"
             value={values.acidente.tempoFuncao}
             onChangeText={handleChange('acidente.tempoFuncao')}
             onBlur={handleBlur('acidente.tempoFuncao')}
             style={styles.input}
           />
+          <View style={{marginBottom: 15}}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.teveTreinamento')}
+              value={values.acidente.teveTreinamento}
+            >
+              <View style={{flexDirection: 'row'}}>
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Teve Treinamento?</Text>
+                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
+          <View style={styles.input}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.teveTreinamentoComp')}
+              value={values.acidente.teveTreinamentoComp}
+            >
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Treinamento Comprovado?</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25, marginTop: -20}}/>
+                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -15, marginTop: -20}}/>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
           <TextInput
-            label="Teve Treinamento?"
-            value={values.acidente.teveTreinamento}
-            onChangeText={handleChange('acidente.teveTreinamento')}
-            onBlur={handleBlur('acidente.teveTreinamento')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Treinamento Comprovado?"
-            value={values.acidente.teveTreinamentoComp}
-            onChangeText={handleChange('acidente.teveTreinamentoComp')}
-            onBlur={handleBlur('acidente.teveTreinamentoComp')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Descrição do Treinamento"
+            label="Descreva o Treinamento"
             value={values.acidente.descricaoTreinamento}
             onChangeText={handleChange('acidente.descricaoTreinamento')}
             onBlur={handleBlur('acidente.descricaoTreinamento')}
             style={styles.input}
           />
-          <TextInput
-            label="Causa do Acidente (Manutenção de Equipamento)"
-            value={values.acidente.causaAcidenteManuEq}
-            onChangeText={handleChange('acidente.causaAcidenteManuEq')}
-            onBlur={handleBlur('acidente.causaAcidenteManuEq')}
-            style={styles.input}
-          />
+          <View style={styles.input}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.causaAcidenteManuEq')}
+              value={values.acidente.causaAcidenteManuEq}
+            >
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Acidente ocorreu em situação de manutenção de equipamento ou máquina</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25, marginTop: -20}}/>
+                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -15, marginTop: -20}}/>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
           <TextInput
             label="Causa do Acidente"
             value={values.acidente.causaAcidente}
@@ -721,56 +755,150 @@ const FormScreen = () => {
             style={styles.input}
           />
           <TextInput
-            label="Causa do Óbito"
+            label="Causa básica do Óbito"
             value={values.acidente.causaObito}
             onChangeText={handleChange('acidente.causaObito')}
             onBlur={handleBlur('acidente.causaObito')}
             style={styles.input}
-          />
-          <TextInput
-            label="Mais Trabalhadores Atingidos?"
-            value={values.acidente.maisTrabalhadoresAtingidos.res}
-            onChangeText={handleChange('acidente.maisTrabalhadoresAtingidos.res')}
-            onBlur={handleBlur('acidente.maisTrabalhadoresAtingidos.res')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Quantidade de Trabalhadores Atingidos"
-            value={values.acidente.maisTrabalhadoresAtingidos.qtd}
-            onChangeText={handleChange('acidente.maisTrabalhadoresAtingidos.qtd')}
-            onBlur={handleBlur('acidente.maisTrabalhadoresAtingidos.qtd')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Outros Óbitos?"
-            value={values.acidente.outrosObitos.res}
-            onChangeText={handleChange('acidente.outrosObitos.res')}
-            onBlur={handleBlur('acidente.outrosObitos.res')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Quantidade de Outros Óbitos"
-            value={values.acidente.outrosObitos.qtd}
-            onChangeText={handleChange('acidente.outrosObitos.qtd')}
-            onBlur={handleBlur('acidente.outrosObitos.qtd')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Outros Acidentes?"
-            value={values.acidente.outrosAcidentes.res}
-            onChangeText={handleChange('acidente.outrosAcidentes.res')}
-            onBlur={handleBlur('acidente.outrosAcidentes.res')}
-            style={styles.input}
-          />
-          <TextInput
-            label="Quantidade de Outros Acidentes"
-            value={values.acidente.outrosAcidentes.qtd}
-            onChangeText={handleChange('acidente.outrosAcidentes.qtd')}
-            onBlur={handleBlur('acidente.outrosAcidentes.qtd')}
-            style={styles.input}
-          />
+          />          
+          <View style={styles.input}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.maisTrabalhadoresAtingidos.res')}
+              value={values.acidente.maisTrabalhadoresAtingidos.res}
+            >
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Mais Trabalhadores Atingidos?</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
+                <View style={{ flexDirection: 'column'}}>
+                  <RadioButton.Item label="SIM" value="S" />
+                  <RadioButton.Item label="NÃO" value="N" />
+                </View>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
+                  <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>
+                  <Text style={{fontSize: 16, fontWeight: 600}}>(</Text>
+                  <View style={{height: 30}}>
+                    <TextInput
+                      style={{alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: 16, width: 40, backgroundColor: '#fff'}}
+                      value={values.acidente.maisTrabalhadoresAtingidos.qtd}
+                      onChangeText={handleChange('acidente.maisTrabalhadoresAtingidos.qtd')}
+                      onBlur={handleBlur('acidente.maisTrabalhadoresAtingidos.qtd')}
+                    />
+                    </View>
+                    <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
+                </View>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
+          
+          <View style={styles.input}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.acidente.outrosObitos.res')}
+              value={values.acidente.outrosObitos.res}
+            >
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
+                <View style={{ flexDirection: 'column'}}>
+                  <RadioButton.Item label="SIM" value="S" />
+                  <RadioButton.Item label="NÃO" value="N" />
+                </View>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
+                  <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>
+                  <Text style={{fontSize: 16, fontWeight: 600}}>(</Text>
+                  <View style={{height: 30}}>
+                    <TextInput
+                      style={{alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: 16, width: 40, backgroundColor: '#fff'}}
+                      value={values.acidente.outrosObitos.qtd}
+                      onChangeText={handleChange('acidente.outrosObitos.qtd')}
+                      onBlur={handleBlur('acidente.outrosObitos.qtd')}
+                    />
+                    </View>
+                    <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
+                </View>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
+
+          <View style={styles.input}>
+            <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
+            <RadioButton.Group
+              onValueChange={handleChange('acidente.outrosAcidentes.res')}
+              value={values.acidente.outrosAcidentes.res}
+            >
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
+                <View style={{ flexDirection: 'column'}}>
+                  <RadioButton.Item label="SIM" value="S" />
+                  <RadioButton.Item label="NÃO" value="N" />
+                </View>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
+                  <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>
+                  <Text style={{fontSize: 16, fontWeight: 600}}>(</Text>
+                  <View style={{height: 30}}>
+                    <TextInput
+                      style={{alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: 16, width: 40, backgroundColor: '#fff'}}
+                      value={values.acidente.outrosAcidentes.qtd}
+                      onChangeText={handleChange('acidente.outrosAcidentes.qtd')}
+                      onBlur={handleBlur('acidente.outrosAcidentes.qtd')}
+                    />
+                    </View>
+                    <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
+                </View>
+              </View>
+            </RadioButton.Group>
+            </View>
+          </View>
+
         </View>
       </List.Accordion>
+
+      <Divider style={styles.divider} />
+
+      {/* Seção: Descrições */}
+      <List.Accordion title="Descrições" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
+      <View style={styles.section}>
+        <Divider style={styles.divider} />
+        <Text style={styles.textTitle}>DESCRIÇÃO DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</Text>
+        <TextInput
+          multiline
+          label={'descrição'}
+          value={values.descTrabalhoHabitual}
+          onChangeText={handleChange('descTrabalhoHabitual')}
+          onBlur={handleBlur('descTrabalhoHabitual')}
+          style={styles.textInputBox}
+        />  
+        <Text style={styles.textTitle}>QUE TRABALHO ESTAVA SENDO REALIZADO NO DIA DO ACIDENTE?</Text>
+        <TextInput
+          multiline
+          label={'descrição'}
+          value={values.trabRealizadoDiaAcidente}
+          onChangeText={handleChange('trabRealizadoDiaAcidente')}
+          onBlur={handleBlur('trabRealizadoDiaAcidente')}
+          style={styles.textInputBox}
+        />
+        <Text style={styles.textTitle}>DESCRIÇÃO DO LOCAL DO ACIDENTE</Text>
+        <TextInput
+          multiline
+          label={'descrição'}
+          value={values.descLocalAcidente}
+          onChangeText={handleChange('descLocalAcidente')}
+          onBlur={handleBlur('descLocalAcidente')}
+          style={styles.textInputBox}
+        />
+        <Text style={styles.textTitle}>DESCRIÇÃO BREVE DA SEQUÊNCIA DOS EVENTOS DO ACIDENTE</Text>
+        <TextInput
+          multiline
+          label={'descrição'}
+          value={values.sequenciaEventosAcidente}
+          onChangeText={handleChange('sequenciaEventosAcidente')}
+          onBlur={handleBlur('sequenciaEventosAcidente')}
+          style={styles.textInputBox}
+        />
+        </View>
+      </List.Accordion>
+
 
       <Divider style={styles.divider} />
 
@@ -801,11 +929,34 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   section: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 0,
+    paddingLeft: 10,
+    paddingEnd: 0,
   },
   button: {
     marginTop: 20,
   },
+  textTitle:{
+    textAlign: 'justify',
+    fontWeight: '700',
+    paddingLeft: 0,
+    paddingEnd: 0
+  },
+  textInputBox:{
+    height: 150,
+    textAlign: 'justify',
+    paddingLeft: 0,
+    paddingEnd: 0,
+    marginBottom: 15,
+    backgroundColor: 'white',
+  },
+  textLabel:{
+    padding: 15,
+    marginBottom: 0,
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#494848'
+  }
 });
 
 export default FormScreen;
