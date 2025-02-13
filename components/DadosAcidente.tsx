@@ -1,9 +1,9 @@
 import styles from "@/constants/styles";
-import { FormikProps } from "formik";
 import { View } from "react-native";
 import { RadioButton, TextInput, Text, List } from "react-native-paper";
-import { DatePickerInput } from "react-native-paper-dates";
-const DadosAcidente = ({ values, handleChange, handleBlur}: any) => (
+import DatePiker from "./DatePiker";
+
+const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) => (
 <List.Accordion title="Dados do Acidente" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
         <View style={styles.section}>
             
@@ -66,14 +66,10 @@ const DadosAcidente = ({ values, handleChange, handleBlur}: any) => (
             onBlur={handleBlur('acidente.enderecoAcidente')}
             style={styles.input}
           />
-          <DatePickerInput
-            style={styles.input}
-            label={'Data do Acidente'}           
-            locale='pt'
-            saveLabel='Data do Acidente'
-            value={values.acidente.data}
-            onChange={e=>handleChange('acidente.data')}
-            inputMode='start'
+          <DatePiker 
+            label='Data do Acidente'
+            fieldValue='acidente.data'
+            setFieldValue={setFieldValue}
           />
           <TextInput
             label="Hora do Acidente"
