@@ -4,11 +4,32 @@ import { RadioButton, TextInput, Text } from "react-native-paper";
 
 const OutrosCampos = ({ values, handleChange, handleBlur }: any) => (
     <View>
-      <TextInput label="Número Total de Trabalhadores" value={values.estabelecimento.nTotalTrabalhadores} onChangeText={handleChange('estabelecimento.nTotalTrabalhadores')} onBlur={handleBlur('estabelecimento.nTotalTrabalhadores')} style={styles.input} />
-      <TextInput label="Número de Homens" value={values.estabelecimento.nHomens} onChangeText={handleChange('estabelecimento.nHomens')} onBlur={handleBlur('estabelecimento.nHomens')} style={styles.input} />
-      <TextInput label="Número de Mulheres" value={values.estabelecimento.nMulheres} onChangeText={handleChange('estabelecimento.nMulheres')} onBlur={handleBlur('estabelecimento.nMulheres')} style={styles.input} />
-      <TextInput label="Ramo de Atividade" value={values.estabelecimento.ramoAtividade} onChangeText={handleChange('estabelecimento.ramoAtividade')} onBlur={handleBlur('estabelecimento.ramoAtividade')} style={styles.input} />
-      <TextInput label="CNAE" value={values.estabelecimento.cnae} onChangeText={handleChange('estabelecimento.cnae')} onBlur={handleBlur('estabelecimento.cnae')} style={styles.input} />
+      <TextInput
+        label="Número Total de Trabalhadores"
+        value={values.estabelecimento.nTotalTrabalhadores} 
+        onChangeText={handleChange('estabelecimento.nTotalTrabalhadores')}
+        onBlur={handleBlur('estabelecimento.nTotalTrabalhadores')}
+        style={styles.input} />
+      <TextInput label="Número de Homens"
+        value={values.estabelecimento.nHomens}
+        onChangeText={handleChange('estabelecimento.nHomens')}
+        onBlur={handleBlur('estabelecimento.nHomens')}
+        style={styles.input} />
+      <TextInput label="Número de Mulheres"
+        value={values.estabelecimento.nMulheres}
+        onChangeText={handleChange('estabelecimento.nMulheres')}
+        onBlur={handleBlur('estabelecimento.nMulheres')}
+        style={styles.input} />
+      <TextInput label="Ramo de Atividade"
+        value={values.estabelecimento.ramoAtividade}
+        onChangeText={handleChange('estabelecimento.ramoAtividade')}
+        onBlur={handleBlur('estabelecimento.ramoAtividade')}
+        style={styles.input} />
+      <TextInput label="CNAE" 
+        value={values.estabelecimento.cnae} 
+        onChangeText={handleChange('estabelecimento.cnae')}
+        onBlur={handleBlur('estabelecimento.cnae')}
+        style={styles.input} />
   
       {/* Grau de Risco */}
       <View>

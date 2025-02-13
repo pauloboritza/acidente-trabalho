@@ -73,6 +73,7 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
               onBlur={handleBlur(`analiseBarreiras.${categoria.campo}.observacao`)}
             />
           </View>
+          <View style={{gap: 20}}></View>
         </View>
       ))}
     </View>
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
+        marginVertical: 5
       },
       categoryTitle: {
         fontSize: 16,
