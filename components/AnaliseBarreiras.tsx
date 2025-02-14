@@ -18,8 +18,6 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.sectionTitle}>Análise de Barreiras</Text>
-
       {categorias.map((categoria, index) => (
         <View key={index} style={styles.categoryContainer}>
           <Text style={styles.categoryTitle}>{categoria.label}</Text>
@@ -73,7 +71,6 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
               onBlur={handleBlur(`analiseBarreiras.${categoria.campo}.observacao`)}
             />
           </View>
-          <View style={{gap: 20}}></View>
         </View>
       ))}
     </View>
@@ -86,10 +83,11 @@ export default AnaliseBarreiras;
 
 const styles = StyleSheet.create({
     container: {
-        padding: 15,
-        backgroundColor: '#fff',
         borderRadius: 10,
         marginBottom: 20,
+        paddingLeft: 0,
+        paddingEnd: 0,
+        marginTop: -5
       },
       sectionTitle: {
         fontSize: 18,
@@ -98,11 +96,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
       },
       categoryContainer: {
-        marginBottom: 15,
-        paddingBottom: 10,
+        backgroundColor: '#fff',
+        padding: 10,
+        marginBottom: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
-        marginVertical: 5
+        marginVertical: 5,
+        borderTopLeftRadius: 5,
+        borderTopEndRadius: 5
       },
       categoryTitle: {
         fontSize: 16,

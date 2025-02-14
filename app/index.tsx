@@ -12,6 +12,8 @@ import FatoresContribuintes from '@/components/FatoresContribuintes';
 import DadosTrabalhador from '@/components/DadosTrabalhador';
 import Descricoes from '@/components/Descricoes';
 import RoteiroInicial from '@/components/RoteiroInicial';
+import AnaliseGestaoSeguranca from '@/components/AnaliseGestaoSeg';
+import InformacoesFinais from '@/components/InformacoesFinais';
 
 const FormScreen = () => {
    
@@ -96,7 +98,7 @@ const FormScreen = () => {
           deAcordoCom:''
         }
       }}
-      onSubmit={values => console.log(values.dataInspecao)}
+      onSubmit={values => console.log(values)}
     >
     {({ handleChange, handleBlur, handleSubmit, setFieldValue, values }) => (
     <ScrollView contentContainerStyle={styles.container}>
@@ -170,6 +172,22 @@ const FormScreen = () => {
       </View>
       </List.Accordion>
 
+      <Divider style={styles.divider} />
+      {/* Seção: Gestão de Segurança */}
+      <AnaliseGestaoSeguranca
+        values={values}
+        handleChange={handleChange}
+        handleBlur={handleBlur}
+      />
+
+    <Divider style={styles.divider} />
+      {/* Seção: Info Finais */}
+      <InformacoesFinais
+        values={values}
+        handleChange={handleChange}
+        handleBlur={handleBlur}
+        setFieldValue={setFieldValue}
+      />
 
 
       <Divider style={styles.divider} />
