@@ -1,7 +1,7 @@
 import React from "react";
 import { DatePickerInput, registerTranslation, pt } from 'react-native-paper-dates';
 registerTranslation('pt', pt);
-const DatePiker = ({label, setFieldValue, fieldValue}: any) =>{
+const DatePiker = ({label, setFieldValue, fieldValue, ...props}: any) =>{
   const [date, setDate] = React.useState(undefined)
 
   return (
@@ -14,6 +14,7 @@ const DatePiker = ({label, setFieldValue, fieldValue}: any) =>{
           setDate(d)}}
       inputMode='start'
       style={{marginBottom: 15}}
+      {...props}
     />  
   )
 }

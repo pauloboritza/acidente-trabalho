@@ -55,16 +55,74 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
                 </View>
             </View>
 
-            <View style={info.checkboxContainer}>
-                <Text style={[styles.textTitle, {textAlign: 'center', marginTop: 3}]}>CONCLUSÕES E RECOMENDAÇÕES</Text>
-                <View style={[styles.textInputBox,{marginHorizontal: 5, marginVertical: 3}]}>
+            <View style={[info.checkboxContainer, {height: 400, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'stretch',  flex: 1}]}>
+                <View>
+                    <Text style={[styles.textTitle, {textAlign: 'center', marginTop: 3}]}>CONCLUSÕES E RECOMENDAÇÕES</Text>
+                </View>
+                <View style={[styles.textInputBox,{marginHorizontal: 5, marginVertical: 3, flex: 1}]}>
                     <TextInput
                         label='Conclusão'
                         multiline
-                        style={{height: 250}}
+                        style={{height: 230}}
                         value={values.conclusoesRecomendacoes}
                         onChangeText={handleChange('conclusoesRecomendacoes')}
                         onBlur={handleBlur('conclusoesRecomendacoes')}
+                    />
+                </View>
+            
+                <View style={{height: 70, marginHorizontal: 5, flex: 0.3, marginTop: 5}}>
+                    <DatePiker 
+                        label="Data"
+                        setFieldValue={setFieldValue}
+                        fieldValue='conclusoesRecomendacoesData'
+                    />
+                </View>
+                <View style={{height: 70, marginHorizontal: 5, flex: 0.3}}>
+                    <TextInput
+                        label='Local'
+                        value={values.conclusoesRecomendacoesLocal}
+                        onChangeText={handleChange('conclusoesRecomendacoesLocal')}
+                        onBlur={handleBlur('conclusoesRecomendacoesLocal')}
+                    />
+                </View>
+            </View>
+           
+           
+            <View style={[info.checkboxContainer, {height: 440, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'stretch',  flex: 1}]}>
+                <View>
+                    <Text style={[styles.textTitle, {textAlign: 'center', marginTop: 3}]}>EQUIPE TÉCNICA</Text>
+                </View>
+                <View style={[styles.textInputBox,{marginHorizontal: 5, marginVertical: 3, flex: 1}]}>
+                    <Text style={{fontSize: 12, textAlign: 'justify'}}>Nome do técnico Função/Profissão Conselho de Classe:</Text>
+                    <TextInput
+                        label='Nome'
+                        multiline
+                        style={{height: 100}}
+                        value={values.equipeTecnica.A}
+                        onChangeText={handleChange('equipeTecnica.A')}
+                        onBlur={handleBlur('equipeTecnica.A')}
+                    />
+                </View>
+                <View style={[styles.textInputBox,{marginHorizontal: 5, marginVertical: 3, flex: 1}]}>
+                    <Text style={{fontSize: 12, textAlign: 'justify'}}>Nome do técnico Função/Profissão Conselho de Classe:</Text>
+                    <TextInput
+                        label='Nome'
+                        multiline
+                        style={{height: 100}}
+                        value={values.equipeTecnica.B}
+                        onChangeText={handleChange('equipeTecnica.B')}
+                        onBlur={handleBlur('equipeTecnica.B')}
+                    />
+                </View>
+                <View style={[styles.textInputBox,{marginHorizontal: 5, marginVertical: 3, flex: 1}]}>
+                    <Text style={{fontSize: 12, textAlign: 'justify'}}>De acordo: Nome do responsável para área de visat ou outra correlata</Text>
+                    <TextInput
+                        label='De acordo:'
+                        multiline
+                        style={{height: 100}}
+                        value={values.equipeTecnica.deAcordoCom}
+                        onChangeText={handleChange('equipeTecnica.deAcordoCom')}
+                        onBlur={handleBlur('equipeTecnica.deAcordoCom')}
                     />
                 </View>
             </View>
