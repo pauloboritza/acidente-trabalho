@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, View, FlatList } from 'react-native';
 import { Button, Text, Divider, List, Checkbox, RadioButton } from 'react-native-paper';
-//import realm from '../database';
 import { Alert } from 'react-native';
 import { Formik } from 'formik';
 import AnaliseBarreiras from '@/components/AnaliseBarreiras';
@@ -14,36 +13,15 @@ import Descricoes from '@/components/Descricoes';
 import RoteiroInicial from '@/components/RoteiroInicial';
 import AnaliseGestaoSeguranca from '@/components/AnaliseGestaoSeg';
 import InformacoesFinais from '@/components/InformacoesFinais';
+import { useAcidentesDatabase } from '@/data/useAcidentesDatabase';
 
-const FormScreen = () => {
-   
+const Index = () => {
 
-  const salvarFormulario = () => {
-    // realm.write(() => {
-    //   realm.create('Form', {
-    //     id: Math.random().toString(),
-    //     dataInspecao,
-    //     numeroSinan,
-    //     motivoInspecao,
-    //     nome,
-    //     nomeMae,
-    //     cpf,
-    //     sexo,
-    //     idade,
-    //     raca,
-    //     dataNascimento,
-    //     telefone,
-    //     escolaridade,
-    //     ocupacao,
-    //     dataAdmissao,
-    //     jornadaTrabalho,
-    //     regimeContrato,
-    //     endereco,
-    //     cep,
-    //     bairro,
-    //     municipioResidencia,
-    //   });
-    // });
+  const { create } = useAcidentesDatabase();
+
+  const salvarFormulario = async (data: any)=>{
+    const res = await create(data)
+    console.log(res)
     Alert.alert('Sucesso', 'Formulário salvo com sucesso!');
   };
 
@@ -92,13 +70,9 @@ const FormScreen = () => {
         conclusoesRecomendacoes: '',
         conclusoesRecomendacoesData:'',
         conclusoesRecomendacoesLocal:'',
-        equipeTecnica:{
-          A:{nome:'', funcao:'', registroConcelho:''},
-          B:{nome:'', funcao:'', registroConcelho:''},
-          deAcordoCom:''
-        }
+        equipeTecnica:{ A:'', B:'', deAcordoCom:'' }
       }}
-      onSubmit={values => console.log(values)}
+      onSubmit={values => salvarFormulario(values)}
     >
     {({ handleChange, handleBlur, handleSubmit, setFieldValue, values }) => (
     <ScrollView contentContainerStyle={styles.container}>
@@ -202,4 +176,4 @@ const FormScreen = () => {
   );
 };
 
-export default FormScreen;
+export default Index;
