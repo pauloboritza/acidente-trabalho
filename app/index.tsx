@@ -13,7 +13,7 @@ const Index = ()=>{
 
     return (
         <View style={styles.container}>   
-        <ImageBackground source={image} resizeMode="cover" style={[styles.image, {resizeMode: 'center'}]}>       
+        <ImageBackground source={image} imageStyle={{resizeMode: 'center'}} resizeMode="cover" style={styles.image}>       
 
             <ListAcidentes />
 
