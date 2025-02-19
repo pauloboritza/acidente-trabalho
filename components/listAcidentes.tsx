@@ -1,9 +1,8 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native"
-import { TextInput, Text } from "react-native-paper";
+import { Text, Searchbar } from "react-native-paper";
 import { Link, useFocusEffect } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase"
-const DATA = [{id: 1, nome:'Joao'},{id:2,nome:'Jose'}]
 const ListAcidentes = ()=>{
     const { getList, remove } = useAcidentesDatabase();
     const [search, setSearch] = useState(String)
@@ -36,11 +35,11 @@ const ListAcidentes = ()=>{
         return
     },[search])
     return(
-        <View style={styles.container}>
-            <TextInput 
-                label='Pesquisar'
+        <View style={styles.container}>   
+            <Searchbar 
+                placeholder="Nome"
                 onChangeText={(text)=>setSearch(text)}
-                style={styles.search}
+                value={search}
             />
             <Text style={styles.title}>Acidentes cadastrados: </Text>
             {acidentes && !acidentesFilter?
@@ -83,7 +82,8 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 16,
-        fontWeight: '600'
+        fontWeight: '700',
+        marginTop: 15
     },
     listContainer:{
         flex: 1,
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
     },
     search: {
         height: 40,
-        borderRadius: 10
+        borderRadius: 10,
     }
 })
