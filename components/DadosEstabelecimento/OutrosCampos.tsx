@@ -49,8 +49,8 @@ const OutrosCampos = ({ values, handleChange, handleBlur }: any) => (
         <Text style={styles.textLabel}>É Terceirizado?</Text>
         <RadioButton.Group onValueChange={handleChange('estabelecimento.eTercerizado')} value={values.estabelecimento.eTercerizado}>
           <View style={styles.radioContainer}>
-            <RadioButton.Item label="Sim" value="S" />
-            <RadioButton.Item label="Não" value="N" />
+            <RadioButton.Item label="Sim" value="SIM" />
+            <RadioButton.Item label="Não" value="NÃO" />
           </View>
         </RadioButton.Group>
       </View>

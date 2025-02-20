@@ -123,6 +123,14 @@ const DadosTrabalhador = ({ values, handleBlur, handleChange}: any) => (
             onBlur={handleBlur('trabalhador.bairro')}
             style={styles.input}
           />
+           <TextInput
+            label="Número"
+            keyboardType="number-pad"
+            value={values.trabalhador.numero}
+            onChangeText={handleChange('trabalhador.numero')}
+            onBlur={handleBlur('trabalhador.numero')}
+            style={styles.input}
+          />
           <TextInput
             label="Município de Residência"
             value={values.trabalhador.municipioResidencia}

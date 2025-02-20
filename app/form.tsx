@@ -37,7 +37,7 @@ const Form = () => {
     <Formik
       initialValues={{
         dataInspecao: undefined,numeroSinan:'',motivoInspecao:'', 
-        trabalhador:{nome:'',nomeMae:'',cpf:'',sexo:'',idade:'',raca:'',dataNascimento:'',telefone:'',escolaridade:'',ocupacao:'',dataAdmissao:'',jornadaTrabalho:'',regimeContrato:'',endereco:'',cep:'',bairro:'',municipioResidencia:''},
+        trabalhador:{nome:'',nomeMae:'',cpf:'',sexo:'',idade:'',raca:'',dataNascimento:'',telefone:'',escolaridade:'',ocupacao:'',dataAdmissao:'',jornadaTrabalho:'',regimeContrato:'',endereco:'',cep:'',bairro:'',numero:'',municipioResidencia:''},
         estabelecimento:{
           pf:{cpf:'',nome:'',cep:'',municipio:'',endereco:'',telefone:'',email:''},
           pj:{cnpj:'',nome:'',cep:'',municipio:'',endereco:'',telefone:'',email:''},

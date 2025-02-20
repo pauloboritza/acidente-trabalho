@@ -29,10 +29,10 @@ const RoteiroInicial = ({ values, handleChange, handleBlur, setFieldValue }: any
               onValueChange={handleChange('motivoInspecao')}
               value={values.motivoInspecao}
             >
-              <RadioButton.Item label="Óbito" value="obito" />
-              <RadioButton.Item label="Amputação" value="amputacao" />
-              <RadioButton.Item label="Criança/Adolescente" value="criancaAdolescente" />
-              <RadioButton.Item label="Outros" value="outros" />
+              <RadioButton.Item label="Óbito" value="Óbito" />
+              <RadioButton.Item label="Amputação" value="Amputação" />
+              <RadioButton.Item label="Criança/Adolescente" value="Criança/Adolescente" />
+              <RadioButton.Item label="Outros" value="Outros" />
             </RadioButton.Group>
           </View>
 

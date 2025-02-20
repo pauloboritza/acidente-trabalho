@@ -25,7 +25,7 @@ const DadosEstabelecimento = ({ values, handleChange, handleBlur }: any) => {
           <OutrosCampos values={values} handleChange={handleChange} handleBlur={handleBlur} />
 
           {/* Terceirizado */}
-          {values.estabelecimento.eTercerizado === 'S' && (
+          {values.estabelecimento.eTercerizado === 'SIM' && (
             <CamposTerceirizado values={values} handleChange={handleChange} handleBlur={handleBlur} />
           )}
         </View>

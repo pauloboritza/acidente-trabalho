@@ -16,8 +16,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
               <View style={{flexDirection: 'column'}}>
                 <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Tipo do Acidente</Text>
                 <View style={{marginEnd: 60, marginTop: -15}}>
-                  <RadioButton.Item label="Acidente típico" value="tipico" />
-                  <RadioButton.Item label="Acidente de trajeto" value="trajeto" style={{marginTop: -15}}/>
+                  <RadioButton.Item label="Acidente típico" value="Acidente típico" />
+                  <RadioButton.Item label="Acidente de trajeto" value="Acidente de trajeto" style={{marginTop: -15}}/>
                 </View>
               </View>
             </RadioButton.Group>
@@ -32,8 +32,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             >
               <View style={{flexDirection: 'row'}}>
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Foi Emitida a CAT?</Text>
-                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
-                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+                <RadioButton.Item label="SIM" value="SIM" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="NÃO" style={{marginRight: -25}}/>
               </View>
             </RadioButton.Group>
             </View>
