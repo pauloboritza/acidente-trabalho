@@ -1,7 +1,5 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ROTEIRO PARA INVESTIGAÇÃO DE ACIDENTE DE TRABALHO</title>
@@ -12,1581 +10,723 @@
             text-indent: 0;
         }
 
-        p {
-            color: black;
+        body {
             font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 12pt;
-            margin: 0pt;
-        }
-
-        .s1 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: none;
-            font-size: 12pt;
-        }
-
-        .s2 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 12pt;
-        }
-
-        .s3 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: none;
-            font-size: 11pt;
-        }
-
-        .s4 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: none;
-            font-size: 11pt;
-        }
-
-        .s5 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 11pt;
-        }
-
-        .s6 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 9pt;
-        }
-
-        .s7 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: none;
             font-size: 10pt;
+            width: 100%;
+            max-width: 21cm; /* Largura de uma folha A4 */
+            margin: 0 auto;
         }
 
-        .s8 {
-            color: black;
-            font-family: Arial, sans-serif;
-            font-style: normal;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10pt;
+        }
+
+        th, td {
+            border: 2px solid #000;
+            padding: 5pt;
+            text-align: left;
+        }
+
+        th {
+            background-color: #D9D9D9;
             font-weight: bold;
-            text-decoration: none;
-            font-size: 10pt;
         }
 
-        table,
-        tbody {
-            vertical-align: top;
-            overflow: visible;
+        .bg-gray {
+            background-color: #EFEFEF;
+        }
+        .bg-white {
+            background-color: #fff;
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .section-title {
+            background-color: #D9D9D9;
+            font-weight: bold;
+            text-align: center;
+            padding: 5pt;
+        }
+        .section-title-sub {
+            font-weight: 400;
+            font-size: 14;
+        }
+
+        .sub-title {
+            background-color: #EFEFEF;
+            font-weight: bold;
+            padding: 5pt;
+        }
+
+        .content {
+            padding: 5pt;
+        }
+        .title{
+            text-indent: 0pt;
+            text-align: center;
+            font-weight: bold;
+            font-size: medium;
+        }
+        .img-title {
+            text-indent: 0pt;
+            text-align: right;
+            justify-content: flex-end;
+            padding-top: 5pt;
         }
     </style>
 </head>
-
 <body>
-    <p style="padding-left: 405pt;text-indent: 0pt;text-align: left;"><span>
-            <table border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td><img width="157" height="58"
-                            src="data:image/jpg;base64,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" />
-                    </td>
-                </tr>
-            </table>
-        </span></p>
+    <!-- Título e informações iniciais -->
+    <p class="img-title"><span>
+        <img width="157" height="58"
+            src="data:image/jpg;base64,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" />
+                
+        </table>
+    </span></p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
-    <p style="text-indent: 0pt;text-align: center;">ROTEIRO PARA INVESTIGAÇÃO DE ACIDENTE DE TRABALHO</p>
+    <p class="title">ROTEIRO PARA INVESTIGAÇÃO DE ACIDENTE DE TRABALHO</p>
     <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:7.125pt" cellspacing="0">
-        <tr style="height:24pt">
-            <td
-                style="width:181pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p class="s1" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Data(s)
-                    da(s) inspeção(ões)</p>
-            </td>
-            <td
-                style="width:328pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{dataInspecao}}<br /></p>
-            </td>
+    <table>
+        <tr>
+            <td class="bg-white">Data(s) da(s) inspeção(ões)</td>
+            <td>{{dataInspecao}}</td>
         </tr>
-        <tr style="height:24pt">
-            <td
-                style="width:181pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p class="s1" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Nº SINAN-NET
-                </p>
-            </td>
-            <td
-                style="width:328pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{numeroSinan}}<br /></p>
-            </td>
+        <tr>
+            <td class="bg-white">Nº SINAN-NET</td>
+            <td>{{numeroSinan}}</td>
         </tr>
-        <tr style="height:50pt">
-            <td
-                style="width:181pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p class="s1" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Motivo da
-                    inspeção/ Investigação do acidente</p>
-            </td>
-            <td
-                style="width:328pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p class="s1"
-                    style="padding-top: 5pt;padding-left: 5pt;padding-right: 24pt;text-indent: 0pt;line-height: 20pt;text-align: left;">
-                    {{motivoInspecao}}</p>
-            </td>
+        <tr>
+            <td class="bg-white">Motivo da inspeção/Investigação do acidente</td>
+            <td>{{motivoInspecao}}</td>
         </tr>
     </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:24pt">
-            <td style="width:510pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="6" bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">DADOS DO
-                    TRABALHADOR</p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Nome</p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="4">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.nome}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Nome da mãe</span></p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="4">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.nomeMae}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">CPF</span></p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="4">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.cpf}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Sexo</span></p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">{{trabalhador.sexo}}
-                </p>
-            </td>
-            <td style="width:112pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#EFEFEF">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Idade</p>
-            </td>
-            <td style="width:147pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.idade}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Raça/cor</span></p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.raca}}<br /></p>
-            </td>
-            <td style="width:112pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#EFEFEF">
-                <p style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Data de nascimento</span></p>
-            </td>
-            <td style="width:147pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.dataNascimento}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Telefone</span></p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.telefone}}<br /></p>
-            </td>
-            <td style="width:112pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Escolaridade</span></p>
-            </td>
-            <td style="width:147pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.escolaridade}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Ocupação</span></p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.ocupacao}}<br /></p>
-            </td>
-            <td style="width:112pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Data de admissão</span></p>
-            </td>
-            <td style="width:147pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.dataAdmissao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-                <p style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                        style=" background-color: #F2F2F2;">Jornada de trabalho</span></p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.jornadaTrabalho}}<br /></p>
-            </td>
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#EFEFEF">
-            <p style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;"><span class="s4"
-                    style=" background-color: #F2F2F2;">Regime de
-                    contrato de trabalho</p>
-            </td>
-            <td
-                style="width:81pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.regimeContrato}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Endereço
-                    residencial</p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="4">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.endereco}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:41pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CEP</p>
-            </td>
-            <td
-                style="width:138pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.cep}}<br /></p>
-            </td>
-            <td style="width:72pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Bairro</p>
-            </td>
-            <td
-                style="width:112pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.bairro}}<br /></p>
-            </td>
-            <td style="width:26pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">N°</p>
-            </td>
-            <td
-                style="width:121pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.numero}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Município de
-                    Residência</p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-top-color:#424242;border-left-style:solid;border-left-width:2pt;border-left-color:#424242;border-bottom-style:solid;border-bottom-width:2pt;border-bottom-color:#424242;border-right-style:solid;border-right-width:2pt;border-right-color:#424242"
-                colspan="4">
-                <p style="text-indent: 0pt;text-align: left;">{{trabalhador.municipioResidencia}}<br /></p>
-            </td>
-        </tr>
-        
-    </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:27pt">
-            <td style="width:510pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="4" bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 9pt;padding-left: 39pt;text-indent: 0pt;text-align: left;">DADOS DO
-                    ESTABELECIMENTO QUE ASSINA A CARTEIRA OU PAGA O SALÁRIO</p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#EFEFEF">
-                <p class="s5"
-                    style="padding-top: 4pt;padding-left: 8pt;padding-right: 7pt;text-indent: 0pt;text-align: center;">
-                    Pessoa Física</p>
-            </td>
-            <td style="width:262pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#EFEFEF">
-                <p class="s5" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">Pessoa
-                    Jurídica</p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CPF</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.cpf}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CNPJ</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.cnpj}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Nome</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.nome}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Nome</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.nome}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CEP</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.cep}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CEP</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.cep}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Município
-                </p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.municipio}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Município
-                </p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.municipio}}<br /></p>
-            </td>
-        </tr>   
-        <tr style="height:24pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Endereço</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.endereco}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Endereço</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.endereco}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Telefone</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.telefone}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Telefone</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.telefone}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:69pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">E-mail</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pf.email}}<br /></p>
-            </td>
-            <td style="width:61pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">E-mail</p>
-            </td>
-            <td
-                style="width:201pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.pj.email}}<br /></p>
-            </td>
-        </tr>
-    </table>
-    <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Número total
-                    de trabalhadores</p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.nTotalTrabalhadores}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:89pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">N° de Homens
-                </p>
-            </td>
-            <td
-                style="width:154pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.nHomens}}<br /></p>
-            </td>
-            <td style="width:88pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">N° de
-                    Mulheres</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.nMulheres}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:114pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Ramo da
-                    atividade</p>
-            </td>
-            <td style="width:396pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.ramoAtividade}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:68pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CNAE</p>
-            </td>
-            <td
-                style="width:175pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.cnae}}<br /></p>
-            </td>
-            <td style="width:88pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Grau de
-                    risco</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{estabelecimento.grauRisco}}</p>
-            </td>
-        </tr>
-    </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:22pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s5" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">É
-                    estabelecimento terceirizado:</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{estabelecimento.eTercerizado}}<span class="s6">(preencher os dados do estabelecimento principal)</span></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">CNPJ do
-                    estabelecimento principal</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.cnpj}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Nome do
-                    estabelecimento principal</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.nome}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Endereço</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.endereco}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">bairro</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.bairro}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">CEP</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.cep}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Município
-                </p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.municipio}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Telefone</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.telefone}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:183pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Email</p>
-            </td>
-            <td
-                style="width:327pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.email}}<br /></p>
-            </td>
-        </tr>
-        
-    </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:23pt">
-            <td style="width:170pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Número total
-                    de trabalhadores</p>
-            </td>
-            <td style="width:340pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.nTotalTrabalhadores}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:89pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">N° de Homens
-                </p>
-            </td>
-            <td
-                style="width:154pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.nHomens}}<br /></p>
-            </td>
-            <td style="width:88pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">N° de
-                    Mulheres</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.nMulheres}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:114pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Ramo da
-                    atividade</p>
-            </td>
-            <td style="width:396pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.ramoAtividade}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:68pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">CNAE</p>
-            </td>
-            <td
-                style="width:175pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.cnae}}<br /></p>
-            </td>
-            <td style="width:88pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Grau de
-                    risco</p>
-            </td>
-            <td
-                style="width:179pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{estabelecimento.terceirizado.grauRisco}}</p>
-            </td>
-        </tr>
-    </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:27pt">
-            <td style="width:511pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="3" bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 9pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">DADOS DO
-                    ACIDENTE</p>
-            </td>
-        </tr>
-        <tr style="height:27pt">
-            <td
-                style="width:263pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{acidente.tipo}}</p>
-            </td>
-            <td style="width:107pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Foi emitida
-                    a CAT?</p>
-            </td>
-            <td
-                style="width:141pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 5pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">{{acidente.emitiuCat}}</p>
-            </td>
-        </tr>
-        
 
-        <tr style="height:35pt">
-            <td style="width:159pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;"> Nome do
-                    estabelecimento ou local
-                    onde ocorreu o acidente</p>
-            </td>
-            <td style="width:352pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.nomeEstabelecimento}}<br /></p>
-            </td>
+    <!-- Dados do Trabalhador -->
+    <table>
+        <tr>
+            <th colspan="4" class="section-title">DADOS DO TRABALHADOR</th>
+        </tr>        
+            <td class="bg-gray" style="width: max-content;">Nome</td>
+            <td colspan="3">{{trabalhador.nome}}</td>
         </tr>
-        <tr style="height:38pt">
-            <td style="width:159pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3"
-                    style="padding-top: 7pt;padding-left: 5pt;padding-right: 4pt;text-indent: 0pt;text-align: left;">
-                    Setor do estabelecimento onde ocorreu o acidente</p>
-            </td>
-            <td style="width:352pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.setorAcidente}}<br /></p>
-            </td>
+        <tr>
+            <td class="bg-gray">Nome da mãe</td>
+            <td colspan="3">{{trabalhador.nomeMae}}</td>
         </tr>
-        <tr style="height:37pt">
-            <td style="width:159pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Município
-                    onde ocorreu o acidente</p>
+        <tr>
+            <td class="bg-gray">CPF</td>
+            <td colspan="3">{{trabalhador.cpf}}</td>
+        </tr>      
+            <td class="bg-gray">Sexo</td>
+            <td>
+                ( ) M 
+                ( ) F
             </td>
-            <td style="width:352pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.municipioAcidente}}<br /></p>
-            </td>
+            <td class="bg-gray">Idade</td>
+            <td>{{trabalhador.idade}}</td>
+        <tr>            
+            <td class="bg-gray">Raça/cor</td>
+            <td>{{trabalhador.raca}}</td>
+            <td class="bg-gray">Data de nascimento</td>
+            <td>{{trabalhador.dataNascimento}}</td>
         </tr>
-        <tr style="height:38pt">
-            <td style="width:159pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 7pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Endereço
-                    onde ocorreu o acidente</p>
-            </td>
-            <td style="width:352pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.enderecoAcidente}}<br /></p>
-            </td>
+        <tr>            
+            <td class="bg-gray">Telefone</td>
+            <td>{{trabalhador.telefone}}</td>
+            <td class="bg-gray">Escolaridade</td>
+            <td>{{trabalhador.escolaridade}}</td>
         </tr>
-        <tr style="height:22pt">
-            <td style="width:62pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Data</p>
-            </td>
-            <td
-                style="width:140pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.data}}<br /></p>
-            </td>
-            <td style="width:52pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Hora</p>
-            </td>
-            <td
-                style="width:257pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.hora}}<br /></p>
-            </td>
+        <tr>            
+            <td class="bg-gray">Ocupação</td>
+            <td>{{trabalhador.ocupacao}}</td>
+            <td class="bg-gray">Data de admissão</td>
+            <td>{{trabalhador.dataAdmissao}}</td>
         </tr>
-        <tr style="height:23pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Após quantas
-                    horas trabalhadas</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.horasTrabalhadas}}<br /></p>
-            </td>
+        <tr>            
+            <td class="bg-gray">Jornada de trabalho</td>
+            <td>{{trabalhador.jornadaTrabalho}}</td>
+            <td class="bg-gray">Regime de contrato de trabalho</td>
+            <td>{{trabalhador.regimeContrato}}</td>
         </tr>
-        <tr style="height:23pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Práticas de
-                    horas extras</p>                
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.fazHorasExtras}}<br /></p>
-            </td>
+        <tr>           
+            <td class="bg-gray">Endereço residencial</td>
+            <td colspan="3">{{trabalhador.endereco}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CEP</td>
+            <td>{{trabalhador.cep}}</td>
+            <td class="bg-gray">Bairro</td>
+            <td>{{trabalhador.bairro}}</td>
+            <td class="bg-gray">N°</td>
+            <td>{{trabalhador.numero}}</td>
+        </tr>
+        <tr>
+            
+            <td class="bg-gray">Município de Residência</td>
+            <td colspan="3">{{trabalhador.municipioResidencia}}</td>
+        </tr>
+    </table>
+
+    <!-- Dados do Estabelecimento -->
+    <table>
+        <tr>
+            <th colspan="4" class="section-title">DADOS DO ESTABELECIMENTO QUE ASSINA A CARTEIRA OU PAGA O SALÁRIO</th>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg-gray">Pessoa Física</td>
+            <td colspan="2" class="bg-gray">Pessoa Jurídica</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CPF</td>
+            <td>{{estabelecimento.pf.cpf}}</td>
+            <td class="bg-gray">CNPJ</td>
+            <td>{{estabelecimento.pj.cnpj}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Nome</td>
+            <td>{{estabelecimento.pf.nome}}</td>
+            <td class="bg-gray">Nome</td>
+            <td>{{estabelecimento.pj.nome}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CEP</td>
+            <td>{{estabelecimento.pf.cep}}</td>
+            <td class="bg-gray">CEP</td>
+            <td>{{estabelecimento.pj.cep}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Município</td>
+            <td>{{estabelecimento.pf.municipio}}</td>
+            <td class="bg-gray">Município</td>
+            <td>{{estabelecimento.pj.municipio}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Endereço</td>
+            <td>{{estabelecimento.pf.endereco}}</td>
+            <td class="bg-gray">Endereço</td>
+            <td>{{estabelecimento.pj.endereco}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Telefone</td>
+            <td>{{estabelecimento.pf.telefone}}</td>
+            <td class="bg-gray">Telefone</td>
+            <td>{{estabelecimento.pj.telefone}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">E-mail</td>
+            <td>{{estabelecimento.pf.email}}</td>
+            <td class="bg-gray">E-mail</td>
+            <td>{{estabelecimento.pj.email}}</td>
+        </tr>
+    </table>
+
+    <!-- Número total de trabalhadores -->
+    <table>
+        <tr>
+            <td class="bg-gray">Número total de trabalhadores</td>
+            <td colspan="3">{{estabelecimento.nTotalTrabalhadores}}</td>
             
         </tr>
-        <tr style="height:39pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3"
-                    style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;line-height: 114%;text-align: left;">
-                    Descreva quantas horas por dia, por semana ou por mês de Horas extras</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.qtdHorasExtras}}<br /></p>
+        <tr><td class="bg-gray">N° de Homens</td>
+            <td>{{estabelecimento.nHomens}}</td>
+            <td class="bg-gray">N° de Mulheres</td>
+            <td>{{estabelecimento.nMulheres}}</td>
+            
+        </tr>
+        <tr>
+            <td class="bg-gray">Ramo da atividade</td>
+            <td colspan="3">{{estabelecimento.ramoAtividade}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CNAE</td>
+            <td>{{estabelecimento.cnae}}</td>
+            <td class="bg-gray">Grau de risco</td>
+            <td>
+                1( ) 2( ) 3( ) 4( )
             </td>
         </tr>
-        <tr style="height:23pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Função no
-                    momento do acidente</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.funcaoAcidente}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Há quanto
-                    tempo está na função</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.tempoFuncao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:23pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Houve
-                    treinamento</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.teveTreinamento}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:22pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Treinamento
-                    comprovado</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.teveTreinamentoComp}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:36pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Descreva o
-                    treinamento</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.descricaoTreinamento}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:50pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">O acidente
-                    ocorreu em situação de manutenção de máquina ou equipamento</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.causaAcidenteManuEq}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:39pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Causa do
-                    acidente</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.causaAcidente}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:39pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Diagnóstico
-                    da lesão</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.diagnosticoLesao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:39pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Causa básica
-                    do óbito</p>
-            </td>
-            <td style="width:309pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2">
-                <p style="text-indent: 0pt;text-align: left;">{{acidente.causaObito}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:35pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mais
-                    trabalhadores atingidos</p>
-            </td>
-            <td
-                style="width:52pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{acidente.maisTrabalhadoresAtingidos.res}}</p>
+    </table>
 
-            </td>
-            <td
-                style="width:257pt;border-top-style:solid;border-top-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Quantos ({{acidente.maisTrabalhadoresAtingidos.qtd}})
-                </p>
-            </td>
-        </tr>
-        <tr style="height:36pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Outros
-                    óbitos</p>
-            </td>
-            <td
-                style="width:52pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{acidente.outrosObitos.res}}</p>
-            </td>
-            <td
-                style="width:257pt;border-top-style:solid;border-top-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 5pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Quantos ({{acidente.outrosObitos.qtd}})
-                </p>
+    <!-- Estabelecimento terceirizado -->
+    <table>
+        <tr>
+            <td class="bg-gray">É estabelecimento terceirizado:</td>
+            <td>
+                ( ) Não 
+                ( ) Sim (preencher os dados do estabelecimento principal)
             </td>
         </tr>
-        <tr style="height:35pt">
-            <td style="width:202pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Outros
-                    acidentes foram registrados no Estabelecimento?</p>
-            </td>
-            <td
-                style="width:52pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{acidente.outrosAcidentes.res}}</p>
-            </td>
-            <td
-                style="width:257pt;border-top-style:solid;border-top-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p class="s3" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Quantos ({{acidente.outrosAcidentes.qtd}})
-                </p>
+        <tr>
+            <td class="bg-gray">CNPJ do estabelecimento principal</td>
+            <td>{{estabelecimento.terceirizado.cnpj}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Nome do estabelecimento principal</td>
+            <td>{{estabelecimento.terceirizado.nome}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Endereço</td>
+            <td>{{estabelecimento.terceirizado.endereco}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Bairro</td>
+            <td>{{estabelecimento.terceirizado.bairro}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CEP</td>
+            <td>{{estabelecimento.terceirizado.cep}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Município</td>
+            <td>{{estabelecimento.terceirizado.municipio}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Telefone</td>
+            <td>{{estabelecimento.terceirizado.telefone}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Email</td>
+            <td>{{estabelecimento.terceirizado.email}}</td>
+        </tr>
+    </table>
+
+    <!-- Número total de trabalhadores tercerizados -->
+    <table>
+        <tr>
+            <td class="bg-gray">Número total de trabalhadores</td>
+            <td colspan="3">{{estabelecimento.terceirizado.nTotalTrabalhadores}}</td>
+            
+        </tr>
+        <tr>
+            <td class="bg-gray">N° de Homens</td>
+            <td>{{estabelecimento.terceirizado.nHomens}}</td>
+            <td class="bg-gray">N° de Mulheres</td>
+            <td>{{estabelecimento.terceirizado.nMulheres}}</td>            
+        </tr>
+        <tr>
+            <td class="bg-gray">Ramo da atividade</td>
+            <td colspan="3">{{estabelecimento.terceirizado.ramoAtividade}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">CNAE</td>
+            <td>{{estabelecimento.terceirizado.cnae}}</td>
+            <td class="bg-gray">Grau de risco</td>
+            <td>
+                1( ) 2( ) 3( ) 4( )
             </td>
         </tr>
     </table>
-    <table style="border-collapse:collapse;margin-left:11.125pt" cellspacing="0">
-        <tr style="height:26pt">
-            <td style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 7pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">DESCRIÇÃO
-                    DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</p>
+
+    <!-- Dados do Acidente -->
+    <table>
+        <tr>
+            <th colspan="3" class="section-title">DADOS DO ACIDENTE</th>
+        </tr>
+        <tr>
+            <td>
+                ( ) Acidente típico 
+                ( ) Acidente de trajeto
+            </td>
+            <td class="bg-gray">Foi emitida a CAT?</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
             </td>
         </tr>
-        <tr style="height:99pt">
-            <td
-                style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{descTrabalhoHabitual}}<br /></p>
+        <tr>
+            <td class="bg-gray">Nome do estabelecimento ou local onde ocorreu o acidente</td>
+            <td>{{acidente.nomeEstabelecimento}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Setor do estabelecimento onde ocorreu o acidente</td>
+            <td>{{acidente.setorAcidente}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Município onde ocorreu o acidente</td>
+            <td>{{acidente.municipioAcidente}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Endereço onde ocorreu o acidente</td>
+            <td>{{acidente.enderecoAcidente}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Data</td>
+            <td>{{acidente.data}}</td>
+            <td class="bg-gray">Hora</td>
+            <td>{{acidente.hora}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Após quantas horas trabalhadas</td>
+            <td>{{acidente.horasTrabalhadas}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Práticas de horas extras</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
             </td>
         </tr>
-        <tr style="height:26pt">
-            <td style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 6pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">QUE
-                    TRABALHO ESTAVA SENDO REALIZADO NO DIA DO ACIDENTE?</p>
+        <tr>
+            <td class="bg-gray">Descreva quantas horas por dia, por semana ou por mês de Horas extras</td>
+            <td>{{acidente.qtdHorasExtras}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Função no momento do acidente</td>
+            <td>{{acidente.funcaoAcidente}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Há quanto tempo está na função</td>
+            <td>{{acidente.tempoFuncao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Houve treinamento</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
             </td>
         </tr>
-        <tr style="height:98pt">
-            <td
-                style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{trabRealizadoDiaAcidente}}<br /></p>
+        <tr>
+            <td class="bg-gray">Treinamento comprovado</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
             </td>
         </tr>
-        <tr style="height:26pt">
-            <td style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 7pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">DESCRIÇÃO
-                    DO LOCAL DO ACIDENTE</p>
+        <tr>
+            <td class="bg-gray">Descreva o treinamento</td>
+            <td>{{acidente.descricaoTreinamento}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">O acidente ocorreu em situação de manutenção de máquina ou equipamento</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
             </td>
         </tr>
-        <tr style="height:99pt">
-            <td
-                style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{descLocalAcidente}}<br /></p>
+        <tr>
+            <td class="bg-gray">Causa do acidente</td>
+            <td>{{acidente.causaAcidente}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Diagnóstico da lesão</td>
+            <td>{{acidente.diagnosticoLesao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Causa básica do óbito</td>
+            <td>{{acidente.causaObito}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Mais trabalhadores atingidos</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
+                Quantos (     ) 
             </td>
         </tr>
-        <tr style="height:26pt">
-            <td style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 6pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">DESCRIÇÃO
-                    BREVE DA SEQUÊNCIA DOS EVENTOS DO ACIDENTE</p>
+        <tr>
+            <td class="bg-gray">Outros óbitos</td>
+            <td>
+                ( ) Sim  
+                ( ) Não
+                Quantos (     )
             </td>
         </tr>
-        <tr style="height:98pt">
-            <td
-                style="width:508pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{sequenciaEventosAcidente}}<br /></p>
-            </td>
-        </tr>
-    </table>
-    <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:11.125pt" cellspacing="0">
-        <tr style="height:51pt">
-            <td style="width:511pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 7pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">FATORES
-                    QUE CONTRIBUÍRAM PARA A OCORRÊNCIA DO ACIDENTE</p>
-                <p class="s7" style="padding-top: 2pt;padding-left: 2pt;text-indent: 0pt;text-align: center;">(DESCREVA
-                    SE NA SITUAÇÃO DO ACIDENTE HAVIA ALGUMA MUDANÇA EM RELAÇÃO AO INDIVÍDUO/ TAREFA/ MATERIAL/ MEIO DE
-                    TRABALHO)</p>
-            </td>
-        </tr>
-        <tr style="height:26pt">
-            <td style="width:511pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#EFEFEF">
-                <p class="s1" style="padding-top: 7pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Na situação
-                    do acidente, houve alguma mudança em componentes do sistema?</p>
-            </td>
-        </tr>
-        <tr style="height:42pt">
-            <td style="width:242pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s1" style="padding-top: 6pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Indivíduo
-                </p>
-            </td>
-            <td
-                style="width:269pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{fatoresContribuintes.individuo}}<br /></p>
-            </td>
-        </tr>
-    </table>
-    <table style="border-collapse:collapse;margin-left:11.125pt" cellspacing="0">
-        <tr style="height:41pt">
-            <td style="width:242pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s1" style="padding-top: 6pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Tarefa</p>
-            </td>
-            <td
-                style="width:269pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{fatoresContribuintes.tarefa}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:42pt">
-            <td style="width:242pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s1" style="padding-top: 6pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Material</p>
-            </td>
-            <td
-                style="width:269pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{fatoresContribuintes.material}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:41pt">
-            <td style="width:242pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s1" style="padding-top: 6pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">Meio de
-                    Trabalho físico e organizacional</p>
-            </td>
-            <td
-                style="width:269pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{fatoresContribuintes.meioTrabalho}}<br /></p>
-            </td>
-        </tr>
-    </table>
-    <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:9.125pt" cellspacing="0">
-        <tr style="height:24pt">
-            <td style="width:515pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="5" bgcolor="#D9D9D9">
-                <p class="s2" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">ANÁLISE DE
-                    BARREIRAS</p>
-            </td>
-        </tr>
-        <tr style="height:24pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                rowspan="3" bgcolor="#EFEFEF">
-                <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br /></p>
-                <p class="s8" style="padding-left: 5pt;text-indent: 0pt;line-height: 114%;text-align: left;">ENERGIA,
-                    CONDIÇÃO OU EVENTO COM POTENCIAL NOCIVO</p>
-            </td>
-            <td style="width:220pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="3" bgcolor="#EFEFEF">
-                <p class="s8" style="padding-top: 7pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">BARREIRAS
-                    INDICADAS E SUA SITUAÇÃO</p>
-            </td>
-            <td style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                rowspan="3" bgcolor="#EFEFEF">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                <p class="s8" style="padding-left: 24pt;text-indent: 0pt;text-align: left;">OBSERVAÇÃO</p>
-                <p class="s7" style="padding-top: 1pt;padding-left: 33pt;text-indent: -21pt;text-align: left;">(Comentar
-                    falha ou ausência)</p>
-            </td>
-        </tr>
-        <tr style="height:15pt">
-            <td style="width:143pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="2" bgcolor="#EFEFEF">
-                <p class="s8"
-                    style="padding-top: 2pt;padding-left: 48pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                    PRESENTES</p>
-            </td>
-            <td style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                rowspan="2" bgcolor="#EFEFEF">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                <p class="s8" style="padding-left: 8pt;text-indent: 0pt;text-align: left;">AUSENTES</p>
-            </td>
-        </tr>
-        <tr style="height:16pt">
-            <td style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s8" style="padding-top: 3pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">SEM FALHA
-                </p>
-            </td>
-            <td style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s8" style="padding-top: 3pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">COM FALHA
-                </p>
-            </td>
-        </tr>
-        <tr style="height:54pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mecânica
-                    (corte, prensagem, punção com partes que se movem de qualquer modo, etc)</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.mecanica.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.mecanica.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.mecanica.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.mecanica.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:53pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Cinética
-                    (impactos contra ou de coisas em movimento ou parada, quedas, partículas em movimento)</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.cinetica.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.cinetica.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.cinetica.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.cinetica.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:38pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Temperaturas
-                    extremas</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.temperaturasExtremas.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.temperaturasExtremas.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.temperaturasExtremas.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.temperaturasExtremas.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:37pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Elétrica</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.eletrica.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.eletrica.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.eletrica.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.eletrica.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:50pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 7pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Química
-                    (corrosiva, tóxica, inflamável, reativa)</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.quimica.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.quimica.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.quimica.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.quimica.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:51pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3"
-                    style="padding-top: 6pt;padding-left: 5pt;padding-right: 10pt;text-indent: 0pt;text-align: left;">
-                    Contaminação por agente biológico</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.biologia.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.biologia.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.biologia.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.biologia.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:52pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Energia
-                    potencial armazenada (objetos sob pressão, tensão, compressão, etc)</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.energiaArmazenada.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.energiaArmazenada.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.energiaArmazenada.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.energiaArmazenada.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:37pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Radiações
-                </p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.radiacoes.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.radiacoes.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.radiacoes.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.radiacoes.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:29pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Acústica</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.acustica.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.acustica.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.acustica.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.acustica.observacao}}<br /></p>
-            </td>
-        </tr>
-        <tr style="height:37pt">
-            <td style="width:184pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Outras
-                    (descrever)</p>
-            </td>
-            <td
-                style="width:70pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.outras.presentes.semFalha}}<br /></p>
-            </td>
-            <td
-                style="width:73pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.outras.presentes.comFalha}}<br /></p>
-            </td>
-            <td
-                style="width:77pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.outras.ausentes}}<br /></p>
-            </td>
-            <td
-                style="width:111pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{analiseBarreiras.outras.observacao}}<br /></p>
+        <tr>
+            <td class="bg-gray">Outros acidentes foram registrados no Estabelecimento?</td>
+            <td>
+                ( ) Sim 
+                ( ) Não
+                Quantos (    ) 
             </td>
         </tr>
     </table>
-    <table style="border-collapse:collapse;margin-left:11.125pt" cellspacing="0">
-        <tr style="height:23pt">
-            <td style="width:510pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="3" bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 5pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">ANÁLISE DA
-                    GESTÃO DE SEGURANÇA E DE PROTEÇÃO</p>
-            </td>
+
+    <!-- Descrição do Trabalho Habitual -->
+    <table>
+        <tr>
+            <th class="section-title">DESCRIÇÃO DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</th>
         </tr>
-        <tr style="height:22pt">
-            <td style="width:249pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s8" style="padding-top: 4pt;padding-left: 61pt;text-indent: 0pt;text-align: left;">GESTÃO DE
-                    SEGURANÇA</p>
-            </td>
-            <td style="width:13pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                rowspan="5">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            </td>
-            <td style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s8" style="padding-top: 4pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">GESTÃO DE
-                    PRODUÇÃO E DE SUA VARIEDADE</p>
-            </td>
+        <tr>
+            <td>{{descTrabalhoHabitual}}</td>
         </tr>
-        <tr style="height:60pt">
-            <td style="width:249pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br /></p>
-                <p class="s3" style="padding-left: 48pt;text-indent: -13pt;text-align: left;">Há registro de acidente
-                    anterior com características assemelhadas?</p>
-            </td>
-            <td style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3"
-                    style="padding-top: 4pt;padding-left: 8pt;padding-right: 7pt;text-indent: 0pt;text-align: center;">
-                    Há indícios de contribuição de aspectos gerenciais relacionados à gestão de jornadas de trabalho,
-                    horas extras, intervalos de descanso, etc?</p>
-            </td>
+    </table>
+
+    <!-- Trabalho Realizado no Dia do Acidente -->
+    <table>
+        <tr>
+            <th class="section-title">QUE TRABALHO ESTAVA SENDO REALIZADO NO DIA DO ACIDENTE?</th>
         </tr>
-        <tr style="height:61pt">
-            <td
-                style="width:249pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{gestaoSeguranca.registroAnteriorSemelhante}}<br /></p>
-            </td>
-            <td
-                style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisJornadaTrabalho}}<br /></p>
-            </td>
+        <tr>
+            <td>{{trabRealizadoDiaAcidente}}</td>
         </tr>
-        <tr style="height:60pt">
-            <td style="width:249pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">Há
-                    registros (livro de atas de CIPA, relatórios de acidentes, outros?) de pedido de solução para
-                    problema de segurança que persiste sem atendimento por parte de gerências?</p>
-            </td>
-            <td style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#F2F2F2">
-                <p class="s3"
-                    style="padding-top: 4pt;padding-left: 8pt;padding-right: 7pt;text-indent: 0pt;text-align: center;">
-                    Há indícios de contribuição de aspectos gerenciais relacionados à adequação de demandas aos recursos
-                    ou capacidade instalada do sistema?</p>
-            </td>
+    </table>
+
+    <!-- Descrição do Local do Acidente -->
+    <table>
+        <tr>
+            <th class="section-title">DESCRIÇÃO DO LOCAL DO ACIDENTE</th>
         </tr>
-        <tr style="height:61pt">
-            <td
-                style="width:249pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{gestaoSeguranca.registroSolictacaoSolucaoProblema}}<br /></p>
-            </td>
-            <td
-                style="width:248pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;">{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisAdequacaoDemandas}}<br /></p>
-            </td>
+        <tr>
+            <td>{{descLocalAcidente}}</td>
         </tr>
-        <tr style="height:35pt">
-            <td style="width:510pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                colspan="3" bgcolor="#EFEFEF">
-                <p class="s3" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">Outros
-                    fatores da gestão do sistema que tenham contribuído para as origens de acidentes?</p>
-                <p class="s3" style="padding-left: 1pt;text-indent: 0pt;text-align: center;">Por favor, descreva-os.</p>
-            </td>
+    </table>
+
+    <!-- Descrição Breve da Sequência dos Eventos do Acidente -->
+    <table>
+        <tr>
+            <th class="section-title">DESCRIÇÃO BREVE DA SEQUÊNCIA DOS EVENTOS DO ACIDENTE</th>
+        </tr>
+        <tr>
+            <td>{{sequenciaEventosAcidente}}</td>
+        </tr>
+    </table>
+
+    <!-- Fatores que Contribuíram para a Ocorrência do Acidente -->
+    <table>
+        <tr>
+            <th colspan="2" class="section-title">FATORES QUE CONTRIBUÍRAM PARA A OCORRÊNCIA DO ACIDENTE
+                <p class="section-title-sub">(DESCREVA SE NA SITUAÇÃO DO ACIDENTE HAVIA ALGUMA MUDANÇA EM RELAÇÃO AO INDIVÍDUO/</br>
+                    TAREFA/ MATERIAL/ MEIO DE TRABALHO)</p>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2" class="section-title" style="text-align: start;">
+                Na situação do acidente, houve alguma mudança em componentes do sistema?
+            </th>            
+        </tr>
+        <tr>
+            <td class="bg-gray">Indivíduo</td>
+            <td>{{fatoresContribuintes.individuo}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Tarefa</td>
+            <td>{{fatoresContribuintes.tarefa}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Material</td>
+            <td>{{fatoresContribuintes.material}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Meio de Trabalho físico e organizacional</td>
+            <td>{{fatoresContribuintes.meioTrabalho}}</td>
+        </tr>
+    </table>
+
+    <!-- Análise de Barreiras -->
+    <table>
+        <tr>
+            <th colspan="5" class="section-title">ANÁLISE DE BARREIRAS</th>
+        </tr>
+        <tr>
+            <th rowspan="2">ENERGIA, CONDIÇÃO OU EVENTO COM POTENCIAL NOCIVO</th>
+            <th colspan="2">PRESENTES</th>
+            <th rowspan="2">AUSENTES</th>
+            <th rowspan="2">OBSERVAÇÃO</th>
+        </tr>
+        <tr>
+            <th>SEM FALHA</th>
+            <th>COM FALHA</th>
+        </tr>
+        <tr>
+            <td class="bg-gray">Mecânica (corte, prensagem, punção com partes que se movem de qualquer modo, etc)</td>
+            <td>{{barreiras.mecanica.semFalha}}</td>
+            <td>{{barreiras.mecanica.comFalha}}</td>
+            <td>{{barreiras.mecanica.ausente}}</td>
+            <td>{{barreiras.mecanica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Cinética (impactos contra ou de coisas em movimento ou parada, quedas, partículas em movimento)</td>
+            <td>{{barreiras.cinetica.semFalha}}</td>
+            <td>{{barreiras.cinetica.comFalha}}</td>
+            <td>{{barreiras.cinetica.ausente}}</td>
+            <td>{{barreiras.cinetica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Temperaturas extremas</td>
+            <td>{{barreiras.temperaturas.semFalha}}</td>
+            <td>{{barreiras.temperaturas.comFalha}}</td>
+            <td>{{barreiras.temperaturas.ausente}}</td>
+            <td>{{barreiras.temperaturas.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Elétrica</td>
+            <td>{{barreiras.eletrica.semFalha}}</td>
+            <td>{{barreiras.eletrica.comFalha}}</td>
+            <td>{{barreiras.eletrica.ausente}}</td>
+            <td>{{barreiras.eletrica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Química (corrosiva, tóxica, inflamável, reativa)</td>
+            <td>{{barreiras.quimica.semFalha}}</td>
+            <td>{{barreiras.quimica.comFalha}}</td>
+            <td>{{barreiras.quimica.ausente}}</td>
+            <td>{{barreiras.quimica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Contaminação por agente biológico</td>
+            <td>{{barreiras.biologica.semFalha}}</td>
+            <td>{{barreiras.biologica.comFalha}}</td>
+            <td>{{barreiras.biologica.ausente}}</td>
+            <td>{{barreiras.biologica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Energia potencial armazenada (objetos sob pressão, tensão, compressão, etc)</td>
+            <td>{{barreiras.energia.semFalha}}</td>
+            <td>{{barreiras.energia.comFalha}}</td>
+            <td>{{barreiras.energia.ausente}}</td>
+            <td>{{barreiras.energia.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Radiações</td>
+            <td>{{barreiras.radiacao.semFalha}}</td>
+            <td>{{barreiras.radiacao.comFalha}}</td>
+            <td>{{barreiras.radiacao.ausente}}</td>
+            <td>{{barreiras.radiacao.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Acústica</td>
+            <td>{{barreiras.acustica.semFalha}}</td>
+            <td>{{barreiras.acustica.comFalha}}</td>
+            <td>{{barreiras.acustica.ausente}}</td>
+            <td>{{barreiras.acustica.observacao}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Outras (descrever)</td>
+            <td>{{barreiras.outras.semFalha}}</td>
+            <td>{{barreiras.outras.comFalha}}</td>
+            <td>{{barreiras.outras.ausente}}</td>
+            <td>{{barreiras.outras.observacao}}</td>
+        </tr>
+    </table>
+
+    <!-- Análise da Gestão de Segurança e de Proteção -->
+    <table>
+        <tr>
+            <th colspan="5" class="section-title">ANÁLISE DA GESTÃO DE SEGURANÇA E DE PROTEÇÃO</th>
+        </tr>
+        <tr>
+            <th>GESTÃO DE SEGURANÇA</th>
+            <th>GESTÃO DE PRODUÇÃO E DE SUA VARIEDADE</th>
+        </tr>
+        <tr>
+            <td class="section-title" style="font-weight: 500;">Há registro de acidente anterior com características assemelhadas?</td>
+            <td class="section-title" style="font-weight: 500;">Há indícios de contribuição de aspectos gerenciais relacionados à gestão de jornadas de trabalho, horas extras, intervalos de descanso, etc?</td>
+        </tr>
+        <tr>
+            <td>{{gestaoSeguranca.registroAnteriorSemelhante}}</td>
+            <td>{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisJornadaTrabalho}}</td>
+        </tr>
+        <tr>
+            <td class="section-title" style="font-weight: 500;">Há registros (livro de atas de CIPA, relatórios de acidentes, outros?) de pedido de solução para problema de segurança que persiste sem atendimento por parte de gerências?</td>
+            <td class="section-title" style="font-weight: 500;">Há indícios de contribuição de aspectos gerenciais relacionados à adequação de demandas aos recursos ou capacidade instalada do sistema?</td>
+        </tr>
+        <tr>
+            <td>{{gestaoSeguranca.registroSolictacaoSolucaoProblema}}</td>
+            <td>{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisAdequacaoDemandas}}</td>
         </tr>
         
+        <tr>
+            <th colspan="5" class="section-title" style="font-weight: 500;">Outros fatores da gestão do sistema que tenham contribuído para as origens de acidentes?
+            </br>Por favor, descreva-os.</td>
+        </tr>
+        <tr>
+            <td colspan="3">{{gestaoSeguranca.outrosFatores}}</td>
+        </tr>
     </table>
-    <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <div class="textbox"
-        style="background:#D9D9D9;border:2.0pt solid #000000;display:block;left:1.0pt;min-height:25.0pt;top:1.0pt;width:511.0pt;">
-        <p class="s5" style="padding-top: 5pt;text-indent: 0pt;text-align: center;">INFORMAÇÕES PRESTADAS POR:</p>
-    </div>
-    <p style="padding-left: 9pt;text-indent: 0pt;text-align: left;" />
-    <div class="textbox"
-        style="border:2.0pt solid #000000;display:block;left:26.0pt;min-height:57.0pt;top:1.0pt;width:511.0pt;">
-        <p class="s1" style="padding-top: 6pt;padding-left: 3pt;text-indent: 0pt;line-height: 164%;text-align: left;">({{informacoesPrestadasPor.trabalhador}})Trabalhador ({{informacoesPrestadasPor.preposto}})Preposto do estabelecimento ({{informacoesPrestadasPor.representanteSindical}})Representante Sindical ({{informacoesPrestadasPor.testemunha}})Testemunha ({{informacoesPrestadasPor.familiar}})Familiar ({{informacoesPrestadasPor.outros}})Outros</p>
-    </div>
 
-    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-    <p style="text-indent: 0pt;line-height: 13pt;text-align: left;"><span
-            style=" color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;">(
-            ) Outro:</span></p>
-    <p style="text-indent: 0pt;line-height: 13pt;text-align: left;"><span
-            style=" color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;">(
-            ) Interdição</span></p>
-    <p style="text-indent: 0pt;line-height: 13pt;text-align: left;"><span
-            style=" color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;">(
-            ) Infração</span></p>
-    <p style="text-indent: 0pt;line-height: 13pt;text-align: left;"><span
-            style=" color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;">(
-            ) Intimação</span></p>
-    <div class="textbox"
-        style="background:#D9D9D9;border:2.0pt solid #000000;display:block;left:1.0pt;min-height:24.0pt;top:1.0pt;width:511.0pt;">
-        <p class="s5" style="padding-top: 4pt;text-indent: 0pt;text-align: center;">PROCEDIMENTOS ADOTADOS:</p>
-    </div>
-    <p style="padding-left: 8pt;text-indent: 0pt;text-align: left;" />
-    <p style="text-indent: 0pt;text-align: left;">{{}}<br /></p>
-    <div class="textbox"
-        style="background:#D9D9D9;border:2.0pt solid #000000;display:block;left:1.0pt;min-height:25.0pt;top:1.0pt;width:511.0pt;">
-        <p class="s5" style="padding-top: 5pt;text-indent: 0pt;text-align: center;">CONCLUSÕES E RECOMENDAÇÕES</p>
-    </div>
-    <p style="padding-left: 8pt;text-indent: 0pt;text-align: left;" />
-    <p style="padding-left: 8pt;text-indent: 0pt;text-align: left;" />
-    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:9.125pt" cellspacing="0">
-        <tr style="height:23pt">
-            <td style="width:56pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">DATA</p>
-            </td>
-            <td
-                style="width:456pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            </td>
+    <!-- Informações Prestadas Por -->
+    <table>
+        <tr>
+            <th class="section-title">INFORMAÇÕES PRESTADAS POR:</th>
         </tr>
-        <tr style="height:23pt">
-            <td style="width:56pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">LOCAL</p>
-            </td>
-            <td
-                style="width:456pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <tr>
+            <td>
+                ( ) Trabalhador 
+                ( ) Preposto do estabelecimento 
+                ( ) Representante Sindical 
+                ( ) Testemunha 
+                ( ) Familiar 
+                ( ) Outros
             </td>
         </tr>
     </table>
-    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-    <table style="border-collapse:collapse;margin-left:8.125pt" cellspacing="0">
-        <tr style="height:23pt">
-            <td style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#D9D9D9">
-                <p class="s5" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">EQUIPE
-                    TÉCNICA</p>
+
+    <!-- Procedimentos Adotados -->
+    <table>
+        <tr>
+            <th class="section-title">PROCEDIMENTOS ADOTADOS:</th>
+        </tr>
+        <tr>
+            <td>
+                ( ) Intimação 
+                ( ) Infração 
+                ( ) Interdição 
+                ( ) Outro
             </td>
         </tr>
-        <tr style="height:23pt">
-            <td style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s1" style="padding-top: 4pt;padding-left: 68pt;text-indent: 0pt;text-align: left;">Nome do
-                    técnico Função/Profissão Conselho de Classe:</p>
-            </td>
+    </table>
+
+    <!-- Conclusões e Recomendações -->
+    <table>
+        <tr>
+            <th class="section-title">CONCLUSÕES E RECOMENDAÇÕES</th>
         </tr>
-        <tr style="height:74pt">
-            <td
-                style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            </td>
+        <tr>
+            <td>{{conclusoesRecomendacoes}}</td>
         </tr>
-        <tr style="height:24pt">
-            <td style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s1" style="padding-top: 4pt;padding-left: 71pt;text-indent: 0pt;text-align: left;">Nome do
-                    técnico Função/Profissão Conselho de Classe</p>
-            </td>
+    </table>
+
+    <!-- Data e Local das Conclusões -->
+    <table>
+        <tr>
+            <td class="bg-gray">Data</td>
+            <td>{{conclusoesRecomendacoesData}}</td>
         </tr>
-        <tr style="height:73pt">
-            <td
-                style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            </td>
+        <tr>
+            <td class="bg-gray">Local</td>
+            <td>{{conclusoesRecomendacoesLocal}}</td>
         </tr>
-        <tr style="height:24pt">
-            <td style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt"
-                bgcolor="#EFEFEF">
-                <p class="s1" style="padding-top: 4pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">De acordo:
-                    Nome do responsável para área de visat ou outra correlata</p>
-            </td>
+    </table>
+
+    <!-- Equipe Técnica -->
+    <table>
+        <tr>
+            <th colspan="2" class="section-title">EQUIPE TÉCNICA</th>
         </tr>
-        <tr style="height:65pt">
-            <td
-                style="width:516pt;border-top-style:solid;border-top-width:2pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt">
-                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            </td>
+        <tr>
+            <td class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe:</td>
+        </tr>
+        <tr>
+            <td>{{equipeTecnica.A}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe</td>
+            
+        </tr>
+        <tr>
+            <td>{{equipeTecnica.B}}</td>
+        </tr>
+        <tr>
+            <td class="bg-gray">De acordo: Nome do responsável para área de visat ou outra correlata</td>
+        </tr>
+        <tr>
+            <td>{{equipeTecnica.deAcordoCom}}</td>
         </tr>
     </table>
 </body>
