@@ -73,7 +73,7 @@ const Form = () => {
           contribuicaoAspectosGerenciaisAdequacaoDemandas:''
         },
         outrosFatoresGestaoSistemaContribuido:'',
-        informacoesPrestadasPor: {trabalhador: '',preposto: '',representanteSindical: '',testemunha: '',familiar: '',outros: ''},
+        informacoesPrestadasPor: {trabalhador: '',preposto: '',representanteSindical: '',testemunha: '',familiar: '',outros:{chk:'', desc:''}},
         procedimentosAdotados: {intimacao: '',infracao: '',interdicao: '',outro: ''},
         conclusoesRecomendacoes: '',
         conclusoesRecomendacoesData:'',

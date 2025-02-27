@@ -93,8 +93,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             >
               <View style={{flexDirection: 'row'}}>
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Faz Horas Extras?</Text>
-                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
-                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+                <RadioButton.Item label="SIM" value="SIM" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="NÃO" style={{marginRight: -25}}/>
               </View>
             </RadioButton.Group>
             </View>
@@ -128,8 +128,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             >
               <View style={{flexDirection: 'row'}}>
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848',marginRight: -20}]}>Teve Treinamento?</Text>
-                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25}}/>
-                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -25}}/>
+                <RadioButton.Item label="SIM" value="SIM" style={{marginRight: -25}}/>
+                <RadioButton.Item label="NÃO" value="NÃO" style={{marginRight: -25}}/>
               </View>
             </RadioButton.Group>
             </View>
@@ -142,8 +142,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             >
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Treinamento Comprovado?</Text>
               <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25, marginTop: -20}}/>
-                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -15, marginTop: -20}}/>
+                <RadioButton.Item label="SIM" value="SIM" style={{marginRight: -25, marginTop: -20}}/>
+                <RadioButton.Item label="NÃO" value="NÃO" style={{marginRight: -15, marginTop: -20}}/>
               </View>
             </RadioButton.Group>
             </View>
@@ -163,8 +163,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             >
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Acidente ocorreu em situação de manutenção de equipamento ou máquina</Text>
               <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <RadioButton.Item label="SIM" value="S" style={{marginRight: -25, marginTop: -20}}/>
-                <RadioButton.Item label="NÃO" value="N" style={{marginRight: -15, marginTop: -20}}/>
+                <RadioButton.Item label="SIM" value="SIM" style={{marginRight: -25, marginTop: -20}}/>
+                <RadioButton.Item label="NÃO" value="NÃO" style={{marginRight: -15, marginTop: -20}}/>
               </View>
             </RadioButton.Group>
             </View>
@@ -199,8 +199,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Mais Trabalhadores Atingidos?</Text>
               <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
                 <View style={{ flexDirection: 'column'}}>
-                  <RadioButton.Item label="SIM" value="S" />
-                  <RadioButton.Item label="NÃO" value="N" />
+                  <RadioButton.Item label="SIM" value="SIM" />
+                  <RadioButton.Item label="NÃO" value="NÃO" />
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
                   <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>
@@ -229,8 +229,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
               <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
                 <View style={{ flexDirection: 'column'}}>
-                  <RadioButton.Item label="SIM" value="S" />
-                  <RadioButton.Item label="NÃO" value="N" />
+                  <RadioButton.Item label="SIM" value="SIM" />
+                  <RadioButton.Item label="NÃO" value="NÃO" />
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
                   <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>
@@ -259,8 +259,8 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
               <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
                 <View style={{ flexDirection: 'column'}}>
-                  <RadioButton.Item label="SIM" value="S" />
-                  <RadioButton.Item label="NÃO" value="N" />
+                  <RadioButton.Item label="SIM" value="SIM" />
+                  <RadioButton.Item label="NÃO" value="NÃO" />
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginRight: 70, marginTop: 10}}>
                   <Text style={{fontSize: 16, fontWeight: '600', color: '#494848'}}>Quantos?</Text>

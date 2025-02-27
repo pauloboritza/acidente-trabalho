@@ -30,8 +30,8 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
               value={values.analiseBarreiras[categoria.campo]?.presentes?.semFalha || ''}
             >
               <View style={styles.radioOptions}>
-                <RadioButton.Item label="Presente" value="P" />
-                <RadioButton.Item label="Ausente" value="A" />
+                <RadioButton.Item label="Presente" value="Presente" />
+                <RadioButton.Item label="Ausente" value="Ausente" />
               </View>
             </RadioButton.Group>
           </View>
@@ -44,8 +44,8 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
               value={values.analiseBarreiras[categoria.campo]?.presentes?.comFalha || ''}
             >
               <View style={styles.radioOptions}>
-                <RadioButton.Item label="Presente" value="P" />
-                <RadioButton.Item label="Ausente" value="A" />
+                <RadioButton.Item label="Presente" value="Presente" />
+                <RadioButton.Item label="Ausente" value="Ausente" />
               </View>
             </RadioButton.Group>
           </View>

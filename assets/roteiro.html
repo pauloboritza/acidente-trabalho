@@ -2,12 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROTEIRO PARA INVESTIGAÇÃO DE ACIDENTE DE TRABALHO</title>
     <style type="text/css">
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             text-indent: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -16,31 +19,38 @@
             width: 100%;
             max-width: 21cm; /* Largura de uma folha A4 */
             margin: 0 auto;
+            padding: 20px;
         }
 
+        /* Estilos gerais para tabelas */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10pt;
+            table-layout: fixed;
+            margin-bottom: 15px;
         }
 
         th, td {
             border: 2px solid #000;
-            padding: 5pt;
+            padding: 10px;
             text-align: left;
         }
 
         th {
             background-color: #D9D9D9;
             font-weight: bold;
+            text-align: center;
         }
 
+        /* Classes utilitárias */
         .bg-gray {
             background-color: #EFEFEF;
         }
+
         .bg-white {
             background-color: #fff;
         }
+
         .text-center {
             text-align: center;
         }
@@ -53,42 +63,61 @@
             text-align: right;
         }
 
-        .full-width {
-            width: 100%;
-        }
-
         .section-title {
             background-color: #D9D9D9;
             font-weight: bold;
             text-align: center;
-            padding: 5pt;
+            padding: 10px;
+            margin-bottom: 10px;
         }
+
         .section-title-sub {
             font-weight: 400;
-            font-size: 14;
+            font-size: 14px;
         }
 
         .sub-title {
             background-color: #EFEFEF;
             font-weight: bold;
-            padding: 5pt;
+            padding: 5px;
         }
 
         .content {
-            padding: 5pt;
+            padding: 5px;
         }
-        .title{
-            text-indent: 0pt;
+
+        .title {
             text-align: center;
             font-weight: bold;
             font-size: medium;
+            margin-bottom: 10px;
         }
+
         .img-title {
-            text-indent: 0pt;
             text-align: right;
-            justify-content: flex-end;
-            padding-top: 5pt;
+            padding-top: 5px;
         }
+
+        /* Estilos para tabelas */
+        table.same-width {
+            width: 100%;
+            table-layout: fixed; /* Tamanho fixo para as colunas */
+        }
+
+        table.same-width td {
+            width: auto; /* Distribui o espaço igualmente */
+        }
+
+        /* Para células que devem ocupar 100% da largura */
+        table.same-width td[colspan="3"] {
+            width: 75%;
+        }
+
+        /* Ajustes para células com rowspan e colspan */
+        td[rowspan], td[colspan] {
+            width: auto;
+        }
+       
     </style>
 </head>
 <body>
@@ -102,632 +131,657 @@
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <p class="title">ROTEIRO PARA INVESTIGAÇÃO DE ACIDENTE DE TRABALHO</p>
     <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-    <table>
-        <tr>
-            <td class="bg-white">Data(s) da(s) inspeção(ões)</td>
-            <td>{{dataInspecao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-white">Nº SINAN-NET</td>
-            <td>{{numeroSinan}}</td>
-        </tr>
-        <tr>
-            <td class="bg-white">Motivo da inspeção/Investigação do acidente</td>
-            <td>{{motivoInspecao}}</td>
-        </tr>
-    </table>
+
+    <!-- Tabela de informações gerais -->
+     <section>
+        <table class="same-width">
+            <tr>
+                <td class="bg-white">Data(s) da(s) inspeção(ões)</td>
+                <td>{{dataInspecao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-white">Nº SINAN-NET</td>
+                <td>{{numeroSinan}}</td>
+            </tr>
+            <tr>
+                <td class="bg-white">Motivo da inspeção/Investigação do acidente</td>
+                <td>{{motivoInspecao}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Dados do Trabalhador -->
-    <table>
-        <tr>
-            <th colspan="4" class="section-title">DADOS DO TRABALHADOR</th>
-        </tr>        
-            <td class="bg-gray" style="width: max-content;">Nome</td>
-            <td colspan="3">{{trabalhador.nome}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome da mãe</td>
-            <td colspan="3">{{trabalhador.nomeMae}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CPF</td>
-            <td colspan="3">{{trabalhador.cpf}}</td>
-        </tr>      
-            <td class="bg-gray">Sexo</td>
-            <td>
-                ( ) M 
-                ( ) F
-            </td>
-            <td class="bg-gray">Idade</td>
-            <td>{{trabalhador.idade}}</td>
-        <tr>            
-            <td class="bg-gray">Raça/cor</td>
-            <td>{{trabalhador.raca}}</td>
-            <td class="bg-gray">Data de nascimento</td>
-            <td>{{trabalhador.dataNascimento}}</td>
-        </tr>
-        <tr>            
-            <td class="bg-gray">Telefone</td>
-            <td>{{trabalhador.telefone}}</td>
-            <td class="bg-gray">Escolaridade</td>
-            <td>{{trabalhador.escolaridade}}</td>
-        </tr>
-        <tr>            
-            <td class="bg-gray">Ocupação</td>
-            <td>{{trabalhador.ocupacao}}</td>
-            <td class="bg-gray">Data de admissão</td>
-            <td>{{trabalhador.dataAdmissao}}</td>
-        </tr>
-        <tr>            
-            <td class="bg-gray">Jornada de trabalho</td>
-            <td>{{trabalhador.jornadaTrabalho}}</td>
-            <td class="bg-gray">Regime de contrato de trabalho</td>
-            <td>{{trabalhador.regimeContrato}}</td>
-        </tr>
-        <tr>           
-            <td class="bg-gray">Endereço residencial</td>
-            <td colspan="3">{{trabalhador.endereco}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CEP</td>
-            <td>{{trabalhador.cep}}</td>
-            <td class="bg-gray">Bairro</td>
-            <td>{{trabalhador.bairro}}</td>
-            <td class="bg-gray">N°</td>
-            <td>{{trabalhador.numero}}</td>
-        </tr>
-        <tr>
-            
-            <td class="bg-gray">Município de Residência</td>
-            <td colspan="3">{{trabalhador.municipioResidencia}}</td>
-        </tr>
-    </table>
+    <section>
+        <table class="same-width">
+            <tr>
+                <th class="section-title" colspan="6">DADOS DO TRABALHADOR</th>
+            </tr> 
+            <tr>
+                <td colspan="2" class="bg-gray">Nome</td>
+                <td colspan="4">{{trabalhador.nome}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bg-gray">Nome da mãe</td>
+                <td colspan="4">{{trabalhador.nomeMae}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bg-gray">CPF</td>
+                <td colspan="4">{{trabalhador.cpf}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Sexo</td>
+                <td colspan="2">{{trabalhador.sexo}}</td>
+                <td class="bg-gray">Idade</td>
+                <td colspan="2">{{trabalhador.idade}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Raça/cor</td>
+                <td colspan="2">{{trabalhador.raca}}</td>
+                <td class="bg-gray">Data de nascimento</td>
+                <td colspan="2">{{trabalhador.dataNascimento}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Telefone</td>
+                <td colspan="2">{{trabalhador.telefone}}</td>
+                <td class="bg-gray">Escolaridade</td>
+                <td colspan="2">{{trabalhador.escolaridade}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Ocupação</td>
+                <td colspan="2">{{trabalhador.ocupacao}}</td>
+                <td class="bg-gray">Data de admissão</td>
+                <td colspan="2">{{trabalhador.dataAdmissao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Jornada de trabalho</td>
+                <td colspan="2">{{trabalhador.jornadaTrabalho}}</td>
+                <td class="bg-gray">Regime de contrato de trabalho</td>
+                <td colspan="2">{{trabalhador.regimeContrato}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Endereço residencial</td>
+                <td colspan="5">{{trabalhador.endereco}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CEP</td>
+                <td>{{trabalhador.cep}}</td>
+                <td class="bg-gray">Bairro</td>
+                <td>{{trabalhador.bairro}}</td>
+                <td class="bg-gray">N°</td>
+                <td>{{trabalhador.numero}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Município de Residência</td>
+                <td colspan="5">{{trabalhador.municipioResidencia}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Dados do Estabelecimento -->
-    <table>
-        <tr>
-            <th colspan="4" class="section-title">DADOS DO ESTABELECIMENTO QUE ASSINA A CARTEIRA OU PAGA O SALÁRIO</th>
-        </tr>
-        <tr>
-            <td colspan="2" class="bg-gray">Pessoa Física</td>
-            <td colspan="2" class="bg-gray">Pessoa Jurídica</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CPF</td>
-            <td>{{estabelecimento.pf.cpf}}</td>
-            <td class="bg-gray">CNPJ</td>
-            <td>{{estabelecimento.pj.cnpj}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome</td>
-            <td>{{estabelecimento.pf.nome}}</td>
-            <td class="bg-gray">Nome</td>
-            <td>{{estabelecimento.pj.nome}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CEP</td>
-            <td>{{estabelecimento.pf.cep}}</td>
-            <td class="bg-gray">CEP</td>
-            <td>{{estabelecimento.pj.cep}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Município</td>
-            <td>{{estabelecimento.pf.municipio}}</td>
-            <td class="bg-gray">Município</td>
-            <td>{{estabelecimento.pj.municipio}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Endereço</td>
-            <td>{{estabelecimento.pf.endereco}}</td>
-            <td class="bg-gray">Endereço</td>
-            <td>{{estabelecimento.pj.endereco}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Telefone</td>
-            <td>{{estabelecimento.pf.telefone}}</td>
-            <td class="bg-gray">Telefone</td>
-            <td>{{estabelecimento.pj.telefone}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">E-mail</td>
-            <td>{{estabelecimento.pf.email}}</td>
-            <td class="bg-gray">E-mail</td>
-            <td>{{estabelecimento.pj.email}}</td>
-        </tr>
-    </table>
+    <section>
+        <table class="same-width">
+            <tr>
+                <th class="section-title" colspan="4">DADOS DO ESTABELECIMENTO QUE ASSINA A CARTEIRA OU PAGA O SALÁRIO</th>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Pessoa Física</td>
+                <td class="bg-gray" colspan="2">Pessoa Jurídica</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CPF</td>
+                <td>{{estabelecimento.pf.cpf}}</td>
+                <td class="bg-gray">CNPJ</td>
+                <td>{{estabelecimento.pj.cnpj}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Nome</td>
+                <td>{{estabelecimento.pf.nome}}</td>
+                <td class="bg-gray">Nome</td>
+                <td>{{estabelecimento.pj.nome}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CEP</td>
+                <td>{{estabelecimento.pf.cep}}</td>
+                <td class="bg-gray">CEP</td>
+                <td>{{estabelecimento.pj.cep}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Município</td>
+                <td>{{estabelecimento.pf.municipio}}</td>
+                <td class="bg-gray">Município</td>
+                <td>{{estabelecimento.pj.municipio}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Endereço</td>
+                <td>{{estabelecimento.pf.endereco}}</td>
+                <td class="bg-gray">Endereço</td>
+                <td>{{estabelecimento.pj.endereco}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Telefone</td>
+                <td>{{estabelecimento.pf.telefone}}</td>
+                <td class="bg-gray">Telefone</td>
+                <td>{{estabelecimento.pj.telefone}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">E-mail</td>
+                <td>{{estabelecimento.pf.email}}</td>
+                <td class="bg-gray">E-mail</td>
+                <td>{{estabelecimento.pj.email}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Número total de trabalhadores -->
-    <table>
-        <tr>
-            <td class="bg-gray">Número total de trabalhadores</td>
-            <td colspan="3">{{estabelecimento.nTotalTrabalhadores}}</td>
-            
-        </tr>
-        <tr><td class="bg-gray">N° de Homens</td>
-            <td>{{estabelecimento.nHomens}}</td>
-            <td class="bg-gray">N° de Mulheres</td>
-            <td>{{estabelecimento.nMulheres}}</td>
-            
-        </tr>
-        <tr>
-            <td class="bg-gray">Ramo da atividade</td>
-            <td colspan="3">{{estabelecimento.ramoAtividade}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CNAE</td>
-            <td>{{estabelecimento.cnae}}</td>
-            <td class="bg-gray">Grau de risco</td>
-            <td>
-                1( ) 2( ) 3( ) 4( )
-            </td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <td class="bg-gray">Número total de trabalhadores</td>
+                <td colspan="3">{{estabelecimento.nTotalTrabalhadores}}</td>
+                
+            </tr>
+            <tr><td class="bg-gray">N° de Homens</td>
+                <td>{{estabelecimento.nHomens}}</td>
+                <td class="bg-gray">N° de Mulheres</td>
+                <td>{{estabelecimento.nMulheres}}</td>
+                
+            </tr>
+            <tr>
+                <td class="bg-gray">Ramo da atividade</td>
+                <td colspan="3">{{estabelecimento.ramoAtividade}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CNAE</td>
+                <td>{{estabelecimento.cnae}}</td>
+                <td class="bg-gray">Grau de risco</td>
+                <td>
+                    {{estabelecimento.grauRisco}}
+                </td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Estabelecimento terceirizado -->
-    <table>
-        <tr>
-            <td class="bg-gray">É estabelecimento terceirizado:</td>
-            <td>
-                ( ) Não 
-                ( ) Sim (preencher os dados do estabelecimento principal)
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CNPJ do estabelecimento principal</td>
-            <td>{{estabelecimento.terceirizado.cnpj}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome do estabelecimento principal</td>
-            <td>{{estabelecimento.terceirizado.nome}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Endereço</td>
-            <td>{{estabelecimento.terceirizado.endereco}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Bairro</td>
-            <td>{{estabelecimento.terceirizado.bairro}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CEP</td>
-            <td>{{estabelecimento.terceirizado.cep}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Município</td>
-            <td>{{estabelecimento.terceirizado.municipio}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Telefone</td>
-            <td>{{estabelecimento.terceirizado.telefone}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Email</td>
-            <td>{{estabelecimento.terceirizado.email}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <td class="bg-gray">É estabelecimento terceirizado:</td>
+                <td colspan="3">
+                    {{estabelecimento.eTercerizado}} (preencher os dados do estabelecimento principal)
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CNPJ do estabelecimento principal</td>
+                <td colspan="3">{{estabelecimento.terceirizado.cnpj}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Nome do estabelecimento principal</td>
+                <td colspan="3">{{estabelecimento.terceirizado.nome}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Endereço</td>
+                <td colspan="3">{{estabelecimento.terceirizado.endereco}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Bairro</td>
+                <td colspan="3">{{estabelecimento.terceirizado.bairro}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CEP</td>
+                <td colspan="3">{{estabelecimento.terceirizado.cep}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Município</td>
+                <td colspan="3">{{estabelecimento.terceirizado.municipio}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Telefone</td>
+                <td colspan="3">{{estabelecimento.terceirizado.telefone}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Email</td>
+                <td colspan="3">{{estabelecimento.terceirizado.email}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Número total de trabalhadores tercerizados -->
-    <table>
-        <tr>
-            <td class="bg-gray">Número total de trabalhadores</td>
-            <td colspan="3">{{estabelecimento.terceirizado.nTotalTrabalhadores}}</td>
-            
-        </tr>
-        <tr>
-            <td class="bg-gray">N° de Homens</td>
-            <td>{{estabelecimento.terceirizado.nHomens}}</td>
-            <td class="bg-gray">N° de Mulheres</td>
-            <td>{{estabelecimento.terceirizado.nMulheres}}</td>            
-        </tr>
-        <tr>
-            <td class="bg-gray">Ramo da atividade</td>
-            <td colspan="3">{{estabelecimento.terceirizado.ramoAtividade}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">CNAE</td>
-            <td>{{estabelecimento.terceirizado.cnae}}</td>
-            <td class="bg-gray">Grau de risco</td>
-            <td>
-                1( ) 2( ) 3( ) 4( )
-            </td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <td class="bg-gray">Número total de trabalhadores</td>
+                <td colspan="3">{{estabelecimento.terceirizado.nTotalTrabalhadores}}</td>
+                
+            </tr>
+            <tr>
+                <td class="bg-gray">N° de Homens</td>
+                <td>{{estabelecimento.terceirizado.nHomens}}</td>
+                <td class="bg-gray">N° de Mulheres</td>
+                <td>{{estabelecimento.terceirizado.nMulheres}}</td>            
+            </tr>
+            <tr>
+                <td class="bg-gray">Ramo da atividade</td>
+                <td colspan="3">{{estabelecimento.terceirizado.ramoAtividade}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">CNAE</td>
+                <td>{{estabelecimento.terceirizado.cnae}}</td>
+                <td class="bg-gray">Grau de risco</td>
+                <td>
+                    {{estabelecimento.terceirizado.grauRisco}}
+                </td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Dados do Acidente -->
-    <table>
-        <tr>
-            <th colspan="3" class="section-title">DADOS DO ACIDENTE</th>
-        </tr>
-        <tr>
-            <td>
-                ( ) Acidente típico 
-                ( ) Acidente de trajeto
-            </td>
-            <td class="bg-gray">Foi emitida a CAT?</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome do estabelecimento ou local onde ocorreu o acidente</td>
-            <td>{{acidente.nomeEstabelecimento}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Setor do estabelecimento onde ocorreu o acidente</td>
-            <td>{{acidente.setorAcidente}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Município onde ocorreu o acidente</td>
-            <td>{{acidente.municipioAcidente}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Endereço onde ocorreu o acidente</td>
-            <td>{{acidente.enderecoAcidente}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Data</td>
-            <td>{{acidente.data}}</td>
-            <td class="bg-gray">Hora</td>
-            <td>{{acidente.hora}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Após quantas horas trabalhadas</td>
-            <td>{{acidente.horasTrabalhadas}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Práticas de horas extras</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Descreva quantas horas por dia, por semana ou por mês de Horas extras</td>
-            <td>{{acidente.qtdHorasExtras}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Função no momento do acidente</td>
-            <td>{{acidente.funcaoAcidente}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Há quanto tempo está na função</td>
-            <td>{{acidente.tempoFuncao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Houve treinamento</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Treinamento comprovado</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Descreva o treinamento</td>
-            <td>{{acidente.descricaoTreinamento}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">O acidente ocorreu em situação de manutenção de máquina ou equipamento</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Causa do acidente</td>
-            <td>{{acidente.causaAcidente}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Diagnóstico da lesão</td>
-            <td>{{acidente.diagnosticoLesao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Causa básica do óbito</td>
-            <td>{{acidente.causaObito}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Mais trabalhadores atingidos</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-                Quantos (     ) 
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Outros óbitos</td>
-            <td>
-                ( ) Sim  
-                ( ) Não
-                Quantos (     )
-            </td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Outros acidentes foram registrados no Estabelecimento?</td>
-            <td>
-                ( ) Sim 
-                ( ) Não
-                Quantos (    ) 
-            </td>
-        </tr>
-    </table>
+     <section>
+        <table>
+            <tr>
+                <th class="section-title" colspan="5">DADOS DO ACIDENTE</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{acidente.tipo}}
+                </td>
+                <td class="bg-gray">Foi emitida a CAT?</td>
+                <td colspan="2">
+                {{acidente.emitiuCat}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Nome do estabelecimento ou local onde ocorreu o acidente</td>
+                <td colspan="3">{{acidente.nomeEstabelecimento}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Setor do estabelecimento onde ocorreu o acidente</td>
+                <td colspan="3">{{acidente.setorAcidente}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Município onde ocorreu o acidente</td>
+                <td colspan="3">{{acidente.municipioAcidente}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Endereço onde ocorreu o acidente</td>
+                <td colspan="3">{{acidente.enderecoAcidente}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Data</td>
+                <td colspan="2">{{acidente.data}}</td>
+                <td class="bg-gray">Hora</td>
+                <td>{{acidente.hora}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Após quantas horas trabalhadas</td>
+                <td colspan="3">{{acidente.horasTrabalhadas}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Práticas de horas extras</td>
+                <td colspan="3">
+                    {{acidente.fazHorasExtras}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Descreva quantas horas por dia, por semana ou por mês de Horas extras</td>
+                <td colspan="3">{{acidente.qtdHorasExtras}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Função no momento do acidente</td>
+                <td colspan="3">{{acidente.funcaoAcidente}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Há quanto tempo está na função</td>
+                <td colspan="3">{{acidente.tempoFuncao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Houve treinamento</td>
+                <td colspan="3">
+                    {{acidente.teveTreinamento}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Treinamento comprovado</td>
+                <td colspan="3">
+                    {{acidente.teveTreinamentoComp}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Descreva o treinamento</td>
+                <td colspan="3">{{acidente.descricaoTreinamento}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">O acidente ocorreu em situação de manutenção de máquina ou equipamento</td>
+                <td colspan="3">
+                {{acidente.causaAcidenteManuEq}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Causa do acidente</td>
+                <td colspan="3">{{acidente.causaAcidente}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Diagnóstico da lesão</td>
+                <td colspan="3">{{acidente.diagnosticoLesao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Causa básica do óbito</td>
+                <td colspan="3">{{acidente.causaObito}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Mais trabalhadores atingidos</td>
+                <td colspan="3">
+                    {{acidente.maisTrabalhadoresAtingidos.res}}
+                    Quantos ({{acidente.maisTrabalhadoresAtingidos.qtd}}) 
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Outros óbitos</td>
+                <td colspan="3">
+                    {{acidente.acidente.outrosObitos.res}}
+                    Quantos ({{acidente.outrosObitos.qtd}})
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Outros acidentes foram registrados no Estabelecimento?</td>
+                <td colspan="3">
+                    {{acidente.outrosAcidentes.res}}
+                    Quantos ({{acidente.outrosAcidentes.qtd}}) 
+                </td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Descrição do Trabalho Habitual -->
-    <table>
-        <tr>
-            <th class="section-title">DESCRIÇÃO DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</th>
-        </tr>
-        <tr>
-            <td>{{descTrabalhoHabitual}}</td>
-        </tr>
-    </table>
+     <section>
+        <table>
+            <tr>
+                <th class="section-title">DESCRIÇÃO DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</th>
+            </tr>
+            <tr>
+                <td>{{descTrabalhoHabitual}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Trabalho Realizado no Dia do Acidente -->
-    <table>
-        <tr>
-            <th class="section-title">QUE TRABALHO ESTAVA SENDO REALIZADO NO DIA DO ACIDENTE?</th>
-        </tr>
-        <tr>
-            <td>{{trabRealizadoDiaAcidente}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th class="section-title">QUE TRABALHO ESTAVA SENDO REALIZADO NO DIA DO ACIDENTE?</th>
+            </tr>
+            <tr>
+                <td>{{trabRealizadoDiaAcidente}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Descrição do Local do Acidente -->
-    <table>
-        <tr>
-            <th class="section-title">DESCRIÇÃO DO LOCAL DO ACIDENTE</th>
-        </tr>
-        <tr>
-            <td>{{descLocalAcidente}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th class="section-title">DESCRIÇÃO DO LOCAL DO ACIDENTE</th>
+            </tr>
+            <tr>
+                <td>{{descLocalAcidente}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Descrição Breve da Sequência dos Eventos do Acidente -->
-    <table>
-        <tr>
-            <th class="section-title">DESCRIÇÃO BREVE DA SEQUÊNCIA DOS EVENTOS DO ACIDENTE</th>
-        </tr>
-        <tr>
-            <td>{{sequenciaEventosAcidente}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th class="section-title">DESCRIÇÃO BREVE DA SEQUÊNCIA DOS EVENTOS DO ACIDENTE</th>
+            </tr>
+            <tr>
+                <td>{{sequenciaEventosAcidente}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Fatores que Contribuíram para a Ocorrência do Acidente -->
-    <table>
-        <tr>
-            <th colspan="2" class="section-title">FATORES QUE CONTRIBUÍRAM PARA A OCORRÊNCIA DO ACIDENTE
-                <p class="section-title-sub">(DESCREVA SE NA SITUAÇÃO DO ACIDENTE HAVIA ALGUMA MUDANÇA EM RELAÇÃO AO INDIVÍDUO/</br>
-                    TAREFA/ MATERIAL/ MEIO DE TRABALHO)</p>
-            </th>
-        </tr>
-        <tr>
-            <th colspan="2" class="section-title" style="text-align: start;">
-                Na situação do acidente, houve alguma mudança em componentes do sistema?
-            </th>            
-        </tr>
-        <tr>
-            <td class="bg-gray">Indivíduo</td>
-            <td>{{fatoresContribuintes.individuo}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Tarefa</td>
-            <td>{{fatoresContribuintes.tarefa}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Material</td>
-            <td>{{fatoresContribuintes.material}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Meio de Trabalho físico e organizacional</td>
-            <td>{{fatoresContribuintes.meioTrabalho}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th class="section-title" colspan="5">FATORES QUE CONTRIBUÍRAM PARA A OCORRÊNCIA DO ACIDENTE
+                    <p class="section-title-sub">(DESCREVA SE NA SITUAÇÃO DO ACIDENTE HAVIA ALGUMA MUDANÇA EM RELAÇÃO AO INDIVÍDUO/</br>
+                        TAREFA/ MATERIAL/ MEIO DE TRABALHO)</p>
+                </th>
+            </tr>
+            <tr>
+                <th class="section-title" style="text-align: start;" colspan="5">
+                    Na situação do acidente, houve alguma mudança em componentes do sistema?
+                </th>            
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Indivíduo</td>
+                <td colspan="3">{{fatoresContribuintes.individuo}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Tarefa</td>
+                <td colspan="3">{{fatoresContribuintes.tarefa}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Material</td>
+                <td colspan="3">{{fatoresContribuintes.material}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Meio de Trabalho físico e organizacional</td>
+                <td colspan="3">{{fatoresContribuintes.meioTrabalho}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Análise de Barreiras -->
-    <table>
-        <tr>
-            <th colspan="5" class="section-title">ANÁLISE DE BARREIRAS</th>
-        </tr>
-        <tr>
-            <th rowspan="2">ENERGIA, CONDIÇÃO OU EVENTO COM POTENCIAL NOCIVO</th>
-            <th colspan="2">PRESENTES</th>
-            <th rowspan="2">AUSENTES</th>
-            <th rowspan="2">OBSERVAÇÃO</th>
-        </tr>
-        <tr>
-            <th>SEM FALHA</th>
-            <th>COM FALHA</th>
-        </tr>
-        <tr>
-            <td class="bg-gray">Mecânica (corte, prensagem, punção com partes que se movem de qualquer modo, etc)</td>
-            <td>{{barreiras.mecanica.semFalha}}</td>
-            <td>{{barreiras.mecanica.comFalha}}</td>
-            <td>{{barreiras.mecanica.ausente}}</td>
-            <td>{{barreiras.mecanica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Cinética (impactos contra ou de coisas em movimento ou parada, quedas, partículas em movimento)</td>
-            <td>{{barreiras.cinetica.semFalha}}</td>
-            <td>{{barreiras.cinetica.comFalha}}</td>
-            <td>{{barreiras.cinetica.ausente}}</td>
-            <td>{{barreiras.cinetica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Temperaturas extremas</td>
-            <td>{{barreiras.temperaturas.semFalha}}</td>
-            <td>{{barreiras.temperaturas.comFalha}}</td>
-            <td>{{barreiras.temperaturas.ausente}}</td>
-            <td>{{barreiras.temperaturas.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Elétrica</td>
-            <td>{{barreiras.eletrica.semFalha}}</td>
-            <td>{{barreiras.eletrica.comFalha}}</td>
-            <td>{{barreiras.eletrica.ausente}}</td>
-            <td>{{barreiras.eletrica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Química (corrosiva, tóxica, inflamável, reativa)</td>
-            <td>{{barreiras.quimica.semFalha}}</td>
-            <td>{{barreiras.quimica.comFalha}}</td>
-            <td>{{barreiras.quimica.ausente}}</td>
-            <td>{{barreiras.quimica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Contaminação por agente biológico</td>
-            <td>{{barreiras.biologica.semFalha}}</td>
-            <td>{{barreiras.biologica.comFalha}}</td>
-            <td>{{barreiras.biologica.ausente}}</td>
-            <td>{{barreiras.biologica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Energia potencial armazenada (objetos sob pressão, tensão, compressão, etc)</td>
-            <td>{{barreiras.energia.semFalha}}</td>
-            <td>{{barreiras.energia.comFalha}}</td>
-            <td>{{barreiras.energia.ausente}}</td>
-            <td>{{barreiras.energia.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Radiações</td>
-            <td>{{barreiras.radiacao.semFalha}}</td>
-            <td>{{barreiras.radiacao.comFalha}}</td>
-            <td>{{barreiras.radiacao.ausente}}</td>
-            <td>{{barreiras.radiacao.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Acústica</td>
-            <td>{{barreiras.acustica.semFalha}}</td>
-            <td>{{barreiras.acustica.comFalha}}</td>
-            <td>{{barreiras.acustica.ausente}}</td>
-            <td>{{barreiras.acustica.observacao}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Outras (descrever)</td>
-            <td>{{barreiras.outras.semFalha}}</td>
-            <td>{{barreiras.outras.comFalha}}</td>
-            <td>{{barreiras.outras.ausente}}</td>
-            <td>{{barreiras.outras.observacao}}</td>
-        </tr>
-    </table>
-
+    <section>
+        <table>
+            <tr>
+                <th colspan="5" class="section-title">ANÁLISE DE BARREIRAS</th>
+            </tr>
+            <tr>
+                <th rowspan="2">ENERGIA, CONDIÇÃO OU EVENTO COM POTENCIAL NOCIVO</th>
+                <th colspan="2">PRESENTES</th>
+                <th rowspan="2">AUSENTES</th>
+                <th rowspan="2">OBSERVAÇÃO</br><p style="font-weight:500;">(Comentar falha ou ausência)</p></th>
+            </tr>
+            <tr>
+                <th>SEM FALHA</th>
+                <th>COM FALHA</th>
+            </tr>
+            <tr>
+                <td class="bg-gray">Mecânica (corte, prensagem, punção com partes que se movem de qualquer modo, etc)</td>
+                <td>{{barreiras.mecanica.semFalha}}</td>
+                <td>{{barreiras.mecanica.comFalha}}</td>
+                <td>{{barreiras.mecanica.ausente}}</td>
+                <td>{{barreiras.mecanica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Cinética (impactos contra ou de coisas em movimento ou parada, quedas, partículas em movimento)</td>
+                <td>{{barreiras.cinetica.semFalha}}</td>
+                <td>{{barreiras.cinetica.comFalha}}</td>
+                <td>{{barreiras.cinetica.ausente}}</td>
+                <td>{{barreiras.cinetica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Temperaturas extremas</td>
+                <td>{{barreiras.temperaturas.semFalha}}</td>
+                <td>{{barreiras.temperaturas.comFalha}}</td>
+                <td>{{barreiras.temperaturas.ausente}}</td>
+                <td>{{barreiras.temperaturas.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Elétrica</td>
+                <td>{{barreiras.eletrica.semFalha}}</td>
+                <td>{{barreiras.eletrica.comFalha}}</td>
+                <td>{{barreiras.eletrica.ausente}}</td>
+                <td>{{barreiras.eletrica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Química (corrosiva, tóxica, inflamável, reativa)</td>
+                <td>{{barreiras.quimica.semFalha}}</td>
+                <td>{{barreiras.quimica.comFalha}}</td>
+                <td>{{barreiras.quimica.ausente}}</td>
+                <td>{{barreiras.quimica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Contaminação por agente biológico</td>
+                <td>{{barreiras.biologica.semFalha}}</td>
+                <td>{{barreiras.biologica.comFalha}}</td>
+                <td>{{barreiras.biologica.ausente}}</td>
+                <td>{{barreiras.biologica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Energia potencial armazenada (objetos sob pressão, tensão, compressão, etc)</td>
+                <td>{{barreiras.energia.semFalha}}</td>
+                <td>{{barreiras.energia.comFalha}}</td>
+                <td>{{barreiras.energia.ausente}}</td>
+                <td>{{barreiras.energia.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Radiações</td>
+                <td>{{barreiras.radiacao.semFalha}}</td>
+                <td>{{barreiras.radiacao.comFalha}}</td>
+                <td>{{barreiras.radiacao.ausente}}</td>
+                <td>{{barreiras.radiacao.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Acústica</td>
+                <td>{{barreiras.acustica.semFalha}}</td>
+                <td>{{barreiras.acustica.comFalha}}</td>
+                <td>{{barreiras.acustica.ausente}}</td>
+                <td>{{barreiras.acustica.observacao}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Outras (descrever)</td>
+                <td>{{barreiras.outras.semFalha}}</td>
+                <td>{{barreiras.outras.comFalha}}</td>
+                <td>{{barreiras.outras.ausente}}</td>
+                <td>{{barreiras.outras.observacao}}</td>
+            </tr>
+        </table>
+    </section>
     <!-- Análise da Gestão de Segurança e de Proteção -->
-    <table>
-        <tr>
-            <th colspan="5" class="section-title">ANÁLISE DA GESTÃO DE SEGURANÇA E DE PROTEÇÃO</th>
-        </tr>
-        <tr>
-            <th>GESTÃO DE SEGURANÇA</th>
-            <th>GESTÃO DE PRODUÇÃO E DE SUA VARIEDADE</th>
-        </tr>
-        <tr>
-            <td class="section-title" style="font-weight: 500;">Há registro de acidente anterior com características assemelhadas?</td>
-            <td class="section-title" style="font-weight: 500;">Há indícios de contribuição de aspectos gerenciais relacionados à gestão de jornadas de trabalho, horas extras, intervalos de descanso, etc?</td>
-        </tr>
-        <tr>
-            <td>{{gestaoSeguranca.registroAnteriorSemelhante}}</td>
-            <td>{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisJornadaTrabalho}}</td>
-        </tr>
-        <tr>
-            <td class="section-title" style="font-weight: 500;">Há registros (livro de atas de CIPA, relatórios de acidentes, outros?) de pedido de solução para problema de segurança que persiste sem atendimento por parte de gerências?</td>
-            <td class="section-title" style="font-weight: 500;">Há indícios de contribuição de aspectos gerenciais relacionados à adequação de demandas aos recursos ou capacidade instalada do sistema?</td>
-        </tr>
-        <tr>
-            <td>{{gestaoSeguranca.registroSolictacaoSolucaoProblema}}</td>
-            <td>{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisAdequacaoDemandas}}</td>
-        </tr>
-        
-        <tr>
-            <th colspan="5" class="section-title" style="font-weight: 500;">Outros fatores da gestão do sistema que tenham contribuído para as origens de acidentes?
-            </br>Por favor, descreva-os.</td>
-        </tr>
-        <tr>
-            <td colspan="3">{{gestaoSeguranca.outrosFatores}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th colspan="6" class="section-title">ANÁLISE DA GESTÃO DE SEGURANÇA E DE PROTEÇÃO</th>
+            </tr>
+            <tr>
+                <th colspan="3">GESTÃO DE SEGURANÇA</th>
+                <th colspan="3">GESTÃO DE PRODUÇÃO E DE SUA VARIEDADE</th>
+            </tr>
+            <tr>
+                <td class="section-title" style="font-weight: 500;" colspan="3">Há registro de acidente anterior com características assemelhadas?</td>
+                <td class="section-title" style="font-weight: 500;" colspan="3">Há indícios de contribuição de aspectos gerenciais relacionados à gestão de jornadas de trabalho, horas extras, intervalos de descanso, etc?</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{gestaoSeguranca.registroAnteriorSemelhante}}</td>
+                <td colspan="3">{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisJornadaTrabalho}}</td>
+            </tr>
+            <tr>
+                <td class="section-title" style="font-weight: 500;" colspan="3">Há registros (livro de atas de CIPA, relatórios de acidentes, outros?) de pedido de solução para problema de segurança que persiste sem atendimento por parte de gerências?</td>
+                <td class="section-title" style="font-weight: 500;" colspan="3">Há indícios de contribuição de aspectos gerenciais relacionados à adequação de demandas aos recursos ou capacidade instalada do sistema?</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{gestaoSeguranca.registroSolictacaoSolucaoProblema}}</td>
+                <td colspan="3">{{gestaoProducaoVariedade.contribuicaoAspectosGerenciaisAdequacaoDemandas}}</td>
+            </tr>
+            
+            <tr>
+                <th colspan="6" class="section-title" style="font-weight: 500;">Outros fatores da gestão do sistema que tenham contribuído para as origens de acidentes?
+                </br>Por favor, descreva-os.</td>
+            </tr>
+            <tr>
+                <td colspan="6">{{gestaoSeguranca.outrosFatores}}</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Informações Prestadas Por -->
-    <table>
-        <tr>
-            <th class="section-title">INFORMAÇÕES PRESTADAS POR:</th>
-        </tr>
-        <tr>
-            <td>
-                ( ) Trabalhador 
-                ( ) Preposto do estabelecimento 
-                ( ) Representante Sindical 
-                ( ) Testemunha 
-                ( ) Familiar 
-                ( ) Outros
-            </td>
-        </tr>
-    </table>
-
+     <section>
+        <table>
+            <tr>
+                <th class="section-title">INFORMAÇÕES PRESTADAS POR:</th>
+            </tr>
+            <tr>
+                <td style="display: flex; justify-content: space-around; align-items: center;">
+                    <label><input type="checkbox" name="trabalhador" value="{{informacoesPrestadasPor.trabalhador}}"> Trabalhador</label>
+                    <label><input type="checkbox" name="preposto" value="{{informacoesPrestadasPor.preposto}}"> Preposto</label>
+                    <label><input type="checkbox" name="representanteSindical" value="{{informacoesPrestadasPor.representanteSindical}}"> Representante Sindical</label>
+                    <label><input type="checkbox" name="testemunha" value="{{informacoesPrestadasPor.testemunha}}"> Testemunha</label>
+                    <label><input type="checkbox" name="familiar" value="{{informacoesPrestadasPor.familiar}}"> Familiar</label>
+                    <label><input type="checkbox" name="outros" value="{{informacoesPrestadasPor.outros}}"> Outros</label>
+                </td>
+            </tr>
+        </table>
+    </section>
     <!-- Procedimentos Adotados -->
-    <table>
-        <tr>
-            <th class="section-title">PROCEDIMENTOS ADOTADOS:</th>
-        </tr>
-        <tr>
-            <td>
-                ( ) Intimação 
-                ( ) Infração 
-                ( ) Interdição 
-                ( ) Outro
-            </td>
-        </tr>
-    </table>
-
+     <section>
+        <table>
+            <tr>
+                <th class="section-title">PROCEDIMENTOS ADOTADOS:</th>
+            </tr>
+            <tr>
+                <td style="display: flex; justify-content: space-around; align-items: center;">
+                    <label><input type="checkbox" name="intimacao" value="{{procedimentosAdotados.intimacao}}"> Intimação</label>
+                    <label><input type="checkbox" name="infracao" value="{{procedimentosAdotados.infracao}}"> Infração</label>
+                    <label><input type="checkbox" name="interdicao" value="{{procedimentosAdotados.interdicao}}"> Interdição</label>
+                    <label><input type="checkbox" name="outro" value="{{procedimentosAdotados.outro.chk}}"> Outro</label>
+                    <label><input name="outro" value="{{procedimentosAdotados.outro.desc}}"></label>
+                </td>
+            </tr>
+        </table>
+    </section>
     <!-- Conclusões e Recomendações -->
-    <table>
-        <tr>
-            <th class="section-title">CONCLUSÕES E RECOMENDAÇÕES</th>
-        </tr>
-        <tr>
-            <td>{{conclusoesRecomendacoes}}</td>
-        </tr>
-    </table>
-
+     <section>
+        <table>
+            <tr>
+                <th class="section-title">CONCLUSÕES E RECOMENDAÇÕES</th>
+            </tr>
+            <tr>
+                <td>{{conclusoesRecomendacoes}}</td>
+            </tr>
+        </table>
+    </section>
     <!-- Data e Local das Conclusões -->
-    <table>
-        <tr>
-            <td class="bg-gray">Data</td>
-            <td>{{conclusoesRecomendacoesData}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Local</td>
-            <td>{{conclusoesRecomendacoesLocal}}</td>
-        </tr>
-    </table>
-
+     <section>
+        <table>
+            <tr>
+                <td class="bg-gray">Data</td>
+                <td>{{conclusoesRecomendacoesData}}</td>
+            </tr>
+            <tr>
+                <td class="bg-gray">Local</td>
+                <td>{{conclusoesRecomendacoesLocal}}</td>
+            </tr>
+        </table>
+    </section>
     <!-- Equipe Técnica -->
-    <table>
-        <tr>
-            <th colspan="2" class="section-title">EQUIPE TÉCNICA</th>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe:</td>
-        </tr>
-        <tr>
-            <td>{{equipeTecnica.A}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe</td>
-            
-        </tr>
-        <tr>
-            <td>{{equipeTecnica.B}}</td>
-        </tr>
-        <tr>
-            <td class="bg-gray">De acordo: Nome do responsável para área de visat ou outra correlata</td>
-        </tr>
-        <tr>
-            <td>{{equipeTecnica.deAcordoCom}}</td>
-        </tr>
-    </table>
+    <section>
+        <table>
+            <tr>
+                <th colspan="5" class="section-title">EQUIPE TÉCNICA</th>
+            </tr>
+            <tr>
+                <td colspan="5" class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe:</td>
+            </tr>
+            <tr>
+                <td colspan="5">{{equipeTecnica.A}}</td>
+            </tr>
+            <tr>
+                <td colspan="5" class="bg-gray">Nome do técnico Função/Profissão Conselho de Classe</td>
+                
+            </tr>
+            <tr>
+                <td colspan="5">{{equipeTecnica.B}}</td>
+            </tr>
+            <tr>
+                <td colspan="5" class="bg-gray">De acordo: Nome do responsável para área de visat ou outra correlata</td>
+            </tr>
+            <tr>
+                <td colspan="5">{{equipeTecnica.deAcordoCom}}</td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>

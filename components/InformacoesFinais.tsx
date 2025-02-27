@@ -17,13 +17,24 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
             <View style={info.checkboxContainer}>
                 <Text style={info.checkboxText}>INFORMAÇÕES PRESTADAS POR:</Text>
                 <View style={info.checkboxItem}>
-                    <Checkbox.Item label="Trabalhador" status="unchecked" />
-                    <Checkbox.Item label="Preposto do estabelecimento" status="unchecked" />
-                    <Checkbox.Item label="Representante Sindical" status="unchecked" />
-                    <Checkbox.Item label="Testemunha" status="unchecked" />
-                    <Checkbox.Item label="Familiar" status="unchecked" />
-                    <Checkbox.Item label="Outros" status="unchecked" />
-                    
+                    <Checkbox.Item label="Trabalhador"
+                     status={values.informacoesPrestadasPor.trabalhador?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.trabalhador,'informacoesPrestadasPor.trabalhador')}/>
+                    <Checkbox.Item label="Preposto do estabelecimento"
+                     status={values.informacoesPrestadasPor.preposto?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.preposto,'informacoesPrestadasPor.preposto')} />
+                    <Checkbox.Item label="Representante Sindical"
+                     status={values.informacoesPrestadasPor.representanteSindical?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.representanteSindical,'informacoesPrestadasPor.representanteSindical')} />
+                    <Checkbox.Item label="Testemunha"
+                     status={values.informacoesPrestadasPor.testemunha?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.testemunha,'informacoesPrestadasPor.testemunha')} />
+                    <Checkbox.Item label="Familiar"
+                     status={values.informacoesPrestadasPor.familiar?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.familiar,'informacoesPrestadasPor.familiar')} />
+                    <Checkbox.Item label="Outros"
+                     status={values.informacoesPrestadasPor.outros?'checked': 'unchecked'}
+                     onPress={e=>onMarked(values.informacoesPrestadasPor.outros,'informacoesPrestadasPor.outros')} />  
                 </View>
             </View>
 
@@ -41,14 +52,14 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
                         onPress={e=>onMarked(values.procedimentosAdotados.interdicao,'procedimentosAdotados.interdicao')} />
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Checkbox.Item label="Outro:" 
-                            status={values.procedimentosAdotados.outro?'checked': 'unchecked'}
-                            onPress={e=>onMarked(values.procedimentosAdotados.outro,'procedimentosAdotados.outro')} />
+                            status={values.procedimentosAdotados.outro.chk?'checked': 'unchecked'}
+                            onPress={e=>onMarked(values.procedimentosAdotados.outro.chk,'procedimentosAdotados.outro.chk')} />
                         <View style={{height: 30, width: 90, marginLeft: -20, marginEnd: 10}}>
                             <TextInput
                                 style={{alignItems: 'center', height: 20, }}
-                                value={values.procedimentosAdotados.outro}
-                                onChangeText={handleChange('procedimentosAdotados.outro')}
-                                onBlur={handleBlur('procedimentosAdotados.outro')}
+                                value={values.procedimentosAdotados.outro.desc}
+                                onChangeText={handleChange('procedimentosAdotados.outro.desc')}
+                                onBlur={handleBlur('procedimentosAdotados.outro.desc')}
                             />
                         </View>
                     </View>                  
