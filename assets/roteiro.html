@@ -7,6 +7,7 @@
     <style type="text/css">
         /* Reset básico */
         * {
+            size: A4;
             margin: 0;
             padding: 0;
             text-indent: 0;
@@ -116,6 +117,9 @@
         /* Ajustes para células com rowspan e colspan */
         td[rowspan], td[colspan] {
             width: auto;
+        }
+        .page-break {
+            page-break-before: always; 
         }
        
     </style>
@@ -251,6 +255,9 @@
                 <td class="bg-gray">Município</td>
                 <td>{{estabelecimento.pj.municipio}}</td>
             </tr>
+
+            <div class="page-break"></div>
+
             <tr>
                 <td class="bg-gray">Endereço</td>
                 <td>{{estabelecimento.pf.endereco}}</td>
@@ -393,6 +400,9 @@
                 <td class="bg-gray" colspan="2">Nome do estabelecimento ou local onde ocorreu o acidente</td>
                 <td colspan="3">{{acidente.nomeEstabelecimento}}</td>
             </tr>
+
+            <div class="page-break"></div>
+
             <tr>
                 <td class="bg-gray" colspan="2">Setor do estabelecimento onde ocorreu o acidente</td>
                 <td colspan="3">{{acidente.setorAcidente}}</td>
@@ -491,6 +501,8 @@
         </table>
     </section>
 
+    <div class="page-break"></div>
+
     <!-- Descrição do Trabalho Habitual -->
      <section>
         <table>
@@ -557,6 +569,9 @@
                 <td class="bg-gray" colspan="2">Indivíduo</td>
                 <td colspan="3">{{fatoresContribuintes.individuo}}</td>
             </tr>
+
+            <div class="page-break"></div>
+
             <tr>
                 <td class="bg-gray" colspan="2">Tarefa</td>
                 <td colspan="3">{{fatoresContribuintes.tarefa}}</td>
@@ -660,6 +675,8 @@
             </tr>
         </table>
     </section>
+
+    <div class="page-break"></div>
     <!-- Análise da Gestão de Segurança e de Proteção -->
     <section>
         <table>
@@ -705,12 +722,13 @@
             </tr>
             <tr>
                 <td style="display: flex; justify-content: space-around; align-items: center;">
-                    <label><input type="checkbox" name="trabalhador" value="{{informacoesPrestadasPor.trabalhador}}"> Trabalhador</label>
-                    <label><input type="checkbox" name="preposto" value="{{informacoesPrestadasPor.preposto}}"> Preposto</label>
-                    <label><input type="checkbox" name="representanteSindical" value="{{informacoesPrestadasPor.representanteSindical}}"> Representante Sindical</label>
-                    <label><input type="checkbox" name="testemunha" value="{{informacoesPrestadasPor.testemunha}}"> Testemunha</label>
-                    <label><input type="checkbox" name="familiar" value="{{informacoesPrestadasPor.familiar}}"> Familiar</label>
-                    <label><input type="checkbox" name="outros" value="{{informacoesPrestadasPor.outros}}"> Outros</label>
+                    <label><input type="checkbox" name="trabalhador" {{informacoesPrestadasPor.trabalhador}}> Trabalhador</label>
+                    <label><input type="checkbox" name="preposto" {{informacoesPrestadasPor.preposto}}> Preposto</label>
+                    <label><input type="checkbox" name="representanteSindical" {{informacoesPrestadasPor.representanteSindical}}> Representante Sindical</label>
+                    <label><input type="checkbox" name="testemunha" {{informacoesPrestadasPor.testemunha}}> Testemunha</label>
+                    <label><input type="checkbox" name="familiar" {{informacoesPrestadasPor.familiar}}> Familiar</label>
+                    <label><input type="checkbox" name="outros" {{informacoesPrestadasPor.outros.chk}}> Outros:</label>
+                    <label><input name="outro" value="{{informacoesPrestadasPor.outros.desc}}"></label>
                 </td>
             </tr>
         </table>
@@ -723,15 +741,17 @@
             </tr>
             <tr>
                 <td style="display: flex; justify-content: space-around; align-items: center;">
-                    <label><input type="checkbox" name="intimacao" value="{{procedimentosAdotados.intimacao}}"> Intimação</label>
-                    <label><input type="checkbox" name="infracao" value="{{procedimentosAdotados.infracao}}"> Infração</label>
-                    <label><input type="checkbox" name="interdicao" value="{{procedimentosAdotados.interdicao}}"> Interdição</label>
-                    <label><input type="checkbox" name="outro" value="{{procedimentosAdotados.outro.chk}}"> Outro</label>
-                    <label><input name="outro" value="{{procedimentosAdotados.outro.desc}}"></label>
+                    <label><input type="checkbox" name="intimacao" v{{procedimentosAdotados.intimacao}}> Intimação</label>
+                    <label><input type="checkbox" name="infracao" {{procedimentosAdotados.infracao}}> Infração</label>
+                    <label><input type="checkbox" name="interdicao" {{procedimentosAdotados.interdicao}}> Interdição</label>
+                    <label><input type="checkbox" name="outro" {{procedimentosAdotados.outros.chk}}> Outros:</label>
+                    <label><input name="outro" value="{{procedimentosAdotados.outros.desc}}"></label>
                 </td>
             </tr>
         </table>
     </section>
+
+    <div class="page-break"></div>
     <!-- Conclusões e Recomendações -->
      <section>
         <table>

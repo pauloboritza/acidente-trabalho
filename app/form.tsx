@@ -74,7 +74,7 @@ const Form = () => {
         },
         outrosFatoresGestaoSistemaContribuido:'',
         informacoesPrestadasPor: {trabalhador: '',preposto: '',representanteSindical: '',testemunha: '',familiar: '',outros:{chk:'', desc:''}},
-        procedimentosAdotados: {intimacao: '',infracao: '',interdicao: '',outro: ''},
+        procedimentosAdotados: {intimacao: '',infracao: '',interdicao: '',outros:{chk:'', desc:''}},
         conclusoesRecomendacoes: '',
         conclusoesRecomendacoesData:'',
         conclusoesRecomendacoesLocal:'',

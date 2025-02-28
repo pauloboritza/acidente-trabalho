@@ -4,10 +4,10 @@ import { RadioButton, TextInput, Text, List, Divider, Checkbox } from "react-nat
 import DatePiker from "./DatePiker";
 const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: any)=>{
     function onMarked(value: any, field: any){
-        if(value == 'S'){
+        if(value == 'checked'){
             setFieldValue(field, '')
         }else{
-            setFieldValue(field, 'S')
+            setFieldValue(field, 'checked')
         }
         
     }
@@ -32,9 +32,19 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
                     <Checkbox.Item label="Familiar"
                      status={values.informacoesPrestadasPor.familiar?'checked': 'unchecked'}
                      onPress={e=>onMarked(values.informacoesPrestadasPor.familiar,'informacoesPrestadasPor.familiar')} />
-                    <Checkbox.Item label="Outros"
-                     status={values.informacoesPrestadasPor.outros?'checked': 'unchecked'}
-                     onPress={e=>onMarked(values.informacoesPrestadasPor.outros,'informacoesPrestadasPor.outros')} />  
+                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Checkbox.Item label="Outro:" 
+                            status={values.informacoesPrestadasPor.outros.chk?'checked': 'unchecked'}
+                            onPress={e=>onMarked(values.informacoesPrestadasPor.outros.chk,'informacoesPrestadasPor.outros.chk')} />
+                        <View style={{height: 30, width: 90, marginLeft: -20, marginEnd: 10}}>
+                            <TextInput
+                                style={{alignItems: 'center', height: 20, }}
+                                value={values.informacoesPrestadasPor.outros.desc}
+                                onChangeText={handleChange('informacoesPrestadasPor.outros.desc')}
+                                onBlur={handleBlur('informacoesPrestadasPor.outros.desc')}
+                            />
+                        </View>
+                    </View>   
                 </View>
             </View>
 
@@ -51,15 +61,15 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
                         status={values.procedimentosAdotados.interdicao?'checked': 'unchecked'}
                         onPress={e=>onMarked(values.procedimentosAdotados.interdicao,'procedimentosAdotados.interdicao')} />
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                        <Checkbox.Item label="Outro:" 
-                            status={values.procedimentosAdotados.outro.chk?'checked': 'unchecked'}
-                            onPress={e=>onMarked(values.procedimentosAdotados.outro.chk,'procedimentosAdotados.outro.chk')} />
+                        <Checkbox.Item label="Outros:" 
+                            status={values.procedimentosAdotados.outros.chk?'checked': 'unchecked'}
+                            onPress={e=>onMarked(values.procedimentosAdotados.outros.chk,'procedimentosAdotados.outros.chk')} />
                         <View style={{height: 30, width: 90, marginLeft: -20, marginEnd: 10}}>
                             <TextInput
                                 style={{alignItems: 'center', height: 20, }}
-                                value={values.procedimentosAdotados.outro.desc}
-                                onChangeText={handleChange('procedimentosAdotados.outro.desc')}
-                                onBlur={handleBlur('procedimentosAdotados.outro.desc')}
+                                value={values.procedimentosAdotados.outros.desc}
+                                onChangeText={handleChange('procedimentosAdotados.outros.desc')}
+                                onBlur={handleBlur('procedimentosAdotados.outros.desc')}
                             />
                         </View>
                     </View>                  
