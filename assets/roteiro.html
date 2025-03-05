@@ -120,8 +120,10 @@
         }
         .page-break {
             page-break-before: always; 
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
-       
+        
     </style>
 </head>
 <body>
@@ -255,9 +257,12 @@
                 <td class="bg-gray">Município</td>
                 <td>{{estabelecimento.pj.municipio}}</td>
             </tr>
+        </table>
+    </section>
 
-            <div class="page-break"></div>
-
+    <div class="page-break"></div>
+    <section>
+        <table>           
             <tr>
                 <td class="bg-gray">Endereço</td>
                 <td>{{estabelecimento.pf.endereco}}</td>
@@ -399,110 +404,113 @@
             <tr>
                 <td class="bg-gray" colspan="2">Nome do estabelecimento ou local onde ocorreu o acidente</td>
                 <td colspan="3">{{acidente.nomeEstabelecimento}}</td>
-            </tr>
-
-            <div class="page-break"></div>
-
+            </tr>               
+        </table>
+    </section>
+    <div class="page-break"></div>
+    <section>
+        <table>            
             <tr>
                 <td class="bg-gray" colspan="2">Setor do estabelecimento onde ocorreu o acidente</td>
-                <td colspan="3">{{acidente.setorAcidente}}</td>
+                <td colspan="5">{{acidente.setorAcidente}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Município onde ocorreu o acidente</td>
-                <td colspan="3">{{acidente.municipioAcidente}}</td>
+                <td colspan="5">{{acidente.municipioAcidente}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Endereço onde ocorreu o acidente</td>
-                <td colspan="3">{{acidente.enderecoAcidente}}</td>
+                <td colspan="5">{{acidente.enderecoAcidente}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Data</td>
-                <td colspan="2">{{acidente.data}}</td>
+                <td colspan="3">{{acidente.data}}</td>
                 <td class="bg-gray">Hora</td>
-                <td>{{acidente.hora}}</td>
+                <td colspan="2">{{acidente.hora}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Após quantas horas trabalhadas</td>
-                <td colspan="3">{{acidente.horasTrabalhadas}}</td>
+                <td colspan="5">{{acidente.horasTrabalhadas}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Práticas de horas extras</td>
-                <td colspan="3">
+                <td colspan="5">
                     {{acidente.fazHorasExtras}}
                 </td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Descreva quantas horas por dia, por semana ou por mês de Horas extras</td>
-                <td colspan="3">{{acidente.qtdHorasExtras}}</td>
+                <td colspan="5">{{acidente.qtdHorasExtras}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Função no momento do acidente</td>
-                <td colspan="3">{{acidente.funcaoAcidente}}</td>
+                <td colspan="5">{{acidente.funcaoAcidente}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Há quanto tempo está na função</td>
-                <td colspan="3">{{acidente.tempoFuncao}}</td>
+                <td colspan="5">{{acidente.tempoFuncao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Houve treinamento</td>
-                <td colspan="3">
+                <td colspan="5">
                     {{acidente.teveTreinamento}}
                 </td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Treinamento comprovado</td>
-                <td colspan="3">
+                <td colspan="5">
                     {{acidente.teveTreinamentoComp}}
                 </td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Descreva o treinamento</td>
-                <td colspan="3">{{acidente.descricaoTreinamento}}</td>
+                <td colspan="5">{{acidente.descricaoTreinamento}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">O acidente ocorreu em situação de manutenção de máquina ou equipamento</td>
-                <td colspan="3">
+                <td colspan="5">
                 {{acidente.causaAcidenteManuEq}}
                 </td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Causa do acidente</td>
-                <td colspan="3">{{acidente.causaAcidente}}</td>
+                <td colspan="5">{{acidente.causaAcidente}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Diagnóstico da lesão</td>
-                <td colspan="3">{{acidente.diagnosticoLesao}}</td>
+                <td colspan="5">{{acidente.diagnosticoLesao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Causa básica do óbito</td>
-                <td colspan="3">{{acidente.causaObito}}</td>
-            </tr>
-            <tr>
-                <td class="bg-gray" colspan="2">Mais trabalhadores atingidos</td>
-                <td colspan="3">
-                    {{acidente.maisTrabalhadoresAtingidos.res}}
-                    Quantos ({{acidente.maisTrabalhadoresAtingidos.qtd}}) 
-                </td>
+                <td colspan="5">{{acidente.causaObito}}</td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Outros óbitos</td>
-                <td colspan="3">
+                <td colspan="5">
                     {{acidente.acidente.outrosObitos.res}}
                     Quantos ({{acidente.outrosObitos.qtd}})
                 </td>
             </tr>
             <tr>
                 <td class="bg-gray" colspan="2">Outros acidentes foram registrados no Estabelecimento?</td>
-                <td colspan="3">
+                <td colspan="5">
                     {{acidente.outrosAcidentes.res}}
                     Quantos ({{acidente.outrosAcidentes.qtd}}) 
                 </td>
             </tr>
+            </tr>
+            <tr>
+                <td class="bg-gray" colspan="2">Mais trabalhadores atingidos</td>
+                <td colspan="5">
+                    {{acidente.maisTrabalhadoresAtingidos.res}}
+                    Quantos ({{acidente.maisTrabalhadoresAtingidos.qtd}}) 
+                </td>
+            </tr>
+            <tr>
         </table>
     </section>
 
     <div class="page-break"></div>
-
     <!-- Descrição do Trabalho Habitual -->
      <section>
         <table>
@@ -569,9 +577,11 @@
                 <td class="bg-gray" colspan="2">Indivíduo</td>
                 <td colspan="3">{{fatoresContribuintes.individuo}}</td>
             </tr>
-
-            <div class="page-break"></div>
-
+        </table>
+    </section>
+    <div class="page-break"></div>
+    <section>
+        <table>           
             <tr>
                 <td class="bg-gray" colspan="2">Tarefa</td>
                 <td colspan="3">{{fatoresContribuintes.tarefa}}</td>

@@ -3,11 +3,12 @@ import { useLocalSearchParams } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
 
 import React, { useState, useEffect } from 'react';
-import { View, Button, Platform, ScrollView } from 'react-native';
+import { View, Button, Platform, ScrollView,Text } from 'react-native';
 import WebView from 'react-native-webview';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as Asset from 'expo-asset';
+import Constants from 'expo-constants';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
 const Details = ()=>{
@@ -28,6 +29,7 @@ const Details = ()=>{
         }           
     }
     // 📌 FUNÇÃO PARA SUBSTITUIR AS VARIÁVEIS NO HTML
+    // @ts-nocheck
     const replaceTemplate = (html: any, data: any) => {
         return html.replace(/{{(.*?)}}/g, (_, key) => {
         const keys = key.trim().split('.');
@@ -43,10 +45,10 @@ const Details = ()=>{
         try {
         const options: any = {
             html: htmlContent,
-            fileName: 'Relatorio_Acidente',
+            fileName: `RELATORIO_${data.trabalhador.nome.replace(/\s/g, '')}`,
             directory: FileSystem.documentDirectory,
-            width: 595, // Largura do A4 em pixels
-            height: 842, // Altura do A4 em pixels
+            // width: 595, // Largura do A4 em pixels
+            // height: 842, // Altura do A4 em pixels
             padding: 10, // 🔥 Reduzimos padding para evitar cortes
         };
 
@@ -61,7 +63,12 @@ const Details = ()=>{
     // 📌 COMPARTILHAR PDF GERADO
     const sharePDF = async () => {
         if (pdfPath && (await Sharing.isAvailableAsync())) {
-        await Sharing.shareAsync(pdfPath);
+            console.log(pdfPath)
+            await Sharing.shareAsync(pdfPath, {
+                UTI: 'com.adobe.pdf',
+                mimeType: 'application/pdf',
+                dialogTitle: 'Compartilhar PDF',
+            });
         } else {
         alert('O compartilhamento não está disponível no seu dispositivo.');
         }
@@ -94,18 +101,27 @@ const Details = ()=>{
     return(
         <ScrollView>
             {data && <>
-                <View style={{ flex: 1 }}>
-                    {htmlContent ? (
+                <View style={{                     
+                    flex: 1,
+                 }}>
+                    {htmlContent ? 
+                    <View style={{flex: 1}}>
                         <WebView
                         originWhitelist={['*']}
-                        source={{ html: htmlContent }}
-                        style={{ flex: 1 }}
-                        />
-                    ) : (
+                        source={{ html: htmlContent}}
+                        style={{ 
+                            flex: 1,
+                            marginTop: Constants.statusBarHeight,
+                        }}                        
+                        >
+                        </WebView>
+                    <Text>Carregou o HTML</Text>
+                    </View>
+                     :
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <Button title="Carregando HTML..." disabled />
                         </View>
-                    )}
+                    }
                     <View style={{ padding: 10 }}>
                         <Button title="Gerar PDF" onPress={createPDF} />
                         {pdfPath && <Button title="Compartilhar PDF" onPress={sharePDF} />}
