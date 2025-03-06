@@ -120,7 +120,7 @@
         }
         .page-break {
             page-break-before: always; 
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
         
@@ -217,8 +217,8 @@
                 <td>{{trabalhador.numero}}</td>
             </tr>
             <tr>
-                <td class="bg-gray">Município de Residência</td>
-                <td colspan="5">{{trabalhador.municipioResidencia}}</td>
+                <td colspan="2" class="bg-gray">Município de Residência</td>
+                <td colspan="4">{{trabalhador.municipioResidencia}}</td>
             </tr>
         </table>
     </section>
@@ -737,8 +737,10 @@
                     <label><input type="checkbox" name="representanteSindical" {{informacoesPrestadasPor.representanteSindical}}> Representante Sindical</label>
                     <label><input type="checkbox" name="testemunha" {{informacoesPrestadasPor.testemunha}}> Testemunha</label>
                     <label><input type="checkbox" name="familiar" {{informacoesPrestadasPor.familiar}}> Familiar</label>
-                    <label><input type="checkbox" name="outros" {{informacoesPrestadasPor.outros.chk}}> Outros:</label>
-                    <label><input name="outro" value="{{informacoesPrestadasPor.outros.desc}}"></label>
+                    <div>
+                        <label><input type="checkbox" name="outros" {{informacoesPrestadasPor.outros.chk}}> Outros:</label>
+                        <label><input style="width: 100px;" name="outro" value="{{informacoesPrestadasPor.outros.desc}}"></label>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -754,8 +756,10 @@
                     <label><input type="checkbox" name="intimacao" v{{procedimentosAdotados.intimacao}}> Intimação</label>
                     <label><input type="checkbox" name="infracao" {{procedimentosAdotados.infracao}}> Infração</label>
                     <label><input type="checkbox" name="interdicao" {{procedimentosAdotados.interdicao}}> Interdição</label>
-                    <label><input type="checkbox" name="outro" {{procedimentosAdotados.outros.chk}}> Outros:</label>
-                    <label><input name="outro" value="{{procedimentosAdotados.outros.desc}}"></label>
+                    <div>
+                        <label><input type="checkbox" name="outro" {{procedimentosAdotados.outros.chk}}> Outros:</label>
+                        <label><input style="width: 120px;" name="outro" value="{{procedimentosAdotados.outros.desc}}"></label>
+                    </div>
                 </td>
             </tr>
         </table>

@@ -2,13 +2,13 @@
 import { useLocalSearchParams } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
 
-import React, { useState, useEffect } from 'react';
-import { View, Button, Platform, ScrollView,Text } from 'react-native';
-import WebView from 'react-native-webview';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { Button } from "react-native-paper";
+import { WebView } from 'react-native-webview';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as Asset from 'expo-asset';
-import Constants from 'expo-constants';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
 const Details = ()=>{
@@ -16,7 +16,7 @@ const Details = ()=>{
     const { id } = useLocalSearchParams();
     const { get } = useAcidentesDatabase();
     const [htmlContent, setHtmlContent] = useState('');
-    const [pdfPath, setPdfPath] = useState(null);
+    const [pdfPath, setPdfPath]:any = useState(null);
 
     const lodadData = async ()=>{
         try {
@@ -46,9 +46,9 @@ const Details = ()=>{
         const options: any = {
             html: htmlContent,
             fileName: `RELATORIO_${data.trabalhador.nome.replace(/\s/g, '')}`,
-            directory: FileSystem.documentDirectory,
-            // width: 595, // Largura do A4 em pixels
-            // height: 842, // Altura do A4 em pixels
+            directory: FileSystem.cacheDirectory,
+            width: 595, // Largura do A4 em pixels
+            height: 842, // Altura do A4 em pixels
             padding: 10, // 🔥 Reduzimos padding para evitar cortes
         };
 
@@ -60,17 +60,22 @@ const Details = ()=>{
         }
     };
 
-    // 📌 COMPARTILHAR PDF GERADO
+    // 📌 COMPARTILHAR PDF GERADO    
     const sharePDF = async () => {
         if (pdfPath && (await Sharing.isAvailableAsync())) {
-            console.log(pdfPath)
-            await Sharing.shareAsync(pdfPath, {
-                UTI: 'com.adobe.pdf',
-                mimeType: 'application/pdf',
-                dialogTitle: 'Compartilhar PDF',
-            });
+            try {
+                //Tranforma pdfPath em um tipo de URI compartilhavel
+                const fileUri = pdfPath.startsWith('file:///') ? pdfPath : `file:///${pdfPath.replace('file://', '')}`;              
+    
+                await Sharing.shareAsync(fileUri, {
+                    mimeType: 'application/pdf',
+                    dialogTitle: 'Compartilhar PDF',
+                });
+            } catch (error) {
+                console.error('Erro ao converter o caminho do arquivo:', error);
+            }
         } else {
-        alert('O compartilhamento não está disponível no seu dispositivo.');
+            alert('O compartilhamento não está disponível no seu dispositivo.');
         }
     };
     const loadHtmlFile = async () => {
@@ -91,7 +96,7 @@ const Details = ()=>{
     React.useEffect(()=>{        
         if(data){
             loadHtmlFile();
-            console.log(htmlContent)
+            //console.log(htmlContent)
         }else{
             lodadData();
         }       
@@ -99,37 +104,44 @@ const Details = ()=>{
         return
     },[data, htmlContent])
     return(
-        <ScrollView>
+        <>
             {data && <>
-                <View style={{                     
-                    flex: 1,
-                 }}>
+                <View style={styles.webViewContainer}>
                     {htmlContent ? 
                     <View style={{flex: 1}}>
                         <WebView
                         originWhitelist={['*']}
                         source={{ html: htmlContent}}
                         style={{ 
-                            flex: 1,
-                            marginTop: Constants.statusBarHeight,
-                        }}                        
+                            flex: 1
+                        }}
+                        javaScriptEnabled={true}
+                        domStorageEnabled={true}                        
                         >
                         </WebView>
-                    <Text>Carregou o HTML</Text>
                     </View>
                      :
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                        <Button title="Carregando HTML..." disabled />
+                        <Button disabled>Carregando HTML...</Button>
                         </View>
                     }
-                    <View style={{ padding: 10 }}>
-                        <Button title="Gerar PDF" onPress={createPDF} />
-                        {pdfPath && <Button title="Compartilhar PDF" onPress={sharePDF} />}
+                    <View style={{ padding: 10, gap: 5 }}>
+                        <Button mode="contained" onPress={createPDF}>Gerar PDF</Button>
+                        {pdfPath && <Button mode="contained" onPress={sharePDF}>Compartilhar PDF</Button>}
                     </View>
                 </View>
             </>}
-        </ScrollView>
+        </>
     )
 }
 
 export default Details;
+
+const styles = StyleSheet.create({
+    webViewContainer:{
+        flex: 1,
+        width: 'auto',
+        height: 'auto',
+        
+    }
+})
