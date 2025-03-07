@@ -20,6 +20,7 @@ const RoteiroInicial = ({ values, handleChange, handleBlur, setFieldValue }: any
             onChangeText={handleChange('numeroSinan')}
             onBlur={handleBlur('numeroSinan')}
             style={styles.input}
+            keyboardType="number-pad"
           />
 
           <View style={styles.input}>

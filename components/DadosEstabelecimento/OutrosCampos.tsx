@@ -5,17 +5,20 @@ import { RadioButton, TextInput, Text } from "react-native-paper";
 const OutrosCampos = ({ values, handleChange, handleBlur }: any) => (
     <View>
       <TextInput
+        keyboardType="number-pad"
         label="Número Total de Trabalhadores"
         value={values.estabelecimento.nTotalTrabalhadores} 
         onChangeText={handleChange('estabelecimento.nTotalTrabalhadores')}
         onBlur={handleBlur('estabelecimento.nTotalTrabalhadores')}
         style={styles.input} />
       <TextInput label="Número de Homens"
+        keyboardType="number-pad"
         value={values.estabelecimento.nHomens}
         onChangeText={handleChange('estabelecimento.nHomens')}
         onBlur={handleBlur('estabelecimento.nHomens')}
         style={styles.input} />
       <TextInput label="Número de Mulheres"
+        keyboardType="number-pad"
         value={values.estabelecimento.nMulheres}
         onChangeText={handleChange('estabelecimento.nMulheres')}
         onBlur={handleBlur('estabelecimento.nMulheres')}

@@ -111,6 +111,7 @@ const Form = () => {
         values={values}
         handleBlur={handleBlur}
         handleChange={handleChange}
+        setFieldValue={setFieldValue}
       />
 
       <Divider style={styles.divider} />

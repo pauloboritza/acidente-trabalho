@@ -1,7 +1,8 @@
 import styles from "@/constants/styles";
 import { View } from "react-native";
 import { RadioButton, TextInput, Text, List } from "react-native-paper";
-const DadosTrabalhador = ({ values, handleBlur, handleChange}: any) => (
+import DatePiker from "./DatePiker";
+const DadosTrabalhador = ({ values, handleBlur, handleChange, setFieldValue}: any) => (
     <List.Accordion title="Dados do Trabalhador" left={(props) => <List.Icon {...props} icon="account" />}>
         <View style={styles.section}>
           <TextInput
@@ -40,6 +41,7 @@ const DadosTrabalhador = ({ values, handleBlur, handleChange}: any) => (
             </View>
           </View>
           <TextInput
+            keyboardType="number-pad"
             label="Idade"
             value={values.trabalhador.idade}
             onChangeText={handleChange('trabalhador.idade')}
@@ -52,12 +54,11 @@ const DadosTrabalhador = ({ values, handleBlur, handleChange}: any) => (
             onChangeText={handleChange('trabalhador.raca')}
             onBlur={handleBlur('trabalhador.raca')}
             style={styles.input}
-          />
-          <TextInput
-            label="Data de Nascimento"
-            value={values.trabalhador.dataNascimento}
-            onChangeText={handleChange('trabalhador.dataNascimento')}
-            onBlur={handleBlur('trabalhador.dataNascimento')}
+          />          
+          <DatePiker 
+            label='Data de Nascimento'
+            fieldValue='trabalhador.dataNascimento'
+            setFieldValue={setFieldValue}
             style={styles.input}
           />
           <TextInput
@@ -81,11 +82,11 @@ const DadosTrabalhador = ({ values, handleBlur, handleChange}: any) => (
             onBlur={handleBlur('trabalhador.ocupacao')}
             style={styles.input}
           />
-          <TextInput
-            label="Data de Admissão"
-            value={values.trabalhador.dataAdmissao}
-            onChangeText={handleChange('trabalhador.dataAdmissao')}
-            onBlur={handleBlur('trabalhador.dataAdmissao')}
+          
+          <DatePiker 
+            label='Data de Admissão'
+            fieldValue='trabalhador.dataAdmissao'
+            setFieldValue={setFieldValue}
             style={styles.input}
           />
           <TextInput

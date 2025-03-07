@@ -1,7 +1,8 @@
 import { useLocalSearchParams } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Button, Alert } from "react-native";
+import { View, StyleSheet, Alert } from "react-native";
+import { Button } from "react-native-paper";
 import { WebView } from "react-native-webview";
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
@@ -59,7 +60,17 @@ const Details = () => {
 
   const printToPDF = async () => {
     try {
-      const { uri } = await Print.printToFileAsync({ html: htmlContent });
+      const { uri } = await Print.printToFileAsync({ 
+        html: htmlContent,
+        width: 650, // Largura 595 do A4 em pixels
+        height: 842, // Altura 842 do A4 em pixels
+        margins: {
+            left: 20,
+            top: 50,
+            right: 20,
+            bottom: 50,
+        }
+     });
       console.log("PDF gerado em:", uri);
       await shareAsync(uri, { mimeType: "application/pdf" });
     } catch (error) {
@@ -72,10 +83,10 @@ const Details = () => {
       {htmlContent ? (
         <WebView originWhitelist={["*"]} source={{ html: htmlContent }} style={styles.webView} />
       ) : (
-        <Button title="Carregando HTML..." disabled />
+        <Button mode="contained" disabled>Carregando HTML...</Button>
       )}
       <View style={styles.buttonContainer}>
-        <Button title="Gerar e Compartilhar PDF" onPress={printToPDF} />
+        <Button mode="contained" onPress={printToPDF}>Gerar PDF e Compartilhar</Button>
       </View>
     </View>
   );

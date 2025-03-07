@@ -2,6 +2,7 @@ import styles from "@/constants/styles";
 import { View } from "react-native";
 import { RadioButton, TextInput, Text, List } from "react-native-paper";
 import DatePiker from "./DatePiker";
+import TimePiker from "./TimePiker";
 
 const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) => (
 <List.Accordion title="Dados do Acidente" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
@@ -70,12 +71,12 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             label='Data do Acidente'
             fieldValue='acidente.data'
             setFieldValue={setFieldValue}
+            style={styles.input}
           />
-          <TextInput
-            label="Hora do Acidente"
-            value={values.acidente.hora}
-            onChangeText={handleChange('acidente.hora')}
-            onBlur={handleBlur('acidente.hora')}
+          <TimePiker 
+            label='Hora do Acidente'
+            fieldValue='acidente.hora'
+            setFieldValue={setFieldValue}
             style={styles.input}
           />
           <TextInput
@@ -84,6 +85,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             onChangeText={handleChange('acidente.horasTrabalhadas')}
             onBlur={handleBlur('acidente.horasTrabalhadas')}
             style={styles.input}
+            keyboardType="number-pad"
           />
           <View style={{marginBottom: 15}}>
             <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
@@ -105,6 +107,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
             onChangeText={handleChange('acidente.qtdHorasExtras')}
             onBlur={handleBlur('acidente.qtdHorasExtras')}
             style={styles.input}
+            keyboardType="number-pad"
           />
           <TextInput
             label="Função no Momento do Acidente"
@@ -211,6 +214,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
                       value={values.acidente.maisTrabalhadoresAtingidos.qtd}
                       onChangeText={handleChange('acidente.maisTrabalhadoresAtingidos.qtd')}
                       onBlur={handleBlur('acidente.maisTrabalhadoresAtingidos.qtd')}
+                      keyboardType="number-pad"
                     />
                     </View>
                     <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
@@ -241,6 +245,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
                       value={values.acidente.outrosObitos.qtd}
                       onChangeText={handleChange('acidente.outrosObitos.qtd')}
                       onBlur={handleBlur('acidente.outrosObitos.qtd')}
+                      keyboardType="number-pad"
                     />
                     </View>
                     <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
@@ -271,6 +276,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
                       value={values.acidente.outrosAcidentes.qtd}
                       onChangeText={handleChange('acidente.outrosAcidentes.qtd')}
                       onBlur={handleBlur('acidente.outrosAcidentes.qtd')}
+                      keyboardType="number-pad"
                     />
                     </View>
                     <Text style={{fontSize: 16, fontWeight: 600}}>)</Text>
