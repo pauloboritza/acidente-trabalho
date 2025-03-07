@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView, View, FlatList } from 'react-native';
-import { Button, Divider, List, Text, Checkbox, RadioButton } from 'react-native-paper';
+import React from 'react';
+import { ScrollView, View } from 'react-native';
+import { Button, Divider, List, Text} from 'react-native-paper';
 import { Alert } from 'react-native';
-import { Formik, FormikErrors } from 'formik';
+import { Formik } from 'formik';
 import { router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AnaliseBarreiras from '@/components/AnaliseBarreiras';
 import DadosEstabelecimento from '@/components/DadosEstabelecimento';
 import styles from '@/constants/styles';
@@ -34,6 +35,7 @@ const Form = () => {
  
 
   return (
+    <SafeAreaView style={{ flex: 1 }}>
     <Formik
       initialValues={{
         dataInspecao: undefined,numeroSinan:'',motivoInspecao:'', 
@@ -192,6 +194,7 @@ const Form = () => {
 
     )}
     </Formik>
+    </SafeAreaView>
   );
 };
 

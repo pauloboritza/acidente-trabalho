@@ -8,6 +8,7 @@ import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
 import * as Asset from "expo-asset";
 import * as FileSystem from "expo-file-system";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Details = () => {
   const [data, setData] = useState<Record<string, any> | null>(null);
@@ -79,16 +80,18 @@ const Details = () => {
   };
 
   return (
-    <View style={styles.container}>
-      {htmlContent ? (
-        <WebView originWhitelist={["*"]} source={{ html: htmlContent }} style={styles.webView} />
-      ) : (
-        <Button mode="contained" disabled>Carregando HTML...</Button>
-      )}
-      <View style={styles.buttonContainer}>
-        <Button mode="contained" onPress={printToPDF}>Gerar PDF e Compartilhar</Button>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        {htmlContent ? (
+          <WebView originWhitelist={["*"]} source={{ html: htmlContent }} style={styles.webView} />
+        ) : (
+          <Button mode="contained" disabled>Carregando HTML...</Button>
+        )}
+        <View style={styles.buttonContainer}>
+          <Button mode="contained" onPress={printToPDF}>Gerar PDF e Compartilhar</Button>
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
