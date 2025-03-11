@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "acidente-trabalho",
+    "name": "Acidente Trabalho",
     "slug": "acidente-trabalho",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -46,8 +46,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "e40e4773-16ab-42d0-9249-88ab503a762b"
+        "projectId": "8915cc6a-ed1e-4ca6-9b4a-b91b50c6c3ae"
       }
-    }
+    },
+    "owner": "pauloboritza"
   }
 }
