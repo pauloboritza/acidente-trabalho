@@ -2,7 +2,7 @@
   "expo": {
     "name": "Acidente Trabalho",
     "slug": "acidente-trabalho",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,10 +10,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.acidente.trabalho"
+      "bundleIdentifier": "com.inv.acidente.trabalho"
     },
     "android": {
-      "package": "com.acidente.trabalho",
+      "package": "com.inv.acidente.trabalho",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
