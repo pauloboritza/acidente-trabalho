@@ -14,6 +14,13 @@ npm install
    npx expo start
 ```
 ## Build 
+- Build Local
+  ```sh
+  npx expo prebuild
+  ```
+```sh
+ cd android && ./gradlew assembleRelease
+```
 - install eas
 ```bash
 npm install -g eas-cli
