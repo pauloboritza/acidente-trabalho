@@ -11,7 +11,6 @@ export function useAcidentesDatabase(): any{
                 $data: JSON.stringify(data),
                 $createdAt: Date.now()
             })
-            console.log(result)
             const resultId = result.lastInsertRowId.toLocaleString()
             return { resultId }
         } catch (error) {
@@ -20,7 +19,7 @@ export function useAcidentesDatabase(): any{
             await statement.finalizeAsync()
         }
     }
-    async function update(data: any, id: number) {
+    async function update(id: number, data: any) {
         const statement = await database.prepareAsync(
           "UPDATE acidentes SET data = $data WHERE id = $id"
         )
@@ -28,7 +27,7 @@ export function useAcidentesDatabase(): any{
         try {
           await statement.executeAsync({
             $id: id,
-            $data: data,
+            $data: JSON.stringify(data),
           })
         } catch (error) {
           throw error
@@ -43,8 +42,7 @@ export function useAcidentesDatabase(): any{
           const response:any = await database.getFirstAsync(query, [
             id,
           ])
-          const parse = await JSON.parse(response?.data)
-              
+          const parse = await JSON.parse(response?.data)  
           return parse
         } catch (error) {
           throw error
@@ -54,7 +52,6 @@ export function useAcidentesDatabase(): any{
         try {
             const query = "SELECT id, json_extract(data, '$.trabalhador.nome') AS nome, createdAt FROM acidentes ORDER BY createdAt DESC"
             const response: any = await database.getAllAsync(query)
-            
             return response
         } catch (error) {
             throw error

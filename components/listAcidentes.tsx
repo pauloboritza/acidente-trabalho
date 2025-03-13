@@ -14,13 +14,12 @@ const ListAcidentes = ()=>{
             const res = await getList()
             setAcidentes(res)
         } catch (error) {
-            console.log(error)
+            console.log("Database GetList", error)
         }        
     }
     useFocusEffect(
         useCallback(() =>{
             getAcidentes()
-            console.log('RENDER')
         },[])
     )
     useEffect(()=>{

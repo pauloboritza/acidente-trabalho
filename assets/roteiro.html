@@ -487,7 +487,7 @@
             <tr>
                 <td class="bg-gray" colspan="2">Outros óbitos</td>
                 <td colspan="5">
-                    {{acidente.acidente.outrosObitos.res}}
+                    {{acidente.outrosObitos.res}}
                     Quantos ({{acidente.outrosObitos.qtd}})
                 </td>
             </tr>
@@ -615,73 +615,73 @@
             </tr>
             <tr>
                 <td class="bg-gray">Mecânica (corte, prensagem, punção com partes que se movem de qualquer modo, etc)</td>
-                <td>{{barreiras.mecanica.semFalha}}</td>
-                <td>{{barreiras.mecanica.comFalha}}</td>
-                <td>{{barreiras.mecanica.ausente}}</td>
-                <td>{{barreiras.mecanica.observacao}}</td>
+                <td>{{analiseBarreiras.mecanica.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.mecanica.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.mecanica.ausentes}}</td>
+                <td>{{analiseBarreiras.mecanica.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Cinética (impactos contra ou de coisas em movimento ou parada, quedas, partículas em movimento)</td>
-                <td>{{barreiras.cinetica.semFalha}}</td>
-                <td>{{barreiras.cinetica.comFalha}}</td>
-                <td>{{barreiras.cinetica.ausente}}</td>
-                <td>{{barreiras.cinetica.observacao}}</td>
+                <td>{{analiseBarreiras.cinetica.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.cinetica.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.cinetica.ausentes}}</td>
+                <td>{{analiseBarreiras.cinetica.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Temperaturas extremas</td>
-                <td>{{barreiras.temperaturas.semFalha}}</td>
-                <td>{{barreiras.temperaturas.comFalha}}</td>
-                <td>{{barreiras.temperaturas.ausente}}</td>
-                <td>{{barreiras.temperaturas.observacao}}</td>
+                <td>{{analiseBarreiras.temperaturasExtremas.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.temperaturasExtremas.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.temperaturasExtremas.ausentes}}</td>
+                <td>{{analiseBarreiras.temperaturasExtremas.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Elétrica</td>
-                <td>{{barreiras.eletrica.semFalha}}</td>
-                <td>{{barreiras.eletrica.comFalha}}</td>
-                <td>{{barreiras.eletrica.ausente}}</td>
-                <td>{{barreiras.eletrica.observacao}}</td>
+                <td>{{analiseBarreiras.eletrica.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.eletrica.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.eletrica.ausentes}}</td>
+                <td>{{analiseBarreiras.eletrica.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Química (corrosiva, tóxica, inflamável, reativa)</td>
-                <td>{{barreiras.quimica.semFalha}}</td>
-                <td>{{barreiras.quimica.comFalha}}</td>
-                <td>{{barreiras.quimica.ausente}}</td>
-                <td>{{barreiras.quimica.observacao}}</td>
+                <td>{{analiseBarreiras.quimica.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.quimica.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.quimica.ausentes}}</td>
+                <td>{{analiseBarreiras.quimica.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Contaminação por agente biológico</td>
-                <td>{{barreiras.biologica.semFalha}}</td>
-                <td>{{barreiras.biologica.comFalha}}</td>
-                <td>{{barreiras.biologica.ausente}}</td>
-                <td>{{barreiras.biologica.observacao}}</td>
+                <td>{{analiseBarreiras.biologia.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.biologia.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.biologia.ausentes}}</td>
+                <td>{{analiseBarreiras.biologia.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Energia potencial armazenada (objetos sob pressão, tensão, compressão, etc)</td>
-                <td>{{barreiras.energia.semFalha}}</td>
-                <td>{{barreiras.energia.comFalha}}</td>
-                <td>{{barreiras.energia.ausente}}</td>
-                <td>{{barreiras.energia.observacao}}</td>
+                <td>{{analiseBarreiras.energiaArmazenada.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.energiaArmazenada.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.energiaArmazenada.ausentes}}</td>
+                <td>{{analiseBarreiras.energiaArmazenada.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Radiações</td>
-                <td>{{barreiras.radiacao.semFalha}}</td>
-                <td>{{barreiras.radiacao.comFalha}}</td>
-                <td>{{barreiras.radiacao.ausente}}</td>
-                <td>{{barreiras.radiacao.observacao}}</td>
+                <td>{{analiseBarreiras.radiacoes.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.radiacoes.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.radiacoes.ausentes}}</td>
+                <td>{{analiseBarreiras.radiacoes.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Acústica</td>
-                <td>{{barreiras.acustica.semFalha}}</td>
-                <td>{{barreiras.acustica.comFalha}}</td>
-                <td>{{barreiras.acustica.ausente}}</td>
-                <td>{{barreiras.acustica.observacao}}</td>
+                <td>{{analiseBarreiras.acustica.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.acustica.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.acustica.ausentes}}</td>
+                <td>{{analiseBarreiras.acustica.observacao}}</td>
             </tr>
             <tr>
                 <td class="bg-gray">Outras (descrever)</td>
-                <td>{{barreiras.outras.semFalha}}</td>
-                <td>{{barreiras.outras.comFalha}}</td>
-                <td>{{barreiras.outras.ausente}}</td>
-                <td>{{barreiras.outras.observacao}}</td>
+                <td>{{analiseBarreiras.outras.presentes.semFalha}}</td>
+                <td>{{analiseBarreiras.outras.presentes.comFalha}}</td>
+                <td>{{analiseBarreiras.outras.ausentes}}</td>
+                <td>{{analiseBarreiras.outras.observacao}}</td>
             </tr>
         </table>
     </section>
@@ -719,7 +719,7 @@
                 </br>Por favor, descreva-os.</td>
             </tr>
             <tr>
-                <td colspan="6">{{gestaoSeguranca.outrosFatores}}</td>
+                <td colspan="6">{{outrosFatoresGestaoSistemaContribuido}}</td>
             </tr>
         </table>
     </section>
@@ -753,7 +753,7 @@
             </tr>
             <tr>
                 <td style="display: flex; justify-content: space-around; align-items: center;">
-                    <label><input type="checkbox" name="intimacao" v{{procedimentosAdotados.intimacao}}> Intimação</label>
+                    <label><input type="checkbox" name="intimacao" {{procedimentosAdotados.intimacao}}> Intimação</label>
                     <label><input type="checkbox" name="infracao" {{procedimentosAdotados.infracao}}> Infração</label>
                     <label><input type="checkbox" name="interdicao" {{procedimentosAdotados.interdicao}}> Interdição</label>
                     <div>

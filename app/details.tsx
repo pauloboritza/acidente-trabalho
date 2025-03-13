@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Button } from "react-native-paper";
 import { WebView } from "react-native-webview";
@@ -9,31 +9,35 @@ import { shareAsync } from "expo-sharing";
 import * as Asset from "expo-asset";
 import * as FileSystem from "expo-file-system";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter, useFocusEffect } from "expo-router";
+import { AnimatedFAB } from "react-native-paper";
 
 const Details = () => {
   const [data, setData] = useState<Record<string, any> | null>(null);
   const { id } = useLocalSearchParams();
   const { get } = useAcidentesDatabase();
   const [htmlContent, setHtmlContent] = useState("");
+  const router = useRouter();
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await get(id);
-        if (response) {
-          setData(response);
-        }
-      } catch (error) {
-        console.log(error);
+  const loadData = async () => {
+    try {
+      const response = await get(id);
+      if (response) {
+        setData(response)
+        loadHtmlFile(response)
       }
-    };
-
-    if (!data) {
-      loadData();
-    } else {
-      loadHtmlFile();
+      return true
+    } catch (error) {
+      console.log(error);
+      return false
     }
-  }, [data]);
+  };
+  useFocusEffect(
+    useCallback(() => {  
+      loadData()            
+    }, [])
+  )
+
 // @ts-nocheck
   const replaceTemplate = (html: string, data: Record<string, any> | null) => {
     return html.replace(/{{(.*?)}}/g, (_: string, key: string): string => {
@@ -46,7 +50,7 @@ const Details = () => {
     });
   };
 // @ts-nocheck
-  const loadHtmlFile = async () => {
+  const loadHtmlFile = async (data: Record<string, any> | null) => {
     try {
       const asset = Asset.Asset.fromModule(require("../assets/roteiro.html"));
       await asset.downloadAsync();
@@ -79,18 +83,33 @@ const Details = () => {
     }
   };
 
+  function handleEdit() {
+    router.navigate({pathname: '/edit', params: { id, data: JSON.stringify(data) } });
+  }
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        {htmlContent ? (
+        {htmlContent ? (<>
           <WebView originWhitelist={["*"]} source={{ html: htmlContent }} style={styles.webView} />
-        ) : (
+            <AnimatedFAB 
+              icon={'file-document-edit'}
+              label={'editar'}
+              extended={false}
+              visible={true}
+              animateFrom={'right'}
+              iconMode={'static'}
+              onPress={handleEdit}
+              style={styles.fabStyle}
+            />
+          </>) : (
           <Button mode="contained" disabled>Carregando HTML...</Button>
         )}
         <View style={styles.buttonContainer}>
           <Button mode="contained" onPress={printToPDF}>Gerar PDF e Compartilhar</Button>
         </View>
       </View>
+      
     </SafeAreaView>
   );
 };
@@ -107,5 +126,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 10,
+  },
+  fabStyle: {
+    bottom: 80,
+    right: 30,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

@@ -26,6 +26,11 @@ export default function Layout(){
           statusBarHidden: false,
           statusBarStyle: 'dark'
         }}/>
+        <Stack.Screen name="edit" options={{
+          title: "Editar Acidente",
+          statusBarHidden: false,
+          statusBarStyle: 'dark'
+        }}/>
       </Stack>
       <StatusBar style="dark" />
     </SQLiteProvider>

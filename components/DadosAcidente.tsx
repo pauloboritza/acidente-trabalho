@@ -227,7 +227,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
           <View style={styles.input}>
             <View style={{flex: 1, justifyContent: 'flex-start', backgroundColor:'#ffff', borderTopEndRadius: 5}}>
             <RadioButton.Group
-              onValueChange={handleChange('acidente.acidente.outrosObitos.res')}
+              onValueChange={handleChange('acidente.outrosObitos.res')}
               value={values.acidente.outrosObitos.res}
             >
               <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
@@ -261,7 +261,7 @@ const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) 
               onValueChange={handleChange('acidente.outrosAcidentes.res')}
               value={values.acidente.outrosAcidentes.res}
             >
-              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros óbitos?</Text>
+              <Text style={[styles.input,{padding: 15, marginBottom: 0, fontSize: 16, fontWeight: '600', color: '#494848'}]}>Outros acidentes?</Text>
               <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: -25}}>
                 <View style={{ flexDirection: 'column'}}>
                   <RadioButton.Item label="SIM" value="SIM" />
