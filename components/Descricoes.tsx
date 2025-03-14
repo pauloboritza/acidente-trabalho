@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { TextInput, Text, List, Divider } from "react-native-paper";
 
 const Descricoes = ({values, handleBlur, handleChange}: any) => (
-    <List.Accordion title="Descrições" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
+    <List.Accordion title="Descrições" left={(props) => <List.Icon {...props} icon="format-list-numbered" />}>
       <View style={styles.section}>
         <Divider style={styles.divider} />
         <Text style={styles.textTitle}>DESCRIÇÃO DO TRABALHO HABITUAL (ROTINEIRO - SEM ACIDENTE)</Text>

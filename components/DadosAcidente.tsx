@@ -5,7 +5,7 @@ import DatePiker from "./DatePiker";
 import TimePiker from "./TimePiker";
 
 const DadosAcidente = ({ values, handleChange, handleBlur, setFieldValue}: any) => (
-<List.Accordion title="Dados do Acidente" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
+<List.Accordion title="Dados do Acidente" left={(props) => <List.Icon {...props} icon="ambulance" />}>
         <View style={styles.section}>
             
           <View style={{marginBottom: 15}}>

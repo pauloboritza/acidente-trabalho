@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { RadioButton, TextInput, Text, List, Divider } from "react-native-paper";
 import DatePiker from "./DatePiker";
 const AnaliseGestaoSeguranca = ({values, handleChange, handleBlur}: any)=>(
- <List.Accordion title="Análise Gestão de Segurança" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
+ <List.Accordion title="Análise Gestão de Segurança" left={(props) => <List.Icon {...props} icon="security" />}>
     <View style={styles.section}>
         <Divider style={styles.divider} />
         <Text style={[styles.textTitle, {textAlign: 'center'}]}>Componente Gestão de Segurança</Text>

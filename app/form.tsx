@@ -152,16 +152,12 @@ const Form = () => {
         />
 
       <Divider style={styles.divider} />
-      {/* Seção: Analise de Barreiras */}
-      <List.Accordion title="Análise de Barreiras" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
-      <View style={styles.section}>
-        <AnaliseBarreiras 
-          values={values}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-        />
-      </View>
-      </List.Accordion>
+      {/* Seção: Analise de Barreiras */}      
+      <AnaliseBarreiras 
+        values={values}
+        handleChange={handleChange}
+        handleBlur={handleBlur}
+      />      
 
       <Divider style={styles.divider} />
       {/* Seção: Gestão de Segurança */}

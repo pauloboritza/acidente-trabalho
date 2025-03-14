@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
-import { RadioButton } from 'react-native-paper';
+import { RadioButton, List } from 'react-native-paper';
 
 const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
   const categorias = [
@@ -17,9 +17,10 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
   ];
 
   return (
-    <View style={styles.container}>
+    <List.Accordion title="Análise de Barreiras" left={(props) => <List.Icon {...props} icon="wall" />}>
+    <View style={styles.container}>    
       {categorias.map((categoria, index) => (
-        <View key={index} style={styles.categoryContainer}>
+        <View key={index} style={[styles.categoryContainer, {marginTop: -1}]}>
           <Text style={styles.categoryTitle}>{categoria.label}</Text>
 
           {/* Sem Falha */}
@@ -73,7 +74,9 @@ const AnaliseBarreiras = ({ values, handleChange, handleBlur }: any) => {
           </View>
         </View>
       ))}
+      
     </View>
+    </List.Accordion>
   );
 };
 
@@ -83,11 +86,9 @@ export default AnaliseBarreiras;
 
 const styles = StyleSheet.create({
     container: {
-        borderRadius: 10,
-        marginBottom: 20,
-        paddingLeft: 0,
-        paddingEnd: 0,
-        marginTop: -5
+      paddingHorizontal: 0,
+      paddingLeft: 10,
+      paddingEnd: 0,   
       },
       sectionTitle: {
         fontSize: 18,

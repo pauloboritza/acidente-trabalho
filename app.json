@@ -2,7 +2,7 @@
   "expo": {
     "name": "Acidente Trabalho",
     "slug": "acidente-trabalho",
-    "version": "1.1.0",
+    "version": "1.2.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,10 +10,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.inv.acidente.trabalho"
+      "bundleIdentifier": "com.acidente.trabalho"
     },
     "android": {
-      "package": "com.inv.acidente.trabalho",
+      "package": "com.acidente.trabalho",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -36,7 +36,15 @@
         }
       ],
       "expo-sqlite",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
@@ -46,7 +54,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "8915cc6a-ed1e-4ca6-9b4a-b91b50c6c3ae"
+        "projectId": "5626e582-39fe-4bdb-b493-ba6c634c934a"
       }
     },
     "owner": "pauloboritza"

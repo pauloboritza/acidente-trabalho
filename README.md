@@ -1,25 +1,49 @@
-# Welcome to your Expo app 👋
+# Projeto destinado a atividade de Extensão da disciplina 📱Programação Para Dispositivos Móveis Em Android📱 do Curso de Ciências da Computação - [<img src="https://cdn.portal.estacio.br/logotipo_marca_estacio_branco_f411d5753c_1_13160695d2.svg">](https://estacio.br/cursos/graduacao/ciencias-da-computacao)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Objetivo do Projeto
+Trata-se de uma atividade prática do curso, onde vou resolver o problema de um setor de uma agência de fiscalização municipal relacionada a Segurança do Trabalho. Onde todo o processo de investigação de acidentes de trabalho é feito utilizando um longo formulário impresso preenchida a mão, o objetivo é informatizar o preenchimento do formulário através de uma App possibilitando que o operador export o formulário preenchido para PDF onde poderá enviar para outros sistemas, assinar o documento digitalmente e etc.
 
-## Get started
+Projeto criado utilizando o [Expo](https://expo.dev) crie o seu em [`create-expo-app`](https://www.npmjs.com/package/create-expo-app)
 
-1. Install dependencies
+
+## Como testar o projeto
+1. Clonar o repositório 
+```bash
+git clone https://github.com/pauloboritza/acidente-trabalho-open.git
+```
+2. Instalar as dependências
 ```bash
 npm install
 ```
 
-2. Start the app
+3. Iniciar o App
 ```bash
-   npx expo start
+npx expo start
 ```
-## Build 
+
+4. Customize o logotipo do PDF editando a linha 133 do arquivo `.html` em `/assets/roteiro.html`
+
+### Projeto sob a licença GNU GPL v3
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)    
+
+## Saiba mais sobre o Expo em:
+Para saber mais sobre como desenvolver seu projeto com o Expo, veja os seguintes recursos
+- [Documentação do Expo](https://docs.expo.dev/): Aprenda os fundamentos ou aprofunde-se em tópicos avançados com nossos [guias](https://docs.expo.dev/guides).
+- [Aprenda o tutorial do Expo](https://docs.expo.dev/tutorial/introduction/): Siga um tutorial passo a passo onde você criará um projeto que roda no Android, iOS e na web.
+
+- Entre para a comunidade
+
+- [Expo no GitHub](https://github.com/expo/expo): Veja nossa plataforma de código aberto e contribua.
+- [Discord community](https://chat.expo.dev): Converse com usuários do Expo e faça perguntas.
+
+## Extras
+### Build 
 - Build Local
-  ```sh
-  npx expo prebuild
-  ```
 ```sh
- cd android && ./gradlew assembleRelease
+npx expo prebuild
+```
+```sh
+cd android && ./gradlew assembleRelease
 ```
 - install eas
 ```bash
@@ -33,41 +57,3 @@ eas login
 ```sh 
 eas build -p android --profile preview --local
 ```
-- Possiveis erros
-```sh
-sudo chown -R $USER:$USER /opt/android/android-sdk
-```
-
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

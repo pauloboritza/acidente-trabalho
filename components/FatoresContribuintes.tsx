@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { TextInput, Text, List } from "react-native-paper";
 
 const FatoresContribuintes = ({ values, handleChange, handleBlur }: any) => (
-    <List.Accordion title="Fatores que Contribuíram" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
+    <List.Accordion title="Fatores que Contribuíram" left={(props) => <List.Icon {...props} icon="note-plus-outline" />}>
       <View style={styles.section}>
         <Text style={[styles.textTitle,{fontWeight: 500}]}>(DESCREVA SE NA SITUAÇÃO DO ACIDENTE HAVIA ALGUMA MUDANÇA EM RELAÇÃO AO INDIVÍDUO/TAREFA/ MATERIAL/ MEIO DE TRABALHO)</Text>
         <Text style={{ fontSize: 14, textAlign: 'justify'}}>Na situação do acidente, houve alguma mudança em componentes do sistema?</Text>

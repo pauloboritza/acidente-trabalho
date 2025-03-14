@@ -12,7 +12,7 @@ const InformacoesFinais = ({ values, handleChange, handleBlur, setFieldValue}: a
         
     }
     return(
-    <List.Accordion title="Informações Finais" left={(props) => <List.Icon {...props} icon="alert-circle" />}>
+    <List.Accordion title="Informações Finais" left={(props) => <List.Icon {...props} icon="flag-checkered" />}>
         <View style={[styles.section, {marginTop: -5}]}>
             <View style={info.checkboxContainer}>
                 <Text style={info.checkboxText}>INFORMAÇÕES PRESTADAS POR:</Text>

@@ -5,13 +5,14 @@ import { RadioButton, TextInput, Text, List } from "react-native-paper";
 import DatePiker from "./DatePiker";
 
 const RoteiroInicial = ({ values, handleChange, handleBlur, setFieldValue }: any) =>(
-    <List.Accordion title="Roteiro Inicial" left={(props) => <List.Icon {...props} icon="clipboard-list" />}>
+    <List.Accordion title="Roteiro Inicial" left={(props) => <List.Icon {...props} icon="view-list-outline" />}>
         <View style={styles.section}>
           
           <DatePiker 
             label='Data da Inspeção'
             fieldValue='dataInspecao'
             setFieldValue={setFieldValue}
+            style={styles.input}
           />            
           
           <TextInput

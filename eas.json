@@ -9,13 +9,20 @@
       "distribution": "internal"
     },
     "preview": {
+      "autoIncrement": true,
       "distribution": "internal",
       "android":{
-        "buildType": "apk"
-      }
+        "buildType": "apk",
+        "autoIncrement": "versionCode"
+      },
+      "channel": "preview"
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "android":{
+        "autoIncrement": "versionCode"
+      },
+      "channel": "production"
     }
   },
   "submit": {
