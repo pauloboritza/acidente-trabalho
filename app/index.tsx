@@ -4,7 +4,8 @@ import { View, StyleSheet, ImageBackground } from "react-native";
 import { AnimatedFAB } from "react-native-paper";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Constants from 'expo-constants';
-import ListAcidentes from "@/components/listAcidentes";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import ListAcidentes from "@/components/ListAcidentes";
 
 const image = require('@/assets/images/seg-trabalho.png')
 
@@ -14,25 +15,29 @@ const Index = ()=>{
     }
 
     return (
+        <GestureHandlerRootView style={{ flex: 1 }}>
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={styles.container}>   
-            <ImageBackground source={image} imageStyle={{resizeMode: 'center'}} resizeMode="cover" style={styles.image}>       
+             
+                <View style={styles.container}>   
+                    <ImageBackground source={image} imageStyle={{resizeMode: 'center'}} resizeMode="cover" style={styles.image}>       
 
-                <ListAcidentes />
+                        <ListAcidentes />
 
-                <AnimatedFAB
-                    icon={'plus'}
-                    label={'Novo'}
-                    extended={true}
-                    onPress={handleForm}
-                    visible={true}
-                    animateFrom={'right'}
-                    iconMode={'static'}
-                    style={styles.fabStyle}
-                />
-            </ImageBackground>
-            </View>
+                        <AnimatedFAB
+                            icon={'plus'}
+                            label={'Novo'}
+                            extended={true}
+                            onPress={handleForm}
+                            visible={true}
+                            animateFrom={'right'}
+                            iconMode={'static'}
+                            style={styles.fabStyle}
+                        />
+                    </ImageBackground>
+                </View>
+            
         </SafeAreaView>
+        </GestureHandlerRootView>
     )
 }
 
