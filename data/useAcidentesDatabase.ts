@@ -66,5 +66,58 @@ export function useAcidentesDatabase(): any{
         }
       }
 
-    return { create, update, get, getList, remove }
+    async function setLogo(logotipo: string){
+        const teste = await getLogo()
+        if (!teste){
+          const statement = await database.prepareAsync(
+              "INSERT INTO fotos VALUES (1, $logotipo)"
+          )
+          try {
+              const result = await statement.executeAsync({
+                  $logotipo: logotipo
+              })
+              const resultId = result.lastInsertRowId.toLocaleString()
+              return { resultId }
+          } catch (error) {
+              throw error
+          } finally {
+              await statement.finalizeAsync()
+          }
+        }else{
+          const statement = await database.prepareAsync(
+              "UPDATE fotos SET logotipo = $logotipo WHERE id = 1"
+          )
+          try {
+              await statement.executeAsync({
+                  $logotipo: logotipo
+              })
+          } catch (error) {
+              throw error
+          } finally {
+              await statement.finalizeAsync()
+          }
+        }
+    }
+    async function getLogo(){
+        try {   
+            const query = "SELECT * FROM fotos WHERE id = 1"
+            const response:any = await database.getFirstAsync(query)
+            if (response){
+              return response.logotipo
+            }
+            else{
+              return undefined
+            }            
+        }
+        catch (error) { throw error }
+    }
+    async function delLogo() {
+      try {
+        await database.execAsync("DELETE FROM fotos WHERE id = 1 ")
+      } catch (error) {
+        throw error
+      }
+    }
+    return { create, update, get, getList, remove, setLogo, getLogo, delLogo }
+
 }

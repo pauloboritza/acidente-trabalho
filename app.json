@@ -44,6 +44,18 @@
             "enableProguardInReleaseBuilds": true
           }
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O App precisa de acesso a galeria para poder alterar o Logotipo."
+        }
+      ],
+      [
+        "expo-asset",
+        {
+          "assets": ["./assets/images/seg-trabalho.png"]
+        }
       ]
     ],
     "experiments": {

@@ -4,6 +4,7 @@ import { Text, Searchbar } from "react-native-paper";
 import { Link, useFocusEffect } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
 import SwipeToDelete from '@/components/SwipeToDelete';  // Importa o componente SwipeToDelete
+import { Light } from "@/constants/Colors";
 
 const ListAcidentes = () => {
   const { getList, remove } = useAcidentesDatabase();
@@ -40,7 +41,6 @@ const ListAcidentes = () => {
 
         return
   }, [search]);
-  console.log("Render ListAcidentes");
 
   // Função chamada para excluir um item da lista
   const handleDelete = (id: any, nome: string) => {
@@ -71,7 +71,11 @@ const ListAcidentes = () => {
         value={search}
       />
       <Text style={styles.title}>Acidentes cadastrados: </Text>
-      {!acidentes && <Text style={styles.noListText}>Nenhum acidente registrado!</Text>}
+      {(acidentes?.length == 0) && 
+      <View style={styles.noListContainer}>
+        <Text style={styles.noListText}>Nenhum acidente registrado!</Text>
+      </View>      
+      }
 
       {acidentes && !acidentesFilter?
         <FlatList
@@ -126,10 +130,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
     marginTop: 15,
+    color: Light.primary
   },
   listContainer: {
     flex: 1,
-    backgroundColor: "#151718",
+    backgroundColor: Light.shadow,
     flexDirection: "column",
     marginVertical: 2,
     padding: 10,
@@ -141,12 +146,20 @@ const styles = StyleSheet.create({
   listText: {
     fontSize: 14,
     fontWeight: "700",
-    color: "#FFF",
+    color: Light.onPrimary,
   },
   noListText:{
     fontSize: 20,
     fontWeight: "700",
     textAlign: 'center',
-    padding: 40
+    color: '#C2185B'
+  },
+  noListContainer:{
+    backgroundColor: Light.secondaryContainer,
+    height: 60,
+    borderRadius: 5,
+    marginTop: 1,
+    alignContent: 'center',
+    justifyContent: 'center'
   }
 });

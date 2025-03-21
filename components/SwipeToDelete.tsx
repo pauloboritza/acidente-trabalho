@@ -1,6 +1,8 @@
 import React from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Icon } from 'react-native-paper';
 import { Swipeable } from 'react-native-gesture-handler';
+import { Light } from '@/constants/Colors';
 
 const SwipeToDelete = ({ children, id, handleDelete, nome }: any) => {
   // Função para renderizar as ações de deslizar (Excluir)
@@ -15,8 +17,12 @@ const SwipeToDelete = ({ children, id, handleDelete, nome }: any) => {
       <View style={styles.swipedRow}>
         {/* Animação do botão de excluir */}
         <Animated.View style={[styles.deleteButton, { opacity }]}>
-          <TouchableOpacity onPress={() => handleDelete(id, nome)}>
+          <TouchableOpacity 
+            style={styles.deleteButtonContainer}
+            onPress={() => handleDelete(id, nome)}
+          >            
             <Text style={styles.deleteButtonText}>Excluir</Text>
+            <Icon source="delete" size={18} color={Light.onPrimary} />          
           </TouchableOpacity>
         </Animated.View>
       </View>
@@ -40,23 +46,31 @@ export default SwipeToDelete;
 const styles = StyleSheet.create({
   swipedRow: {
     flexDirection: 'row',
-    backgroundColor: '#b60000',
+    backgroundColor: Light.error,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    height: '100%',
-    paddingVertical: 10,
-    borderRadius: 10,
+    alignSelf: 'center',
+    height: '95%',
+    borderRadius: 5,
+  },
+  deleteButtonContainer: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    gap: 1
   },
   deleteButton: {
-    backgroundColor: '#b60000',
+    backgroundColor: Light.error,
     justifyContent: 'center',
-    padding: 10,
-    width: 70, // Define a largura da área de deslizar
+    width: 90, // Define a largura da área de deslizar
     alignItems: 'center',
-    height: '100%',
+    alignSelf: 'center',
+    height: '90%',
   },
   deleteButtonText: {
-    color: '#fff',
+    color: Light.onPrimary,
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 16,

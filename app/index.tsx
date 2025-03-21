@@ -1,15 +1,30 @@
 import React from "react";
 import { router } from "expo-router";
 import { View, StyleSheet, ImageBackground } from "react-native";
-import { AnimatedFAB } from "react-native-paper";
+import { AnimatedFAB, Button, Icon, Text } from "react-native-paper";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Constants from 'expo-constants';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ListAcidentes from "@/components/ListAcidentes";
-
-const image = require('@/assets/images/seg-trabalho.png')
+import MenuButton from "@/components/MenuButton";
+import { useAssets } from "expo-asset";
 
 const Index = ()=>{
+    const [assets, error] = useAssets([
+        require('@/assets/images/seg-trabalho.png')
+    ])
+    // React.useEffect(()=>{
+    //     (async ()=>{
+    //         const img = await Asset.Asset.fromURI('../assets/images/seg-trabalho.png');
+    //         setImage(img.uri)
+    //         console.log(img)
+    //     })()
+        
+    //     return
+    // }
+    // ,[])
+    // console.log(assets)
+    //console.log("imG; ", assets[0].uri)
     function handleForm(){
         router.navigate('/form')
     }
@@ -19,7 +34,9 @@ const Index = ()=>{
         <SafeAreaView style={{ flex: 1 }}>
              
                 <View style={styles.container}>   
-                    <ImageBackground source={image} imageStyle={{resizeMode: 'center'}} resizeMode="cover" style={styles.image}>       
+                    <ImageBackground source={{uri:  '', width: 100, height: 100}} imageStyle={styles.imageStyle} resizeMode="cover" style={styles.image}>       
+
+                        <MenuButton />
 
                         <ListAcidentes />
 
@@ -61,6 +78,9 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
+    imageStyle: {
+        resizeMode: 'center'
+    }
 })

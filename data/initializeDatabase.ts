@@ -7,5 +7,9 @@ export default async function initializeDatabase( database: SQLiteDatabase){
             data JSON,
             createdAt DATETIME
         );
+        CREATE TABLE IF NOT EXISTS fotos (
+            id INTEGER PRIMARY KEY,
+            logotipo TEXT
+        );
     `)
 }

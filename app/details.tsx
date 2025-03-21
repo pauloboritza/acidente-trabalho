@@ -11,22 +11,30 @@ import * as FileSystem from "expo-file-system";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from "expo-router";
 import { AnimatedFAB } from "react-native-paper";
+import { logotipo } from "@/constants/logotipo";
 
 const Details = () => {
   const [data, setData] = useState<Record<string, any> | null>(null);
   const { id } = useLocalSearchParams();
-  const { get } = useAcidentesDatabase();
+  const { get, getLogo } = useAcidentesDatabase();
   const [htmlContent, setHtmlContent] = useState("");
   const router = useRouter();
 
   const loadData = async () => {
     try {
       const response = await get(id);
-      if (response) {
-        setData(response)
-        loadHtmlFile(response)
+      const logo = await getLogo();
+      if (response && logo) {
+        setData({logotipo: logo, ...response})
+        loadHtmlFile({logotipo: logo, ...response})
+      }else{
+        if(response){
+          setData({logotipo: logotipo, ...response})
+          loadHtmlFile({logotipo: logotipo, ...response})
+        }
       }
       return true
+
     } catch (error) {
       console.log(error);
       return false
