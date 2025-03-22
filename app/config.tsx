@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react"
-import { Alert, Image, View, StyleSheet } from "react-native"
+import { Alert, View, StyleSheet } from "react-native"
+import { Image, ImageProps } from 'expo-image';
 import { Button, Text, Icon } from "react-native-paper"
-import { logotipo } from "@/constants/logotipo"
+import { logotipoDefault } from "@/constants/logotipo"
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase"
 import * as ImagePicker from 'expo-image-picker';
 import { Light } from "@/constants/Colors"
@@ -15,7 +16,7 @@ const Config = ()=>{
             if (response){
                 setImage(response)
             }else{
-                setImage(logotipo)
+                setImage(logotipoDefault)
             }
         })()
 
@@ -29,8 +30,8 @@ const Config = ()=>{
             let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: 'images',
             allowsEditing: true,
-            aspect: [16, 10],
-            quality: 0,
+            aspect: [16, 7],
+            quality: 0.2,
             base64: true
             });
         
@@ -46,13 +47,13 @@ const Config = ()=>{
       };
       async function handleRestore(){
         await delLogo()
-        setImage(logotipo)
+        setImage(logotipoDefault)
         Alert.alert("Sucesso!", "Logotipo padrão restaurado com sucesso!");
       }
     return (
         <View style={styles.container}>
             <Text style={styles.textLogoAtual}>Logotipo Atual:</Text>
-            <Image source={{uri: image }} style={styles.image} />
+            <Image source={image} style={styles.image} contentFit="contain" />
             <View style={styles.buttonsContainer}>
                 <Button
                     mode="contained"
@@ -96,8 +97,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '70%',
-        height: 80,
-        resizeMode: 'stretch'
+        height: 80
     },
     buttonsContainer: {
         flexDirection: 'row',

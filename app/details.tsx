@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { useAcidentesDatabase } from "@/data/useAcidentesDatabase";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Button } from "react-native-paper";
 import { WebView } from "react-native-webview";
@@ -11,7 +11,7 @@ import * as FileSystem from "expo-file-system";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from "expo-router";
 import { AnimatedFAB } from "react-native-paper";
-import { logotipo } from "@/constants/logotipo";
+import { logotipoDefault } from "@/constants/logotipo";
 
 const Details = () => {
   const [data, setData] = useState<Record<string, any> | null>(null);
@@ -29,8 +29,8 @@ const Details = () => {
         loadHtmlFile({logotipo: logo, ...response})
       }else{
         if(response){
-          setData({logotipo: logotipo, ...response})
-          loadHtmlFile({logotipo: logotipo, ...response})
+          setData({logotipo: logotipoDefault, ...response})
+          loadHtmlFile({logotipo: logotipoDefault, ...response})
         }
       }
       return true
@@ -46,7 +46,7 @@ const Details = () => {
     }, [])
   )
 
-// @ts-nocheck
+
   const replaceTemplate = (html: string, data: Record<string, any> | null) => {
     return html.replace(/{{(.*?)}}/g, (_: string, key: string): string => {
       const keys = key.trim().split(".");
@@ -57,7 +57,7 @@ const Details = () => {
       return String(value);
     });
   };
-// @ts-nocheck
+
   const loadHtmlFile = async (data: Record<string, any> | null) => {
     try {
       const asset = Asset.Asset.fromModule(require("../assets/roteiro.html"));

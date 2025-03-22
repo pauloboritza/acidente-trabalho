@@ -1,30 +1,16 @@
 import React from "react";
 import { router } from "expo-router";
-import { View, StyleSheet, ImageBackground } from "react-native";
-import { AnimatedFAB, Button, Icon, Text } from "react-native-paper";
+import { View, StyleSheet } from "react-native";
+import { AnimatedFAB } from "react-native-paper";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Constants from 'expo-constants';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ListAcidentes from "@/components/ListAcidentes";
 import MenuButton from "@/components/MenuButton";
-import { useAssets } from "expo-asset";
+import { ImageBackground } from "@/components/ImageBackground";
 
 const Index = ()=>{
-    const [assets, error] = useAssets([
-        require('@/assets/images/seg-trabalho.png')
-    ])
-    // React.useEffect(()=>{
-    //     (async ()=>{
-    //         const img = await Asset.Asset.fromURI('../assets/images/seg-trabalho.png');
-    //         setImage(img.uri)
-    //         console.log(img)
-    //     })()
-        
-    //     return
-    // }
-    // ,[])
-    // console.log(assets)
-    //console.log("imG; ", assets[0].uri)
+    const img = require('@/assets/images/seg-trabalho.png')
+    
     function handleForm(){
         router.navigate('/form')
     }
@@ -32,27 +18,25 @@ const Index = ()=>{
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
         <SafeAreaView style={{ flex: 1 }}>
-             
-                <View style={styles.container}>   
-                    <ImageBackground source={{uri:  '', width: 100, height: 100}} imageStyle={styles.imageStyle} resizeMode="cover" style={styles.image}>       
+            <View style={styles.container}>   
+                <ImageBackground source={img}>       
 
-                        <MenuButton />
+                    <MenuButton />
 
-                        <ListAcidentes />
+                    <ListAcidentes />
 
-                        <AnimatedFAB
-                            icon={'plus'}
-                            label={'Novo'}
-                            extended={true}
-                            onPress={handleForm}
-                            visible={true}
-                            animateFrom={'right'}
-                            iconMode={'static'}
-                            style={styles.fabStyle}
-                        />
-                    </ImageBackground>
-                </View>
-            
+                    <AnimatedFAB
+                        icon={'plus'}
+                        label={'Novo'}
+                        extended={true}
+                        onPress={handleForm}
+                        visible={true}
+                        animateFrom={'right'}
+                        iconMode={'static'}
+                        style={styles.fabStyle}
+                    />
+                </ImageBackground>
+            </View>
         </SafeAreaView>
         </GestureHandlerRootView>
     )
@@ -77,8 +61,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     image: {
-        flex: 1,
-        justifyContent: 'center',
+        flex: 1
     },
     imageStyle: {
         resizeMode: 'center'

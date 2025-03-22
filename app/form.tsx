@@ -1,7 +1,6 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
-import { Button, Divider, List, Text} from 'react-native-paper';
-import { Alert } from 'react-native';
+import { ScrollView, Alert } from 'react-native';
+import { Button, Divider, Text} from 'react-native-paper';
 import { Formik } from 'formik';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
