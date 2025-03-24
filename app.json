@@ -17,7 +17,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -50,12 +54,6 @@
         {
           "photosPermission": "O App precisa de acesso a galeria para poder alterar o Logotipo."
         }
-      ],
-      [
-        "expo-asset",
-        {
-          "assets": ["./assets/images/seg-trabalho.png"]
-        }
       ]
     ],
     "experiments": {
@@ -69,6 +67,12 @@
         "projectId": "5626e582-39fe-4bdb-b493-ba6c634c934a"
       }
     },
-    "owner": "pauloboritza"
+    "owner": "pauloboritza",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/5626e582-39fe-4bdb-b493-ba6c634c934a"
+    }
   }
 }
