@@ -42,7 +42,7 @@ const ListAcidentes = () => {
         return
   }, [search]);
 
-  // Função chamada para excluir um item da lista
+  // Função chamada para excluir um item da lista de acidentes
   const handleDelete = (id: any, nome: string) => {
     try {
       Alert.alert("Atenção!", `Deseja mesmo excluir permanentemente o registro de acidente do: ${nome}`, [
